@@ -14,6 +14,7 @@ const FilterTab = () => {
         left: "119px",
         gap: "22px",
         display: "flex",
+        backgroundColor: "#f8f8f8",
       }}
     >
       <div

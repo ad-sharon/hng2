@@ -7,8 +7,9 @@ import FilterTab from "../components/filter_tab";
 import ProductListing from "../components/product_listing";
 import Footer from "../components/footer";
 import PrevNext from "../components/prev_next";
+import CartListing from "../components/cartlisting";
 
-function ProductPage() {
+function CartPage() {
   return (
     <Box>
       <div
@@ -24,15 +25,15 @@ function ProductPage() {
         <TopBar />
         <TimbuDiv />
         <TitleBar />
-      </div>
-      <FilterTab />
-      <ProductListing />
 
-      <div>
-        <Footer />
+        <CartListing />
+
+        <div>
+          <Footer />
+        </div>
       </div>
     </Box>
   );
 }
 
-export default ProductPage;
+export default CartPage;

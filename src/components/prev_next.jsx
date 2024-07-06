@@ -4,194 +4,228 @@ import arrow_right from "..//assets/images/arrow_right.png";
 
 const PrevNext = () => {
   return (
-    <div
-      style={{
-        width: "427px",
-        height: "42px",
-        display: "flex",
-      }}
-    >
+    <div>
       <div
         style={{
-          display: "flex",
-          width: "119px",
+          width: "427px",
           height: "42px",
-          padding: "8px 12px 8px 12px",
-          opacity: "50%",
-          gap: "8px",
-          whiteSpace: "nowrap",
-        }}
-      >
-        <img src={arrow_left} style={{ width: "16px", height: "16px" }} />
-        <p
-          style={{
-            width: "71px",
-            height: "26px",
-            fontFamily: "Kanit",
-            fontWeight: "400",
-            fontSize: "18px",
-            lineHeight: "26px",
-            letterSpacing: "0.5px",
-            color: "#B2A6A6",
-          }}
-        >
-          Previous
-        </p>
-      </div>
-      <div
-        style={{
-          width: "207px",
-          height: "38px",
           gap: "8px",
           display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
         }}
       >
+        {/* previous/arrow-left */}
         <div
           style={{
+            width: "119px",
+            height: "42px",
+            padding: "8px 12px",
+            opacity: "50%",
             borderRadius: "8px",
-            backgroundColor: "#ED8174",
-            width: "32px",
-            height: "28px",
-            padding: "8px 12px 8px 12px",
+            gap: "8px",
+            display: "flex",
           }}
         >
-          <p
+          <div
             style={{
-              width: "6px",
-              height: "26px",
+              alignItems: "center",
+              display: "flex",
+            }}
+          >
+            <img
+              src={arrow_left}
+              style={{
+                width: "16",
+                height: "16",
+              }}
+            />
+          </div>
+
+          <div
+            style={{
+              color: "#B2A6A6",
+              fontSize: "18px",
               fontFamily: "Kanit",
               fontWeight: "400",
-              fontSize: "18px",
-              letterSpacing: "0.5px",
               lineHeight: "26px",
-              color: "#fff",
+              letterSpacing: "0.09px",
             }}
           >
-            1
-          </p>
+            Previous
+          </div>
+        </div>
+
+        {/* numbers */}
+        <div
+          style={{
+            width: "207px",
+            height: "38px",
+            alignItems: "center",
+            gap: "8px",
+            display: "flex",
+          }}
+        >
+          <div
+            style={{
+              width: 32,
+              height: 28,
+              padding: "8px 12px",
+              backgroundColor: "#ED8174",
+              borderRadius: "8px",
+              flexDirection: "column",
+              justifyContent: "center",
+              display: "flex",
+            }}
+          >
+            <div
+              style={{
+                color: "#fff",
+                fontSize: "18px",
+                fontFamily: "Kanit, sans-serif",
+                fontWeight: "400",
+                lineHeight: "26px",
+                letterSpacing: "0.09px",
+              }}
+            >
+              1
+            </div>
+          </div>
+
+          <div
+            style={{
+              width: "32px",
+              height: "28px",
+              padding: "8px 12px",
+              flexDirection: "column",
+              justifyContent: "center",
+              display: "flex",
+            }}
+          >
+            <div
+              style={{
+                color: "#473838",
+                fontSize: "18px",
+                fontFamily: "Kanit, sans-serif",
+                fontWeight: "400",
+                lineHeight: "26px",
+                letterSpacing: "0.09px",
+              }}
+            >
+              2
+            </div>
+          </div>
+
+          <div
+            style={{
+              width: "32px",
+              height: "28px",
+              padding: "8px 12px",
+              flexDirection: "column",
+              justifyContent: "center",
+              display: "flex",
+            }}
+          >
+            <div
+              style={{
+                color: "#473838",
+                fontSize: "18px",
+                fontFamily: "Kanit, sans-serif",
+                fontWeight: "400",
+                lineHeight: "26px",
+                letterSpacing: "0.09px",
+              }}
+            >
+              3
+            </div>
+          </div>
+          <div
+            style={{
+              paddingLeft: 16,
+              paddingRight: 16,
+              paddingTop: 8,
+              paddingBottom: 8,
+              borderRadius: 8,
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+              display: "inline-flex",
+            }}
+          >
+            <div
+              style={{
+                color: "#000",
+                fontSize: "16px",
+                fontFamily: "Inter, sans-serif",
+                fontWeight: "700",
+                lineHeight: "22.4px",
+              }}
+            >
+              ...
+            </div>
+          </div>
+          <div
+            style={{
+              width: "32px",
+              height: "28px",
+              padding: "8px 12px",
+              flexDirection: "column",
+              justifyContent: "center",
+              display: "flex",
+            }}
+          >
+            <div
+              style={{
+                color: "#473838",
+                fontSize: "18px",
+                fontFamily: "Kanit, sans-serif",
+                fontWeight: "400",
+                lineHeight: "26px",
+                letterSpacing: "0.09px",
+              }}
+            >
+              5
+            </div>
+          </div>
         </div>
 
         <div
           style={{
-            borderRadius: "8px",
-            width: "32px",
-            height: "28px",
-            padding: "8px 12px 8px 12px",
+            width: "85px",
+            height: "42px",
+            padding: "8px 12px",
+            alignItems: "center",
+            gap: "8px",
+            display: "flex",
           }}
         >
-          <p
+          <div
             style={{
-              width: "6px",
-              height: "26px",
-              fontFamily: "Kanit",
+              color: "#ED8174",
+              fontSize: "18px",
+              fontFamily: "Kanit, sans-serif",
               fontWeight: "400",
-              fontSize: "18px",
-              letterSpacing: "0.5px",
               lineHeight: "26px",
-              color: "#473838",
+              letterSpacing: "0.09px",
             }}
           >
-            2
-          </p>
-        </div>
+            Next
+          </div>
 
-        <div
-          style={{
-            borderRadius: "8px",
-            width: "32px",
-            height: "28px",
-            padding: "8px 12px 8px 12px",
-          }}
-        >
-          <p
+          <div
             style={{
-              width: "6px",
-              height: "26px",
-              fontFamily: "Kanit",
-              fontWeight: "400",
-              fontSize: "18px",
-              letterSpacing: "0.5px",
-              lineHeight: "26px",
-              color: "#473838",
+              display: "flex",
             }}
           >
-            3
-          </p>
+            <img
+              src={arrow_right}
+              style={{
+                width: 16,
+                height: 16,
+              }}
+            />
+          </div>
         </div>
-
-        <div
-          style={{
-            borderRadius: "8px",
-            width: "32px",
-            height: "28px",
-            padding: "8px 12px 8px 12px",
-            flexDirection: "row",
-          }}
-        >
-          <p
-            style={{
-              width: "15px",
-              height: "22px",
-              fontFamily: " Inter, sans-serif",
-              fontWeight: "700",
-              fontSize: "16px",
-              lineHeight: "22.4px",
-              color: "#000",
-            }}
-          >
-            ...
-          </p>
-        </div>
-
-        <div
-          style={{
-            borderRadius: "8px",
-            width: "32px",
-            height: "28px",
-            padding: "8px 12px 8px 12px",
-          }}
-        >
-          <p
-            style={{
-              width: "6px",
-              height: "26px",
-              fontFamily: "Kanit",
-              fontWeight: "400",
-              fontSize: "18px",
-              letterSpacing: "0.5px",
-              lineHeight: "26px",
-              color: "#473838",
-            }}
-          >
-            5
-          </p>
-        </div>
-      </div>
-
-      <div
-        style={{
-          display: "flex",
-          width: "85px",
-          height: "42px",
-          padding: "8px 12px 8px 12px",
-          gap: "8px",
-        }}
-      >
-        <p
-          style={{
-            width: "37px",
-            height: "26px",
-            fontFamily: "Kanit, sans-serif",
-            fontWeight: "400",
-            fontSize: "18px",
-            lineHeight: "26px",
-            letterSpacing: "0.5px",
-            whiteSpace: "nowrap",
-          }}
-        >
-          Next
-        </p>
-        <img src={arrow_right} style={{ width: "16px", height: "16px" }} />
       </div>
     </div>
   );
