@@ -512,7 +512,7 @@ const ProductListing = () => {
                     whiteSpace: "nowrap",
                   }}
                 >
-                  Save 14%
+                  Sold Out
                 </p>
               </div>
               <img
