@@ -1,10 +1,13 @@
 import React from "react";
 import search from "../assets/images/search.png";
 import cart from "../assets/images/cart.png";
-import CartItem from "./cart_item";
+import CartItem1 from "./cart_item1";
+import CartItem2 from "./cart_item2";
+import CartSide from "./cart_side";
 
-const CartTab = () => {
+const CartMain = () => {
   return (
+    // all div
     <div
       style={{
         width: 1200,
@@ -12,17 +15,19 @@ const CartTab = () => {
         top: 420,
         left: 120,
         gap: 16,
+        display: "flex",
+        flexDirection: "column",
         position: "absolute",
       }}
     >
+      {/* cart tab div */}
       <div
         style={{
           width: 1199,
           height: 32,
-          top: 426,
-          left: "119px",
           justifyContent: "space-between",
           display: "flex",
+          flexDirection: "row",
         }}
       >
         <div
@@ -69,14 +74,53 @@ const CartTab = () => {
           </div>
         </div>
       </div>
-      <div>
-        <CartItem />
-      </div>
-      <div>
-        <CartItem />
+      {/* cart tab div end */}
+
+      <div
+        style={{
+          width: 1200,
+          height: 465,
+          gap: 120,
+          display: "flex",
+          flexDirection: "row",
+        }}
+      >
+        {/* 2 cart items */}
+        <div
+          style={{
+            width: 1200,
+            height: 465,
+            gap: 41,
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
+          <div
+            style={{
+              width: 767,
+              height: 465,
+            }}
+          >
+            <CartItem1 />
+          </div>
+          <div
+            style={{
+              width: 767,
+              height: 465,
+              gap: 41,
+              display: "flex",
+              flexDirection: "column",
+            }}
+          >
+            <CartItem2 />
+          </div>
+        </div>
+        <div>
+          <CartSide />
+        </div>
       </div>
     </div>
   );
 };
 
-export default CartTab;
+export default CartMain;

@@ -1,19 +1,21 @@
 import React from "react";
-import search from "../assets/images/search.png";
-import cart from "../assets/images/cart.png";
+import plus from "../assets/images/plus.png";
+import minus from "../assets/images/minus.png";
 import cart1 from "../assets/images/cart1.png";
 
-const CartItem = () => {
+const CartItem1 = () => {
   return (
     <div
       style={{
         width: 757,
         height: "212px",
         gap: 22,
+        paddingBottom: 40,
         display: "flex",
         position: "absolute",
       }}
     >
+      {/* picture div */}
       <div
         style={{
           height: 172,
@@ -34,12 +36,14 @@ const CartItem = () => {
         />
       </div>
 
+      {/* text div */}
       <div
         style={{
           width: 589,
           height: "140px",
           flexDirection: "column",
           display: "flex",
+          margin: "auto",
           gap: 16,
         }}
       >
@@ -50,7 +54,7 @@ const CartItem = () => {
             height: "32px",
             alignItems: "center",
             gap: 21,
-            display: "inline-flex",
+            display: "flex",
           }}
         >
           <div
@@ -93,14 +97,12 @@ const CartItem = () => {
               style={{
                 width: 24,
                 height: 24,
-                paddingLeft: 5,
-                paddingRight: 5,
                 justifyContent: "center",
                 alignItems: "center",
                 display: "flex",
               }}
             >
-              <img src={cart}></img>
+              <img src={minus}></img>
             </div>
 
             <div
@@ -122,13 +124,12 @@ const CartItem = () => {
               style={{
                 width: 24,
                 height: 24,
-                padding: 5,
                 justifyContent: "center",
                 alignItems: "center",
                 display: "flex",
               }}
             >
-              <img src={cart} alt="" />
+              <img src={plus} alt="" />
             </div>
           </div>
 
@@ -176,4 +177,4 @@ const CartItem = () => {
   );
 };
 
-export default CartItem;
+export default CartItem1;

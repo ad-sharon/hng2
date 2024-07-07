@@ -3,7 +3,7 @@ import { Box, ChakraProvider, extendTheme } from "@chakra-ui/react";
 import TopBar from "../components/topBar";
 import TimbuDiv from "../components/timbu_div";
 import TitleBar from "../components/title_bar";
-import CartTab from "../components/cart_tab";
+import CartMain from "../components/cart_main";
 import Footer from "../components/footer";
 
 const theme = extendTheme({
@@ -33,7 +33,7 @@ function CartPage() {
         <TitleBar />
       </div>
 
-      <CartTab />
+      <CartMain />
 
       <div>
         <Footer />
