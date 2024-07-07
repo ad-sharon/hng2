@@ -2599,9 +2599,7 @@ const ProductListing = () => {
           </div>
         </div>
       </div>
-      <div>
-        <PrevNext />
-      </div>
+      <PrevNext />
     </div>
   );
 };

@@ -4,15 +4,22 @@ import arrow_right from "..//assets/images/arrow_right.png";
 
 const PrevNext = () => {
   return (
-    <div>
+    <div
+      style={{
+        width: "1200px",
+        height: "235px",
+        display: "flex",
+        justifyContent: "center", // Align content to the bottom
+        alignItems: "center",
+      }}
+    >
       <div
         style={{
           width: "427px",
           height: "42px",
           gap: "8px",
           display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
+          flexDirection: "row",
         }}
       >
         {/* previous/arrow-left */}
