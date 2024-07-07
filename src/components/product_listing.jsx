@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import product1 from "..//assets/images/product1.png";
 import product2 from "..//assets/images/product2.png";
 import product3 from "..//assets/images/product3.png";
@@ -14,6 +15,7 @@ import product12 from "..//assets/images/product12.png";
 import PrevNext from "./prev_next";
 import smallStar from "..//assets/images/smallStar.png";
 import plainStar from "..//assets/images/plainStar.png";
+import "../hover_product.css";
 
 const ProductListing = () => {
   return (
@@ -37,7 +39,6 @@ const ProductListing = () => {
         }}
       >
         <div
-          className="div"
           style={{
             width: "1200px",
             height: "448px",
@@ -55,7 +56,9 @@ const ProductListing = () => {
             }}
           >
             {/* one card image */}
+
             <div
+              className="hover_product"
               style={{
                 width: "278.25px",
                 height: "340px",
@@ -64,13 +67,28 @@ const ProductListing = () => {
               }}
             >
               <div
+                className="hover_content"
                 style={{
+                  position: "absolute",
+                  top: "0",
+                  left: "0",
+                  right: "0",
+                  bottom: "0",
+                  display: "flex",
+                  flexDirection: "column",
+                  zIndex: "1",
+                }}
+              ></div>
+              <div
+                style={{
+                  position: "absolute",
                   maxWidth: "92px",
                   maxHeight: "30px",
                   top: "-1px",
                   left: "-1px",
                   padding: "4px 8px 4px 8px",
-                  backgroundColor: "#EEE4E3",
+                  backgroundColor: "#EEE4E3 ",
+                  zIndex: "2",
                 }}
               >
                 <p
@@ -93,12 +111,17 @@ const ProductListing = () => {
                 src={product1}
                 style={{
                   width: "232px",
+                  height: "286px",
                   position: "absolute",
                   height: "286px",
                   top: "27px",
                   left: "23px",
                 }}
               />
+
+              <Link to="/cart" className="hover_button">
+                Add to Cart
+              </Link>
             </div>
 
             {/* CAPTION */}
