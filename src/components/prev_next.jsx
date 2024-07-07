@@ -35,6 +35,7 @@ const PrevNext = () => {
           >
             <img
               src={arrow_left}
+              alt=""
               style={{
                 width: "16",
                 height: "16",
@@ -219,6 +220,7 @@ const PrevNext = () => {
           >
             <img
               src={arrow_right}
+              alt=""
               style={{
                 width: 16,
                 height: 16,

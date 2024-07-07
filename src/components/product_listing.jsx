@@ -1,5 +1,4 @@
 import React from "react";
-import { Box } from "@chakra-ui/react";
 import product1 from "..//assets/images/product1.png";
 import product2 from "..//assets/images/product2.png";
 import product3 from "..//assets/images/product3.png";
@@ -13,31 +12,46 @@ import product10 from "..//assets/images/product10.png";
 import product11 from "..//assets/images/product11.png";
 import product12 from "..//assets/images/product12.png";
 import PrevNext from "./prev_next";
+import smallStar from "..//assets/images/smallStar.png";
+import plainStar from "..//assets/images/plainStar.png";
 
 const ProductListing = () => {
   return (
-    <Box
-      position="absolute"
-      width="1440px"
-      h="1596px"
-      top="504px"
-      left="119.5px"
-      gap="114px"
-      display="flex"
-      flexDirection="column"
+    <div
+      style={{
+        position: "absolute",
+        width: "1200px",
+        h: "1596px",
+        top: "504px",
+        left: "119.5px",
+        gap: "114px",
+      }}
     >
       <div
         style={{
           width: "1200px",
           height: "1440px",
+          display: "flex",
+          flexDirection: "column",
+          gap: "48px",
         }}
       >
-        <div className="div" style={{ display: "flex" }}>
+        <div
+          className="div"
+          style={{
+            width: "1200px",
+            height: "448px",
+            display: "flex",
+            gap: "29px",
+          }}
+        >
           <div
             style={{
-              width: "1200px",
+              width: "278.25px",
               height: "448px",
-              gap: "29px",
+              gap: "8px",
+              display: "flex",
+              flexDirection: "column",
             }}
           >
             {/* one card image */}
@@ -51,24 +65,22 @@ const ProductListing = () => {
             >
               <div
                 style={{
-                  position: "absolute",
                   maxWidth: "92px",
                   maxHeight: "30px",
                   top: "-1px",
                   left: "-1px",
                   padding: "4px 8px 4px 8px",
-                  backgroundColor: "#FDDDD9",
+                  backgroundColor: "#EEE4E3",
                 }}
               >
                 <p
                   style={{
                     width: "56px",
-                    height: "22px",
                     fontFamily: "Kanit",
                     fontWeight: "400",
                     fontSize: "14px",
                     lineHeight: "22px",
-                    letterSpacing: "0.5px",
+                    letterSpacing: "0.07px",
                     textAlign: "center",
                     whiteSpace: "nowrap",
                   }}
@@ -76,6 +88,7 @@ const ProductListing = () => {
                   Save 14%
                 </p>
               </div>
+
               <img
                 src={product1}
                 style={{
@@ -87,14 +100,164 @@ const ProductListing = () => {
                 }}
               />
             </div>
+
+            {/* CAPTION */}
             <div
+              className="Info"
               style={{
-                width: "278.25px",
-                height: "100px",
-                border: "1px solid #000",
+                width: 278.25,
+                height: 100,
+                position: "relative",
+                flexDirection: "column",
+                justifyContent: "flex-start",
+                alignItems: "center",
+                gap: 24,
+                display: "flex",
               }}
             >
-              <p>Lora Starter Kit</p>
+              <div
+                style={{
+                  height: "100px",
+                  gap: 8,
+                  alignItems: "center",
+                  flexDirection: "column",
+                  display: "flex",
+                }}
+              >
+                <div
+                  style={{
+                    justifyContent: "center",
+                    height: "26px",
+                    display: "flex",
+                    flexDirection: "row",
+                    alignItems: "center",
+                    gap: "8px",
+                  }}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "flex-start",
+                      width: 132,
+                      height: 24,
+                      gap: "3px",
+                    }}
+                  >
+                    <img
+                      src={smallStar}
+                      alt=""
+                      style={{
+                        width: 24,
+                        height: 24,
+                      }}
+                    />
+                    <img
+                      src={smallStar}
+                      alt=""
+                      style={{
+                        width: 24,
+                        height: 24,
+                      }}
+                    />
+                    <img
+                      src={smallStar}
+                      alt=""
+                      style={{
+                        width: 24,
+                        height: 24,
+                      }}
+                    />
+                    <img
+                      src={smallStar}
+                      alt=""
+                      style={{
+                        width: 24,
+                        height: 24,
+                      }}
+                    />
+                    <img
+                      src={plainStar}
+                      style={{
+                        width: 24,
+                        height: 24,
+                      }}
+                    />
+                  </div>
+
+                  <div
+                    style={{
+                      color: "#473838",
+                      fontSize: 18,
+                      fontFamily: "Kanit",
+                      fontWeight: "400",
+                      lineHeight: 26,
+                      letterSpacing: 0.09,
+                    }}
+                  >
+                    4 (5)
+                  </div>
+                </div>
+
+                <div
+                  style={{
+                    height: "26px",
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
+                  <p
+                    style={{
+                      textAlign: "center",
+                      color: "#473838",
+                      fontSize: 18,
+                      fontFamily: "Kanit",
+                      fontWeight: "400",
+                      letterSpacing: 0.09,
+                    }}
+                  >
+                    Lora Starter Kit
+                  </p>
+                </div>
+
+                <div
+                  style={{
+                    gap: 8,
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    height: "26px",
+                  }}
+                >
+                  <div
+                    style={{
+                      textAlign: "center",
+                      color: "#473838",
+                      fontSize: 24,
+                      fontFamily: "Kanit",
+                      fontWeight: "400",
+                      textDecoration: "line-through",
+                      lineHeight: 32,
+                      letterSpacing: 0.12,
+                    }}
+                  >
+                    $200
+                  </div>
+
+                  <div
+                    style={{
+                      textAlign: "center",
+                      color: "#F7AFBC",
+                      fontSize: 24,
+                      fontFamily: "Kanit",
+                      fontWeight: "700",
+                      lineHeight: 32,
+                      letterSpacing: 0.12,
+                    }}
+                  >
+                    $186
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -118,24 +281,22 @@ const ProductListing = () => {
               <div
                 style={{
                   position: "absolute",
-                  top: "-1px",
-                  left: "-1px",
                   maxWidth: "92px",
                   maxHeight: "30px",
-
+                  top: "-1px",
+                  left: "-1px",
                   padding: "4px 8px 4px 8px",
-                  backgroundColor: "#FDDDD9",
+                  backgroundColor: "#EEE4E3",
                 }}
               >
                 <p
                   style={{
                     width: "56px",
-                    height: "22px",
                     fontFamily: "Kanit",
                     fontWeight: "400",
                     fontSize: "14px",
                     lineHeight: "22px",
-                    letterSpacing: "0.5px",
+                    letterSpacing: "0.07px",
                     textAlign: "center",
                     whiteSpace: "nowrap",
                   }}
@@ -155,16 +316,163 @@ const ProductListing = () => {
                 }}
               />
             </div>
+
+            {/* CAPTION */}
             <div
+              className="Info"
               style={{
-                width: "278.25px",
-                height: "100px",
-                border: "1px solid #000",
+                width: 278.25,
+                height: 100,
+                position: "relative",
+                flexDirection: "column",
+                justifyContent: "flex-start",
+                alignItems: "center",
+                gap: 24,
+                display: "flex",
               }}
             >
-              <p>Lora Starter Kit</p>
+              <div
+                style={{
+                  height: "100px",
+                  gap: 8,
+                  alignItems: "center",
+                  flexDirection: "column",
+                  display: "flex",
+                }}
+              >
+                <div
+                  style={{
+                    justifyContent: "center",
+                    height: "26px",
+                    display: "flex",
+                    flexDirection: "row",
+                    alignItems: "center",
+                    gap: "8px",
+                  }}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "flex-start",
+                      width: 132,
+                      height: 24,
+                      gap: "3px",
+                    }}
+                  >
+                    <img
+                      src={smallStar}
+                      style={{
+                        width: 24,
+                        height: 24,
+                      }}
+                    />
+                    <img
+                      src={smallStar}
+                      style={{
+                        width: 24,
+                        height: 24,
+                      }}
+                    />
+                    <img
+                      src={smallStar}
+                      style={{
+                        width: 24,
+                        height: 24,
+                      }}
+                    />
+                    <img
+                      src={smallStar}
+                      style={{
+                        width: 24,
+                        height: 24,
+                      }}
+                    />
+                    <img
+                      src={plainStar}
+                      style={{
+                        width: 24,
+                        height: 24,
+                      }}
+                    />
+                  </div>
+
+                  <div
+                    style={{
+                      color: "#473838",
+                      fontSize: 18,
+                      fontFamily: "Kanit",
+                      fontWeight: "400",
+                      lineHeight: 26,
+                      letterSpacing: 0.09,
+                    }}
+                  >
+                    4 (5)
+                  </div>
+                </div>
+
+                <div
+                  style={{
+                    height: "26px",
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
+                  <p
+                    style={{
+                      textAlign: "center",
+                      color: "#473838",
+                      fontSize: 18,
+                      fontFamily: "Kanit",
+                      fontWeight: "400",
+                      letterSpacing: 0.09,
+                    }}
+                  >
+                    Sekine Serum
+                  </p>
+                </div>
+
+                <div
+                  style={{
+                    gap: 8,
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    height: "26px",
+                  }}
+                >
+                  <div
+                    style={{
+                      textAlign: "center",
+                      color: "#473838",
+                      fontSize: 24,
+                      fontFamily: "Kanit",
+                      fontWeight: "400",
+                      textDecoration: "line-through",
+                      lineHeight: 32,
+                      letterSpacing: 0.12,
+                    }}
+                  >
+                    $280
+                  </div>
+
+                  <div
+                    style={{
+                      textAlign: "center",
+                      color: "#F7AFBC",
+                      fontSize: 24,
+                      fontFamily: "Kanit",
+                      fontWeight: "700",
+                      lineHeight: 32,
+                      letterSpacing: 0.12,
+                    }}
+                  >
+                    $186
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
+
           <div
             style={{
               width: "1200px",
@@ -172,7 +480,6 @@ const ProductListing = () => {
               gap: "29px",
             }}
           >
-            {/* one card image */}
             <div
               style={{
                 width: "278.25px",
@@ -190,18 +497,17 @@ const ProductListing = () => {
                   top: "-1px",
                   left: "-1px",
                   padding: "4px 8px 4px 8px",
-                  backgroundColor: "#FDDDD9",
+                  backgroundColor: "#EEE4E3",
                 }}
               >
                 <p
                   style={{
                     width: "56px",
-                    height: "22px",
                     fontFamily: "Kanit",
                     fontWeight: "400",
                     fontSize: "14px",
                     lineHeight: "22px",
-                    letterSpacing: "0.5px",
+                    letterSpacing: "0.07px",
                     textAlign: "center",
                     whiteSpace: "nowrap",
                   }}
@@ -221,14 +527,160 @@ const ProductListing = () => {
                 }}
               />
             </div>
+
+            {/* CAPTION */}
             <div
+              className="Info"
               style={{
-                width: "278.25px",
-                height: "100px",
-                border: "1px solid #000",
+                width: 278.25,
+                height: 100,
+                position: "relative",
+                flexDirection: "column",
+                justifyContent: "flex-start",
+                alignItems: "center",
+                gap: 24,
+                display: "flex",
               }}
             >
-              <p>Lora Starter Kit</p>
+              <div
+                style={{
+                  height: "100px",
+                  gap: 8,
+                  alignItems: "center",
+                  flexDirection: "column",
+                  display: "flex",
+                }}
+              >
+                <div
+                  style={{
+                    justifyContent: "center",
+                    height: "26px",
+                    display: "flex",
+                    flexDirection: "row",
+                    alignItems: "center",
+                    gap: "8px",
+                  }}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "flex-start",
+                      width: 132,
+                      height: 24,
+                      gap: "3px",
+                    }}
+                  >
+                    <img
+                      src={smallStar}
+                      style={{
+                        width: 24,
+                        height: 24,
+                      }}
+                    />
+                    <img
+                      src={smallStar}
+                      style={{
+                        width: 24,
+                        height: 24,
+                      }}
+                    />
+                    <img
+                      src={smallStar}
+                      style={{
+                        width: 24,
+                        height: 24,
+                      }}
+                    />
+                    <img
+                      src={smallStar}
+                      style={{
+                        width: 24,
+                        height: 24,
+                      }}
+                    />
+                    <img
+                      src={plainStar}
+                      style={{
+                        width: 24,
+                        height: 24,
+                      }}
+                    />
+                  </div>
+
+                  <div
+                    style={{
+                      color: "#473838",
+                      fontSize: 18,
+                      fontFamily: "Kanit",
+                      fontWeight: "400",
+                      lineHeight: 26,
+                      letterSpacing: 0.09,
+                    }}
+                  >
+                    4 (5)
+                  </div>
+                </div>
+
+                <div
+                  style={{
+                    height: "26px",
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
+                  <p
+                    style={{
+                      textAlign: "center",
+                      color: "#473838",
+                      fontSize: 18,
+                      fontFamily: "Kanit",
+                      fontWeight: "400",
+                      letterSpacing: 0.09,
+                    }}
+                  >
+                    Roladan Kit
+                  </p>
+                </div>
+
+                <div
+                  style={{
+                    gap: 8,
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    height: "26px",
+                  }}
+                >
+                  <div
+                    style={{
+                      textAlign: "center",
+                      color: "#473838",
+                      fontSize: 24,
+                      fontFamily: "Kanit",
+                      fontWeight: "400",
+                      textDecoration: "line-through",
+                      lineHeight: 32,
+                      letterSpacing: 0.12,
+                    }}
+                  >
+                    $500
+                  </div>
+
+                  <div
+                    style={{
+                      textAlign: "center",
+                      color: "#F7AFBC",
+                      fontSize: 24,
+                      fontFamily: "Kanit",
+                      fontWeight: "700",
+                      lineHeight: 32,
+                      letterSpacing: 0.12,
+                    }}
+                  >
+                    $186
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -257,18 +709,17 @@ const ProductListing = () => {
                   top: "-1px",
                   left: "-1px",
                   padding: "4px 8px 4px 8px",
-                  backgroundColor: "#FDDDD9",
+                  backgroundColor: "#EEE4E3",
                 }}
               >
                 <p
                   style={{
                     width: "56px",
-                    height: "22px",
                     fontFamily: "Kanit",
                     fontWeight: "400",
                     fontSize: "14px",
                     lineHeight: "22px",
-                    letterSpacing: "0.5px",
+                    letterSpacing: "0.07px",
                     textAlign: "center",
                     whiteSpace: "nowrap",
                   }}
@@ -288,14 +739,160 @@ const ProductListing = () => {
                 }}
               />
             </div>
+
+            {/* CAPTION */}
             <div
+              className="Info"
               style={{
-                width: "278.25px",
-                height: "100px",
-                border: "1px solid #000",
+                width: 278.25,
+                height: 100,
+                position: "relative",
+                flexDirection: "column",
+                justifyContent: "flex-start",
+                alignItems: "center",
+                gap: 24,
+                display: "flex",
               }}
             >
-              <p>Lora Starter Kit</p>
+              <div
+                style={{
+                  height: "100px",
+                  gap: 8,
+                  alignItems: "center",
+                  flexDirection: "column",
+                  display: "flex",
+                }}
+              >
+                <div
+                  style={{
+                    justifyContent: "center",
+                    height: "26px",
+                    display: "flex",
+                    flexDirection: "row",
+                    alignItems: "center",
+                    gap: "8px",
+                  }}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "flex-start",
+                      width: 132,
+                      height: 24,
+                      gap: "3px",
+                    }}
+                  >
+                    <img
+                      src={smallStar}
+                      style={{
+                        width: 24,
+                        height: 24,
+                      }}
+                    />
+                    <img
+                      src={smallStar}
+                      style={{
+                        width: 24,
+                        height: 24,
+                      }}
+                    />
+                    <img
+                      src={smallStar}
+                      style={{
+                        width: 24,
+                        height: 24,
+                      }}
+                    />
+                    <img
+                      src={smallStar}
+                      style={{
+                        width: 24,
+                        height: 24,
+                      }}
+                    />
+                    <img
+                      src={plainStar}
+                      style={{
+                        width: 24,
+                        height: 24,
+                      }}
+                    />
+                  </div>
+
+                  <div
+                    style={{
+                      color: "#473838",
+                      fontSize: 18,
+                      fontFamily: "Kanit",
+                      fontWeight: "400",
+                      lineHeight: 26,
+                      letterSpacing: 0.09,
+                    }}
+                  >
+                    4 (5)
+                  </div>
+                </div>
+
+                <div
+                  style={{
+                    height: "26px",
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
+                  <p
+                    style={{
+                      textAlign: "center",
+                      color: "#473838",
+                      fontSize: 18,
+                      fontFamily: "Kanit",
+                      fontWeight: "400",
+                      letterSpacing: 0.09,
+                    }}
+                  >
+                    Lano Serum
+                  </p>
+                </div>
+
+                <div
+                  style={{
+                    gap: 8,
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    height: "26px",
+                  }}
+                >
+                  <div
+                    style={{
+                      textAlign: "center",
+                      color: "#473838",
+                      fontSize: 24,
+                      fontFamily: "Kanit",
+                      fontWeight: "400",
+                      textDecoration: "line-through",
+                      lineHeight: 32,
+                      letterSpacing: 0.12,
+                    }}
+                  >
+                    $200
+                  </div>
+
+                  <div
+                    style={{
+                      textAlign: "center",
+                      color: "#F7AFBC",
+                      fontSize: 24,
+                      fontFamily: "Kanit",
+                      fontWeight: "700",
+                      lineHeight: 32,
+                      letterSpacing: 0.12,
+                    }}
+                  >
+                    $186
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -327,23 +924,22 @@ const ProductListing = () => {
                   top: "-1px",
                   left: "-1px",
                   padding: "4px 8px 4px 8px",
-                  backgroundColor: "#FDDDD9",
+                  backgroundColor: "#EEE4E3",
                 }}
               >
                 <p
                   style={{
                     width: "56px",
-                    height: "22px",
                     fontFamily: "Kanit",
                     fontWeight: "400",
                     fontSize: "14px",
                     lineHeight: "22px",
-                    letterSpacing: "0.5px",
+                    letterSpacing: "0.07px",
                     textAlign: "center",
                     whiteSpace: "nowrap",
                   }}
                 >
-                  Save 10%
+                  Sold Out
                 </p>
               </div>
               <img
@@ -358,14 +954,160 @@ const ProductListing = () => {
                 }}
               />
             </div>
+
+            {/* CAPTION */}
             <div
+              className="Info"
               style={{
-                width: "278.25px",
-                height: "100px",
-                border: "1px solid #000",
+                width: 278.25,
+                height: 100,
+                position: "relative",
+                flexDirection: "column",
+                justifyContent: "flex-start",
+                alignItems: "center",
+                gap: 24,
+                display: "flex",
               }}
             >
-              <p>Lora Starter Kit</p>
+              <div
+                style={{
+                  height: "100px",
+                  gap: 8,
+                  alignItems: "center",
+                  flexDirection: "column",
+                  display: "flex",
+                }}
+              >
+                <div
+                  style={{
+                    justifyContent: "center",
+                    height: "26px",
+                    display: "flex",
+                    flexDirection: "row",
+                    alignItems: "center",
+                    gap: "8px",
+                  }}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "flex-start",
+                      width: 132,
+                      height: 24,
+                      gap: "3px",
+                    }}
+                  >
+                    <img
+                      src={smallStar}
+                      style={{
+                        width: 24,
+                        height: 24,
+                      }}
+                    />
+                    <img
+                      src={smallStar}
+                      style={{
+                        width: 24,
+                        height: 24,
+                      }}
+                    />
+                    <img
+                      src={smallStar}
+                      style={{
+                        width: 24,
+                        height: 24,
+                      }}
+                    />
+                    <img
+                      src={smallStar}
+                      style={{
+                        width: 24,
+                        height: 24,
+                      }}
+                    />
+                    <img
+                      src={plainStar}
+                      style={{
+                        width: 24,
+                        height: 24,
+                      }}
+                    />
+                  </div>
+
+                  <div
+                    style={{
+                      color: "#473838",
+                      fontSize: 18,
+                      fontFamily: "Kanit",
+                      fontWeight: "400",
+                      lineHeight: 26,
+                      letterSpacing: 0.09,
+                    }}
+                  >
+                    4 (5)
+                  </div>
+                </div>
+
+                <div
+                  style={{
+                    height: "26px",
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
+                  <p
+                    style={{
+                      textAlign: "center",
+                      color: "#473838",
+                      fontSize: 18,
+                      fontFamily: "Kanit",
+                      fontWeight: "400",
+                      letterSpacing: 0.09,
+                    }}
+                  >
+                    Lip Balm
+                  </p>
+                </div>
+
+                <div
+                  style={{
+                    gap: 8,
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    height: "26px",
+                  }}
+                >
+                  <div
+                    style={{
+                      textAlign: "center",
+                      color: "#473838",
+                      fontSize: 24,
+                      fontFamily: "Kanit",
+                      fontWeight: "400",
+                      textDecoration: "line-through",
+                      lineHeight: 32,
+                      letterSpacing: 0.12,
+                    }}
+                  >
+                    $20
+                  </div>
+
+                  <div
+                    style={{
+                      textAlign: "center",
+                      color: "#F7AFBC",
+                      fontSize: 24,
+                      fontFamily: "Kanit",
+                      fontWeight: "700",
+                      lineHeight: 32,
+                      letterSpacing: 0.12,
+                    }}
+                  >
+                    $15
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -394,18 +1136,17 @@ const ProductListing = () => {
                   top: "-1px",
                   left: "-1px",
                   padding: "4px 8px 4px 8px",
-                  backgroundColor: "#FDDDD9",
+                  backgroundColor: "#EEE4E3",
                 }}
               >
                 <p
                   style={{
                     width: "56px",
-                    height: "22px",
                     fontFamily: "Kanit",
                     fontWeight: "400",
                     fontSize: "14px",
                     lineHeight: "22px",
-                    letterSpacing: "0.5px",
+                    letterSpacing: "0.07px",
                     textAlign: "center",
                     whiteSpace: "nowrap",
                   }}
@@ -425,14 +1166,160 @@ const ProductListing = () => {
                 }}
               />
             </div>
+
+            {/* CAPTION */}
             <div
+              className="Info"
               style={{
-                width: "278.25px",
-                height: "100px",
-                border: "1px solid #000",
+                width: 278.25,
+                height: 100,
+                position: "relative",
+                flexDirection: "column",
+                justifyContent: "flex-start",
+                alignItems: "center",
+                gap: 24,
+                display: "flex",
               }}
             >
-              <p>Lora Starter Kit</p>
+              <div
+                style={{
+                  height: "100px",
+                  gap: 8,
+                  alignItems: "center",
+                  flexDirection: "column",
+                  display: "flex",
+                }}
+              >
+                <div
+                  style={{
+                    justifyContent: "center",
+                    height: "26px",
+                    display: "flex",
+                    flexDirection: "row",
+                    alignItems: "center",
+                    gap: "8px",
+                  }}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "flex-start",
+                      width: 132,
+                      height: 24,
+                      gap: "3px",
+                    }}
+                  >
+                    <img
+                      src={smallStar}
+                      style={{
+                        width: 24,
+                        height: 24,
+                      }}
+                    />
+                    <img
+                      src={smallStar}
+                      style={{
+                        width: 24,
+                        height: 24,
+                      }}
+                    />
+                    <img
+                      src={smallStar}
+                      style={{
+                        width: 24,
+                        height: 24,
+                      }}
+                    />
+                    <img
+                      src={smallStar}
+                      style={{
+                        width: 24,
+                        height: 24,
+                      }}
+                    />
+                    <img
+                      src={plainStar}
+                      style={{
+                        width: 24,
+                        height: 24,
+                      }}
+                    />
+                  </div>
+
+                  <div
+                    style={{
+                      color: "#473838",
+                      fontSize: 18,
+                      fontFamily: "Kanit",
+                      fontWeight: "400",
+                      lineHeight: 26,
+                      letterSpacing: 0.09,
+                    }}
+                  >
+                    4 (5)
+                  </div>
+                </div>
+
+                <div
+                  style={{
+                    height: "26px",
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
+                  <p
+                    style={{
+                      textAlign: "center",
+                      color: "#473838",
+                      fontSize: 18,
+                      fontFamily: "Kanit",
+                      fontWeight: "400",
+                      letterSpacing: 0.09,
+                    }}
+                  >
+                    Lim Lip Gloss
+                  </p>
+                </div>
+
+                <div
+                  style={{
+                    gap: 8,
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    height: "26px",
+                  }}
+                >
+                  <div
+                    style={{
+                      textAlign: "center",
+                      color: "#473838",
+                      fontSize: 24,
+                      fontFamily: "Kanit",
+                      fontWeight: "400",
+                      textDecoration: "line-through",
+                      lineHeight: 32,
+                      letterSpacing: 0.12,
+                    }}
+                  >
+                    $200
+                  </div>
+
+                  <div
+                    style={{
+                      textAlign: "center",
+                      color: "#F7AFBC",
+                      fontSize: 24,
+                      fontFamily: "Kanit",
+                      fontWeight: "700",
+                      lineHeight: 32,
+                      letterSpacing: 0.12,
+                    }}
+                  >
+                    $186
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -461,18 +1348,17 @@ const ProductListing = () => {
                   top: "-1px",
                   left: "-1px",
                   padding: "4px 8px 4px 8px",
-                  backgroundColor: "#FDDDD9",
+                  backgroundColor: "#EEE4E3",
                 }}
               >
                 <p
                   style={{
                     width: "56px",
-                    height: "22px",
                     fontFamily: "Kanit",
                     fontWeight: "400",
                     fontSize: "14px",
                     lineHeight: "22px",
-                    letterSpacing: "0.5px",
+                    letterSpacing: "0.07px",
                     textAlign: "center",
                     whiteSpace: "nowrap",
                   }}
@@ -492,14 +1378,160 @@ const ProductListing = () => {
                 }}
               />
             </div>
+
+            {/* CAPTION */}
             <div
+              className="Info"
               style={{
-                width: "278.25px",
-                height: "100px",
-                border: "1px solid #000",
+                width: 278.25,
+                height: 100,
+                position: "relative",
+                flexDirection: "column",
+                justifyContent: "flex-start",
+                alignItems: "center",
+                gap: 24,
+                display: "flex",
               }}
             >
-              <p>Lora Starter Kit</p>
+              <div
+                style={{
+                  height: "100px",
+                  gap: 8,
+                  alignItems: "center",
+                  flexDirection: "column",
+                  display: "flex",
+                }}
+              >
+                <div
+                  style={{
+                    justifyContent: "center",
+                    height: "26px",
+                    display: "flex",
+                    flexDirection: "row",
+                    alignItems: "center",
+                    gap: "8px",
+                  }}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "flex-start",
+                      width: 132,
+                      height: 24,
+                      gap: "3px",
+                    }}
+                  >
+                    <img
+                      src={smallStar}
+                      style={{
+                        width: 24,
+                        height: 24,
+                      }}
+                    />
+                    <img
+                      src={smallStar}
+                      style={{
+                        width: 24,
+                        height: 24,
+                      }}
+                    />
+                    <img
+                      src={smallStar}
+                      style={{
+                        width: 24,
+                        height: 24,
+                      }}
+                    />
+                    <img
+                      src={smallStar}
+                      style={{
+                        width: 24,
+                        height: 24,
+                      }}
+                    />
+                    <img
+                      src={plainStar}
+                      style={{
+                        width: 24,
+                        height: 24,
+                      }}
+                    />
+                  </div>
+
+                  <div
+                    style={{
+                      color: "#473838",
+                      fontSize: 18,
+                      fontFamily: "Kanit",
+                      fontWeight: "400",
+                      lineHeight: 26,
+                      letterSpacing: 0.09,
+                    }}
+                  >
+                    4 (5)
+                  </div>
+                </div>
+
+                <div
+                  style={{
+                    height: "26px",
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
+                  <p
+                    style={{
+                      textAlign: "center",
+                      color: "#473838",
+                      fontSize: 18,
+                      fontFamily: "Kanit",
+                      fontWeight: "400",
+                      letterSpacing: 0.09,
+                    }}
+                  >
+                    Branti Lipstick
+                  </p>
+                </div>
+
+                <div
+                  style={{
+                    gap: 8,
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    height: "26px",
+                  }}
+                >
+                  <div
+                    style={{
+                      textAlign: "center",
+                      color: "#473838",
+                      fontSize: 24,
+                      fontFamily: "Kanit",
+                      fontWeight: "400",
+                      textDecoration: "line-through",
+                      lineHeight: 32,
+                      letterSpacing: 0.12,
+                    }}
+                  >
+                    $200
+                  </div>
+
+                  <div
+                    style={{
+                      textAlign: "center",
+                      color: "#F7AFBC",
+                      fontSize: 24,
+                      fontFamily: "Kanit",
+                      fontWeight: "700",
+                      lineHeight: 32,
+                      letterSpacing: 0.12,
+                    }}
+                  >
+                    $186
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -528,18 +1560,17 @@ const ProductListing = () => {
                   top: "-1px",
                   left: "-1px",
                   padding: "4px 8px 4px 8px",
-                  backgroundColor: "#FDDDD9",
+                  backgroundColor: "#EEE4E3",
                 }}
               >
                 <p
                   style={{
                     width: "56px",
-                    height: "22px",
                     fontFamily: "Kanit",
                     fontWeight: "400",
                     fontSize: "14px",
                     lineHeight: "22px",
-                    letterSpacing: "0.5px",
+                    letterSpacing: "0.07px",
                     textAlign: "center",
                     whiteSpace: "nowrap",
                   }}
@@ -559,14 +1590,160 @@ const ProductListing = () => {
                 }}
               />
             </div>
+
+            {/* CAPTION */}
             <div
+              className="Info"
               style={{
-                width: "278.25px",
-                height: "100px",
-                border: "1px solid #000",
+                width: 278.25,
+                height: 100,
+                position: "relative",
+                flexDirection: "column",
+                justifyContent: "flex-start",
+                alignItems: "center",
+                gap: 24,
+                display: "flex",
               }}
             >
-              <p>Lora Starter Kit</p>
+              <div
+                style={{
+                  height: "100px",
+                  gap: 8,
+                  alignItems: "center",
+                  flexDirection: "column",
+                  display: "flex",
+                }}
+              >
+                <div
+                  style={{
+                    justifyContent: "center",
+                    height: "26px",
+                    display: "flex",
+                    flexDirection: "row",
+                    alignItems: "center",
+                    gap: "8px",
+                  }}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "flex-start",
+                      width: 132,
+                      height: 24,
+                      gap: "3px",
+                    }}
+                  >
+                    <img
+                      src={smallStar}
+                      style={{
+                        width: 24,
+                        height: 24,
+                      }}
+                    />
+                    <img
+                      src={smallStar}
+                      style={{
+                        width: 24,
+                        height: 24,
+                      }}
+                    />
+                    <img
+                      src={smallStar}
+                      style={{
+                        width: 24,
+                        height: 24,
+                      }}
+                    />
+                    <img
+                      src={smallStar}
+                      style={{
+                        width: 24,
+                        height: 24,
+                      }}
+                    />
+                    <img
+                      src={plainStar}
+                      style={{
+                        width: 24,
+                        height: 24,
+                      }}
+                    />
+                  </div>
+
+                  <div
+                    style={{
+                      color: "#473838",
+                      fontSize: 18,
+                      fontFamily: "Kanit",
+                      fontWeight: "400",
+                      lineHeight: 26,
+                      letterSpacing: 0.09,
+                    }}
+                  >
+                    4 (5)
+                  </div>
+                </div>
+
+                <div
+                  style={{
+                    height: "26px",
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
+                  <p
+                    style={{
+                      textAlign: "center",
+                      color: "#473838",
+                      fontSize: 18,
+                      fontFamily: "Kanit",
+                      fontWeight: "400",
+                      letterSpacing: 0.09,
+                    }}
+                  >
+                    Sekine Shower Gel
+                  </p>
+                </div>
+
+                <div
+                  style={{
+                    gap: 8,
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    height: "26px",
+                  }}
+                >
+                  <div
+                    style={{
+                      textAlign: "center",
+                      color: "#473838",
+                      fontSize: 24,
+                      fontFamily: "Kanit",
+                      fontWeight: "400",
+                      textDecoration: "line-through",
+                      lineHeight: 32,
+                      letterSpacing: 0.12,
+                    }}
+                  >
+                    $430
+                  </div>
+
+                  <div
+                    style={{
+                      textAlign: "center",
+                      color: "#F7AFBC",
+                      fontSize: 24,
+                      fontFamily: "Kanit",
+                      fontWeight: "700",
+                      lineHeight: 32,
+                      letterSpacing: 0.12,
+                    }}
+                  >
+                    $400
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -598,18 +1775,17 @@ const ProductListing = () => {
                   top: "-1px",
                   left: "-1px",
                   padding: "4px 8px 4px 8px",
-                  backgroundColor: "#FDDDD9",
+                  backgroundColor: "#EEE4E3",
                 }}
               >
                 <p
                   style={{
                     width: "56px",
-                    height: "22px",
                     fontFamily: "Kanit",
                     fontWeight: "400",
                     fontSize: "14px",
                     lineHeight: "22px",
-                    letterSpacing: "0.5px",
+                    letterSpacing: "0.07px",
                     textAlign: "center",
                     whiteSpace: "nowrap",
                   }}
@@ -629,14 +1805,160 @@ const ProductListing = () => {
                 }}
               />
             </div>
+
+            {/* CAPTION */}
             <div
+              className="Info"
               style={{
-                width: "278.25px",
-                height: "100px",
-                border: "1px solid #000",
+                width: 278.25,
+                height: 100,
+                position: "relative",
+                flexDirection: "column",
+                justifyContent: "flex-start",
+                alignItems: "center",
+                gap: 24,
+                display: "flex",
               }}
             >
-              <p>Lora Starter Kit</p>
+              <div
+                style={{
+                  height: "100px",
+                  gap: 8,
+                  alignItems: "center",
+                  flexDirection: "column",
+                  display: "flex",
+                }}
+              >
+                <div
+                  style={{
+                    justifyContent: "center",
+                    height: "26px",
+                    display: "flex",
+                    flexDirection: "row",
+                    alignItems: "center",
+                    gap: "8px",
+                  }}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "flex-start",
+                      width: 132,
+                      height: 24,
+                      gap: "3px",
+                    }}
+                  >
+                    <img
+                      src={smallStar}
+                      style={{
+                        width: 24,
+                        height: 24,
+                      }}
+                    />
+                    <img
+                      src={smallStar}
+                      style={{
+                        width: 24,
+                        height: 24,
+                      }}
+                    />
+                    <img
+                      src={smallStar}
+                      style={{
+                        width: 24,
+                        height: 24,
+                      }}
+                    />
+                    <img
+                      src={smallStar}
+                      style={{
+                        width: 24,
+                        height: 24,
+                      }}
+                    />
+                    <img
+                      src={plainStar}
+                      style={{
+                        width: 24,
+                        height: 24,
+                      }}
+                    />
+                  </div>
+
+                  <div
+                    style={{
+                      color: "#473838",
+                      fontSize: 18,
+                      fontFamily: "Kanit",
+                      fontWeight: "400",
+                      lineHeight: 26,
+                      letterSpacing: 0.09,
+                    }}
+                  >
+                    4 (5)
+                  </div>
+                </div>
+
+                <div
+                  style={{
+                    height: "26px",
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
+                  <p
+                    style={{
+                      textAlign: "center",
+                      color: "#473838",
+                      fontSize: 18,
+                      fontFamily: "Kanit",
+                      fontWeight: "400",
+                      letterSpacing: 0.09,
+                    }}
+                  >
+                    Kora Body Wash
+                  </p>
+                </div>
+
+                <div
+                  style={{
+                    gap: 8,
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    height: "26px",
+                  }}
+                >
+                  <div
+                    style={{
+                      textAlign: "center",
+                      color: "#473838",
+                      fontSize: 24,
+                      fontFamily: "Kanit",
+                      fontWeight: "400",
+                      textDecoration: "line-through",
+                      lineHeight: 32,
+                      letterSpacing: 0.12,
+                    }}
+                  >
+                    $200
+                  </div>
+
+                  <div
+                    style={{
+                      textAlign: "center",
+                      color: "#F7AFBC",
+                      fontSize: 24,
+                      fontFamily: "Kanit",
+                      fontWeight: "700",
+                      lineHeight: 32,
+                      letterSpacing: 0.12,
+                    }}
+                  >
+                    $186
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -665,18 +1987,17 @@ const ProductListing = () => {
                   top: "-1px",
                   left: "-1px",
                   padding: "4px 8px 4px 8px",
-                  backgroundColor: "#FDDDD9",
+                  backgroundColor: "#EEE4E3",
                 }}
               >
                 <p
                   style={{
                     width: "56px",
-                    height: "22px",
                     fontFamily: "Kanit",
                     fontWeight: "400",
                     fontSize: "14px",
                     lineHeight: "22px",
-                    letterSpacing: "0.5px",
+                    letterSpacing: "0.07px",
                     textAlign: "center",
                     whiteSpace: "nowrap",
                   }}
@@ -696,14 +2017,160 @@ const ProductListing = () => {
                 }}
               />
             </div>
+
+            {/* CAPTION */}
             <div
+              className="Info"
               style={{
-                width: "278.25px",
-                height: "100px",
-                border: "1px solid #000",
+                width: 278.25,
+                height: 100,
+                position: "relative",
+                flexDirection: "column",
+                justifyContent: "flex-start",
+                alignItems: "center",
+                gap: 24,
+                display: "flex",
               }}
             >
-              <p>Lora Starter Kit</p>
+              <div
+                style={{
+                  height: "100px",
+                  gap: 8,
+                  alignItems: "center",
+                  flexDirection: "column",
+                  display: "flex",
+                }}
+              >
+                <div
+                  style={{
+                    justifyContent: "center",
+                    height: "26px",
+                    display: "flex",
+                    flexDirection: "row",
+                    alignItems: "center",
+                    gap: "8px",
+                  }}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "flex-start",
+                      width: 132,
+                      height: 24,
+                      gap: "3px",
+                    }}
+                  >
+                    <img
+                      src={smallStar}
+                      style={{
+                        width: 24,
+                        height: 24,
+                      }}
+                    />
+                    <img
+                      src={smallStar}
+                      style={{
+                        width: 24,
+                        height: 24,
+                      }}
+                    />
+                    <img
+                      src={smallStar}
+                      style={{
+                        width: 24,
+                        height: 24,
+                      }}
+                    />
+                    <img
+                      src={smallStar}
+                      style={{
+                        width: 24,
+                        height: 24,
+                      }}
+                    />
+                    <img
+                      src={plainStar}
+                      style={{
+                        width: 24,
+                        height: 24,
+                      }}
+                    />
+                  </div>
+
+                  <div
+                    style={{
+                      color: "#473838",
+                      fontSize: 18,
+                      fontFamily: "Kanit",
+                      fontWeight: "400",
+                      lineHeight: 26,
+                      letterSpacing: 0.09,
+                    }}
+                  >
+                    4 (5)
+                  </div>
+                </div>
+
+                <div
+                  style={{
+                    height: "26px",
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
+                  <p
+                    style={{
+                      textAlign: "center",
+                      color: "#473838",
+                      fontSize: 18,
+                      fontFamily: "Kanit",
+                      fontWeight: "400",
+                      letterSpacing: 0.09,
+                    }}
+                  >
+                    Jami Face Cream
+                  </p>
+                </div>
+
+                <div
+                  style={{
+                    gap: 8,
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    height: "26px",
+                  }}
+                >
+                  <div
+                    style={{
+                      textAlign: "center",
+                      color: "#473838",
+                      fontSize: 24,
+                      fontFamily: "Kanit",
+                      fontWeight: "400",
+                      textDecoration: "line-through",
+                      lineHeight: 32,
+                      letterSpacing: 0.12,
+                    }}
+                  >
+                    $200
+                  </div>
+
+                  <div
+                    style={{
+                      textAlign: "center",
+                      color: "#F7AFBC",
+                      fontSize: 24,
+                      fontFamily: "Kanit",
+                      fontWeight: "700",
+                      lineHeight: 32,
+                      letterSpacing: 0.12,
+                    }}
+                  >
+                    $186
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -732,18 +2199,17 @@ const ProductListing = () => {
                   top: "-1px",
                   left: "-1px",
                   padding: "4px 8px 4px 8px",
-                  backgroundColor: "#FDDDD9",
+                  backgroundColor: "#EEE4E3",
                 }}
               >
                 <p
                   style={{
                     width: "56px",
-                    height: "22px",
                     fontFamily: "Kanit",
                     fontWeight: "400",
                     fontSize: "14px",
                     lineHeight: "22px",
-                    letterSpacing: "0.5px",
+                    letterSpacing: "0.07px",
                     textAlign: "center",
                     whiteSpace: "nowrap",
                   }}
@@ -763,14 +2229,160 @@ const ProductListing = () => {
                 }}
               />
             </div>
+
+            {/* CAPTION */}
             <div
+              className="Info"
               style={{
-                width: "278.25px",
-                height: "100px",
-                border: "1px solid #000",
+                width: 278.25,
+                height: 100,
+                position: "relative",
+                flexDirection: "column",
+                justifyContent: "flex-start",
+                alignItems: "center",
+                gap: 24,
+                display: "flex",
               }}
             >
-              <p>Lora Starter Kit</p>
+              <div
+                style={{
+                  height: "100px",
+                  gap: 8,
+                  alignItems: "center",
+                  flexDirection: "column",
+                  display: "flex",
+                }}
+              >
+                <div
+                  style={{
+                    justifyContent: "center",
+                    height: "26px",
+                    display: "flex",
+                    flexDirection: "row",
+                    alignItems: "center",
+                    gap: "8px",
+                  }}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "flex-start",
+                      width: 132,
+                      height: 24,
+                      gap: "3px",
+                    }}
+                  >
+                    <img
+                      src={smallStar}
+                      style={{
+                        width: 24,
+                        height: 24,
+                      }}
+                    />
+                    <img
+                      src={smallStar}
+                      style={{
+                        width: 24,
+                        height: 24,
+                      }}
+                    />
+                    <img
+                      src={smallStar}
+                      style={{
+                        width: 24,
+                        height: 24,
+                      }}
+                    />
+                    <img
+                      src={smallStar}
+                      style={{
+                        width: 24,
+                        height: 24,
+                      }}
+                    />
+                    <img
+                      src={plainStar}
+                      style={{
+                        width: 24,
+                        height: 24,
+                      }}
+                    />
+                  </div>
+
+                  <div
+                    style={{
+                      color: "#473838",
+                      fontSize: 18,
+                      fontFamily: "Kanit",
+                      fontWeight: "400",
+                      lineHeight: 26,
+                      letterSpacing: 0.09,
+                    }}
+                  >
+                    4 (5)
+                  </div>
+                </div>
+
+                <div
+                  style={{
+                    height: "26px",
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
+                  <p
+                    style={{
+                      textAlign: "center",
+                      color: "#473838",
+                      fontSize: 18,
+                      fontFamily: "Kanit",
+                      fontWeight: "400",
+                      letterSpacing: 0.09,
+                    }}
+                  >
+                    Sekine Make-up Kit
+                  </p>
+                </div>
+
+                <div
+                  style={{
+                    gap: 8,
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    height: "26px",
+                  }}
+                >
+                  <div
+                    style={{
+                      textAlign: "center",
+                      color: "#473838",
+                      fontSize: 24,
+                      fontFamily: "Kanit",
+                      fontWeight: "400",
+                      textDecoration: "line-through",
+                      lineHeight: 32,
+                      letterSpacing: 0.12,
+                    }}
+                  >
+                    $200
+                  </div>
+
+                  <div
+                    style={{
+                      textAlign: "center",
+                      color: "#F7AFBC",
+                      fontSize: 24,
+                      fontFamily: "Kanit",
+                      fontWeight: "700",
+                      lineHeight: 32,
+                      letterSpacing: 0.12,
+                    }}
+                  >
+                    $186
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -799,18 +2411,17 @@ const ProductListing = () => {
                   top: "-1px",
                   left: "-1px",
                   padding: "4px 8px 4px 8px",
-                  backgroundColor: "#FDDDD9",
+                  backgroundColor: "#EEE4E3",
                 }}
               >
                 <p
                   style={{
                     width: "56px",
-                    height: "22px",
                     fontFamily: "Kanit",
                     fontWeight: "400",
                     fontSize: "14px",
                     lineHeight: "22px",
-                    letterSpacing: "0.5px",
+                    letterSpacing: "0.07px",
                     textAlign: "center",
                     whiteSpace: "nowrap",
                   }}
@@ -830,14 +2441,160 @@ const ProductListing = () => {
                 }}
               />
             </div>
+
+            {/* CAPTION */}
             <div
+              className="Info"
               style={{
-                width: "278.25px",
-                height: "100px",
-                border: "1px solid #000",
+                width: 278.25,
+                height: 100,
+                position: "relative",
+                flexDirection: "column",
+                justifyContent: "flex-start",
+                alignItems: "center",
+                gap: 24,
+                display: "flex",
               }}
             >
-              <p>Lora Starter Kit</p>
+              <div
+                style={{
+                  height: "100px",
+                  gap: 8,
+                  alignItems: "center",
+                  flexDirection: "column",
+                  display: "flex",
+                }}
+              >
+                <div
+                  style={{
+                    justifyContent: "center",
+                    height: "26px",
+                    display: "flex",
+                    flexDirection: "row",
+                    alignItems: "center",
+                    gap: "8px",
+                  }}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "flex-start",
+                      width: 132,
+                      height: 24,
+                      gap: "3px",
+                    }}
+                  >
+                    <img
+                      src={smallStar}
+                      style={{
+                        width: 24,
+                        height: 24,
+                      }}
+                    />
+                    <img
+                      src={smallStar}
+                      style={{
+                        width: 24,
+                        height: 24,
+                      }}
+                    />
+                    <img
+                      src={smallStar}
+                      style={{
+                        width: 24,
+                        height: 24,
+                      }}
+                    />
+                    <img
+                      src={smallStar}
+                      style={{
+                        width: 24,
+                        height: 24,
+                      }}
+                    />
+                    <img
+                      src={plainStar}
+                      style={{
+                        width: 24,
+                        height: 24,
+                      }}
+                    />
+                  </div>
+
+                  <div
+                    style={{
+                      color: "#473838",
+                      fontSize: 18,
+                      fontFamily: "Kanit",
+                      fontWeight: "400",
+                      lineHeight: 26,
+                      letterSpacing: 0.09,
+                    }}
+                  >
+                    4 (5)
+                  </div>
+                </div>
+
+                <div
+                  style={{
+                    height: "26px",
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
+                  <p
+                    style={{
+                      textAlign: "center",
+                      color: "#473838",
+                      fontSize: 18,
+                      fontFamily: "Kanit",
+                      fontWeight: "400",
+                      letterSpacing: 0.09,
+                    }}
+                  >
+                    Ora Face Cream
+                  </p>
+                </div>
+
+                <div
+                  style={{
+                    gap: 8,
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    height: "26px",
+                  }}
+                >
+                  <div
+                    style={{
+                      textAlign: "center",
+                      color: "#473838",
+                      fontSize: 24,
+                      fontFamily: "Kanit",
+                      fontWeight: "400",
+                      textDecoration: "line-through",
+                      lineHeight: 32,
+                      letterSpacing: 0.12,
+                    }}
+                  >
+                    $200
+                  </div>
+
+                  <div
+                    style={{
+                      textAlign: "center",
+                      color: "#F7AFBC",
+                      fontSize: 24,
+                      fontFamily: "Kanit",
+                      fontWeight: "700",
+                      lineHeight: 32,
+                      letterSpacing: 0.12,
+                    }}
+                  >
+                    $186
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -845,7 +2602,7 @@ const ProductListing = () => {
       <div>
         <PrevNext />
       </div>
-    </Box>
+    </div>
   );
 };
 
