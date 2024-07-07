@@ -78,7 +78,11 @@ const ProductListing = () => {
                   flexDirection: "column",
                   zIndex: "1",
                 }}
-              ></div>
+              >
+                <Link to="/addcart" className="hover_button">
+                  Add to Cart
+                </Link>
+              </div>
               <div
                 style={{
                   position: "absolute",
@@ -118,10 +122,6 @@ const ProductListing = () => {
                   left: "23px",
                 }}
               />
-
-              <Link to="/cart" className="hover_button">
-                Add to Cart
-              </Link>
             </div>
 
             {/* CAPTION */}
@@ -293,6 +293,7 @@ const ProductListing = () => {
             }}
           >
             <div
+              className="hover_product"
               style={{
                 width: "278.25px",
                 height: "340px",
@@ -301,6 +302,23 @@ const ProductListing = () => {
                 position: "relative",
               }}
             >
+              <div
+                className="hover_content"
+                style={{
+                  position: "absolute",
+                  top: "0",
+                  left: "0",
+                  right: "0",
+                  bottom: "0",
+                  display: "flex",
+                  flexDirection: "column",
+                  zIndex: "1",
+                }}
+              >
+                <Link to="/addcart" className="hover_button">
+                  Add to Cart
+                </Link>
+              </div>
               <div
                 style={{
                   position: "absolute",
@@ -335,7 +353,6 @@ const ProductListing = () => {
                   height: "286px",
                   top: "27px",
                   left: "23px",
-                  zIndex: "1",
                 }}
               />
             </div>
@@ -716,14 +733,33 @@ const ProductListing = () => {
           >
             {/* one card image */}
             <div
+              className="hover_product"
               style={{
                 width: "278.25px",
                 height: "340px",
+
                 backgroundColor: "#f1f0f0",
                 display: "flex",
                 position: "relative",
               }}
             >
+              <div
+                className="hover_content"
+                style={{
+                  position: "absolute",
+                  top: "0",
+                  left: "0",
+                  right: "0",
+                  bottom: "0",
+                  display: "flex",
+                  flexDirection: "column",
+                  zIndex: "1",
+                }}
+              >
+                <Link to="/addcart" className="hover_button">
+                  Add to Cart
+                </Link>
+              </div>
               <div
                 style={{
                   position: "absolute",
@@ -758,7 +794,6 @@ const ProductListing = () => {
                   height: "286px",
                   top: "27px",
                   left: "23px",
-                  zIndex: "1",
                 }}
               />
             </div>
@@ -921,12 +956,11 @@ const ProductListing = () => {
         </div>
 
         {/* second role of four cards */}
-        <div className="" style={{ display: "flex" }}>
+        <div className="" style={{ display: "flex", gap: "29px" }}>
           <div
             style={{
               width: "1200px",
               height: "448px",
-              gap: "29px",
             }}
           >
             {/* one card image */}
@@ -1143,6 +1177,7 @@ const ProductListing = () => {
           >
             {/* one card image */}
             <div
+              className="hover_product"
               style={{
                 width: "278.25px",
                 height: "340px",
@@ -1151,6 +1186,23 @@ const ProductListing = () => {
                 position: "relative",
               }}
             >
+              <div
+                className="hover_content"
+                style={{
+                  position: "absolute",
+                  top: "0",
+                  left: "0",
+                  right: "0",
+                  bottom: "0",
+                  display: "flex",
+                  flexDirection: "column",
+                  zIndex: "1",
+                }}
+              >
+                <Link to="/addcart" className="hover_button">
+                  Add to Cart
+                </Link>
+              </div>
               <div
                 style={{
                   position: "absolute",
@@ -1185,7 +1237,6 @@ const ProductListing = () => {
                   height: "286px",
                   top: "27px",
                   left: "23px",
-                  zIndex: "1",
                 }}
               />
             </div>
@@ -1355,6 +1406,7 @@ const ProductListing = () => {
           >
             {/* one card image */}
             <div
+              className="hover_product"
               style={{
                 width: "278.25px",
                 height: "340px",
@@ -1363,6 +1415,23 @@ const ProductListing = () => {
                 position: "relative",
               }}
             >
+              <div
+                className="hover_content"
+                style={{
+                  position: "absolute",
+                  top: "0",
+                  left: "0",
+                  right: "0",
+                  bottom: "0",
+                  display: "flex",
+                  flexDirection: "column",
+                  zIndex: "1",
+                }}
+              >
+                <Link to="/addcart" className="hover_button">
+                  Add to Cart
+                </Link>
+              </div>
               <div
                 style={{
                   position: "absolute",
@@ -1397,7 +1466,6 @@ const ProductListing = () => {
                   height: "286px",
                   top: "27px",
                   left: "23px",
-                  zIndex: "1",
                 }}
               />
             </div>
@@ -1567,6 +1635,7 @@ const ProductListing = () => {
           >
             {/* one card image */}
             <div
+              className="hover_product"
               style={{
                 width: "278.25px",
                 height: "340px",
@@ -1575,6 +1644,23 @@ const ProductListing = () => {
                 position: "relative",
               }}
             >
+              <div
+                className="hover_content"
+                style={{
+                  position: "absolute",
+                  top: "0",
+                  left: "0",
+                  right: "0",
+                  bottom: "0",
+                  display: "flex",
+                  flexDirection: "column",
+                  zIndex: "1",
+                }}
+              >
+                <Link to="/addcart" className="hover_button">
+                  Add to Cart
+                </Link>
+              </div>
               <div
                 style={{
                   position: "absolute",
@@ -1609,7 +1695,6 @@ const ProductListing = () => {
                   height: "286px",
                   top: "27px",
                   left: "23px",
-                  zIndex: "1",
                 }}
               />
             </div>
@@ -1772,16 +1857,16 @@ const ProductListing = () => {
         </div>
 
         {/* third role of four cards */}
-        <div className="" style={{ display: "flex" }}>
+        <div className="" style={{ display: "flex", gap: "29px" }}>
           <div
             style={{
               width: "1200px",
               height: "448px",
-              gap: "29px",
             }}
           >
             {/* one card image */}
             <div
+              className="hover_product"
               style={{
                 width: "278.25px",
                 height: "340px",
@@ -1790,6 +1875,23 @@ const ProductListing = () => {
                 position: "relative",
               }}
             >
+              <div
+                className="hover_content"
+                style={{
+                  position: "absolute",
+                  top: "0",
+                  left: "0",
+                  right: "0",
+                  bottom: "0",
+                  display: "flex",
+                  flexDirection: "column",
+                  zIndex: "1",
+                }}
+              >
+                <Link to="/addcart" className="hover_button">
+                  Add to Cart
+                </Link>
+              </div>
               <div
                 style={{
                   position: "absolute",
@@ -1824,7 +1926,6 @@ const ProductListing = () => {
                   height: "286px",
                   top: "27px",
                   left: "23px",
-                  zIndex: "1",
                 }}
               />
             </div>
@@ -1994,6 +2095,7 @@ const ProductListing = () => {
           >
             {/* one card image */}
             <div
+              className="hover_product"
               style={{
                 width: "278.25px",
                 height: "340px",
@@ -2002,6 +2104,23 @@ const ProductListing = () => {
                 position: "relative",
               }}
             >
+              <div
+                className="hover_content"
+                style={{
+                  position: "absolute",
+                  top: "0",
+                  left: "0",
+                  right: "0",
+                  bottom: "0",
+                  display: "flex",
+                  flexDirection: "column",
+                  zIndex: "1",
+                }}
+              >
+                <Link to="/addcart" className="hover_button">
+                  Add to Cart
+                </Link>
+              </div>
               <div
                 style={{
                   position: "absolute",
@@ -2036,7 +2155,6 @@ const ProductListing = () => {
                   height: "286px",
                   top: "27px",
                   left: "23px",
-                  zIndex: "1",
                 }}
               />
             </div>
@@ -2206,6 +2324,7 @@ const ProductListing = () => {
           >
             {/* one card image */}
             <div
+              className="hover_product"
               style={{
                 width: "278.25px",
                 height: "340px",
@@ -2214,6 +2333,23 @@ const ProductListing = () => {
                 position: "relative",
               }}
             >
+              <div
+                className="hover_content"
+                style={{
+                  position: "absolute",
+                  top: "0",
+                  left: "0",
+                  right: "0",
+                  bottom: "0",
+                  display: "flex",
+                  flexDirection: "column",
+                  zIndex: "1",
+                }}
+              >
+                <Link to="/addcart" className="hover_button">
+                  Add to Cart
+                </Link>
+              </div>
               <div
                 style={{
                   position: "absolute",
@@ -2248,7 +2384,6 @@ const ProductListing = () => {
                   height: "286px",
                   top: "27px",
                   left: "23px",
-                  zIndex: "1",
                 }}
               />
             </div>
@@ -2418,6 +2553,7 @@ const ProductListing = () => {
           >
             {/* one card image */}
             <div
+              className="hover_product"
               style={{
                 width: "278.25px",
                 height: "340px",
@@ -2426,6 +2562,23 @@ const ProductListing = () => {
                 position: "relative",
               }}
             >
+              <div
+                className="hover_content"
+                style={{
+                  position: "absolute",
+                  top: "0",
+                  left: "0",
+                  right: "0",
+                  bottom: "0",
+                  display: "flex",
+                  flexDirection: "column",
+                  zIndex: "1",
+                }}
+              >
+                <Link to="/addcart" className="hover_button">
+                  Add to Cart
+                </Link>
+              </div>
               <div
                 style={{
                   position: "absolute",
@@ -2460,7 +2613,6 @@ const ProductListing = () => {
                   height: "286px",
                   top: "27px",
                   left: "23px",
-                  zIndex: "1",
                 }}
               />
             </div>
