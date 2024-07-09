@@ -2,10 +2,11 @@ import React from "react";
 import plus from "../assets/images/plus.png";
 import minus from "../assets/images/minus.png";
 import cart1 from "../assets/images/cart1.png";
+import { Box } from "@chakra-ui/react";
 
 const CartItem1 = () => {
   return (
-    <div
+    <Box
       style={{
         width: 757,
         height: "212px",
@@ -15,8 +16,8 @@ const CartItem1 = () => {
         position: "absolute",
       }}
     >
-      {/* picture div */}
-      <div
+      {/* picture Box */}
+      <Box
         style={{
           height: 172,
           width: "146px",
@@ -34,10 +35,10 @@ const CartItem1 = () => {
           }}
           alt=""
         />
-      </div>
+      </Box>
 
-      {/* text div */}
-      <div
+      {/* text Box */}
+      <Box
         style={{
           width: 589,
           height: "140px",
@@ -47,8 +48,8 @@ const CartItem1 = () => {
           gap: 16,
         }}
       >
-        {/* lora div */}
-        <div
+        {/* lora Box */}
+        <Box
           style={{
             width: 589,
             height: "32px",
@@ -57,7 +58,7 @@ const CartItem1 = () => {
             display: "flex",
           }}
         >
-          <div
+          <Box
             style={{
               width: 166,
               color: "#473838",
@@ -69,19 +70,20 @@ const CartItem1 = () => {
             }}
           >
             Lora Starter Kit
-          </div>
-        </div>
+          </Box>
+        </Box>
 
-        <div
+        <Box
+          width={{ base: "50%", xl: "589px" }}
           style={{
             height: "50px",
-            width: "589px",
+
             justifyContent: "space-between",
             alignItems: "center",
             display: "flex",
           }}
         >
-          <div
+          <Box
             style={{
               width: 150,
               height: "50px",
@@ -93,7 +95,7 @@ const CartItem1 = () => {
               display: "flex",
             }}
           >
-            <div
+            <Box
               style={{
                 width: 24,
                 height: 24,
@@ -103,9 +105,9 @@ const CartItem1 = () => {
               }}
             >
               <img src={minus}></img>
-            </div>
+            </Box>
 
-            <div
+            <Box
               style={{
                 width: "8px",
                 textAlign: "center",
@@ -118,9 +120,9 @@ const CartItem1 = () => {
               }}
             >
               1
-            </div>
+            </Box>
 
-            <div
+            <Box
               style={{
                 width: 24,
                 height: 24,
@@ -130,10 +132,10 @@ const CartItem1 = () => {
               }}
             >
               <img src={plus} alt="" />
-            </div>
-          </div>
+            </Box>
+          </Box>
 
-          <div
+          <Box
             style={{
               textAlign: "center",
               color: "#473838",
@@ -145,10 +147,10 @@ const CartItem1 = () => {
             }}
           >
             $186
-          </div>
-        </div>
+          </Box>
+        </Box>
 
-        <div
+        <Box
           style={{
             width: 92,
             height: 26,
@@ -157,7 +159,7 @@ const CartItem1 = () => {
             display: "inline-flex",
           }}
         >
-          <div
+          <Box
             style={{
               width: 166,
               color: "#ED8174",
@@ -170,10 +172,10 @@ const CartItem1 = () => {
             }}
           >
             Remove
-          </div>
-        </div>
-      </div>
-    </div>
+          </Box>
+        </Box>
+      </Box>
+    </Box>
   );
 };
 

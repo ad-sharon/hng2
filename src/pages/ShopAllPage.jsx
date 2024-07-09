@@ -6,6 +6,8 @@ import NavBar from "../components/navbar";
 import FilterTab from "../components/filter_tab";
 import ProductListing from "../components/shop_all";
 import Footer from "../components/footer";
+import FilterMobile from "../components/filter_tab_mobile";
+import ShopAllMobile from "../components/product_list_mobile";
 
 const theme = extendTheme({
   styles: {
@@ -20,22 +22,16 @@ const theme = extendTheme({
 function ShopAllPage() {
   return (
     <ChakraProvider theme={theme}>
-      <div
-        style={{
-          height: "379.57px",
-          width: "1440px",
-          display: "flex",
-          flexDirection: "column",
-          gap: "16px",
-        }}
-      >
-        <TopBar />
-        <TimbuDiv />
-        <NavBar />
-      </div>
+      <TopBar />
+      <TimbuDiv />
+      <NavBar />
 
-      <FilterTab />
-      <ProductListing />
+      <div>
+        <FilterTab />
+        <FilterMobile />
+        <ProductListing />
+        <ShopAllMobile />
+      </div>
 
       <div>
         <Footer />

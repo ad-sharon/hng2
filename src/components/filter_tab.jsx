@@ -1,4 +1,5 @@
 import React from "react";
+import { Box } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import filterIcon from "..//assets/images/filter.png";
 import expandDown from "../assets/images/expand_down.png";
@@ -7,18 +8,18 @@ import cart from "../assets/images/cart.png";
 
 const FilterTab = () => {
   return (
-    <div
+    <Box
+      display={{ base: "none", xl: "flex" }}
       style={{
-        position: "absolute",
         width: 1200,
+        position: "absolute",
         height: 26,
         top: 426,
         left: "119px",
         justifyContent: "space-between",
-        display: "flex",
       }}
     >
-      <div
+      <Box
         style={{
           width: "352px",
           height: "26px",
@@ -29,7 +30,7 @@ const FilterTab = () => {
           backgroundColor: "#f8f8f8",
         }}
       >
-        <div
+        <Box
           style={{
             width: "107px",
             height: "26px",
@@ -52,9 +53,9 @@ const FilterTab = () => {
           >
             Filter by :
           </a>
-        </div>
+        </Box>
 
-        <div
+        <Box
           style={{
             width: "127px",
             height: "26px",
@@ -78,9 +79,9 @@ const FilterTab = () => {
             Availability
           </a>
           <img src={expandDown} style={{ width: "24px", height: "24px" }}></img>
-        </div>
+        </Box>
 
-        <div
+        <Box
           style={{
             width: "75px",
             height: "26px",
@@ -104,11 +105,11 @@ const FilterTab = () => {
             Price
           </a>
           <img src={expandDown} style={{ width: "24px", height: "24px" }}></img>
-        </div>
-      </div>
+        </Box>
+      </Box>
 
       {/* search,cart */}
-      <div
+      <Box
         style={{
           width: 85,
           height: 24,
@@ -117,16 +118,16 @@ const FilterTab = () => {
           justifyContent: "space-between",
         }}
       >
-        <div className="Search" style={{ width: 24, height: 24 }}>
+        <Box className="Search" style={{ width: 24, height: 24 }}>
           <img src={search} alt="" />
-        </div>
-        <div className="UilCart" style={{ width: 24, height: 24 }}>
+        </Box>
+        <Box className="UilCart" style={{ width: 24, height: 24 }}>
           <Link to="/addcart">
             <img src={cart} alt="" />
           </Link>
-        </div>
-      </div>
-    </div>
+        </Box>
+      </Box>
+    </Box>
   );
 };
 

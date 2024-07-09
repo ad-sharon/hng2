@@ -1,11 +1,19 @@
 import React from "react";
+import { Box } from "@chakra-ui/react";
 import logo from "..//assets/images/timbu_logo.png";
 
-const TimbuDiv = () => {
+const TimbuBox = () => {
   return (
-    <div
+    <Box
       style={{
-        width: "1440px",
+        width: {
+          base: "100%",
+          sm: "100%",
+          md: "100%",
+          lg: "100%",
+          xl: "100%",
+          "2xl": "1440px",
+        },
         height: "57.57px",
         backgroundColor: "#F8F8F8",
         border: "0.86px solid #BCBABA",
@@ -16,7 +24,7 @@ const TimbuDiv = () => {
         zIndex: "20",
       }}
     >
-      <div
+      <Box
         style={{
           width: "120.41px",
           borderTopWidth: "0px",
@@ -38,9 +46,9 @@ const TimbuDiv = () => {
             height: "33.57px",
           }}
         />
-      </div>
-    </div>
+      </Box>
+    </Box>
   );
 };
 
-export default TimbuDiv;
+export default TimbuBox;

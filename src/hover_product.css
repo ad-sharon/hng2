@@ -31,6 +31,10 @@
   left: 0;
 }
 
+.hover_button:hover {
+  background-color: #c9675b;
+}
+
 .hover_product:hover .hover_button {
   opacity: 1;
 }

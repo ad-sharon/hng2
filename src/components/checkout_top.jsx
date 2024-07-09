@@ -1,6 +1,7 @@
 import React from "react";
 import cart from "../assets/images/cart.png";
 import back from "../assets/images/back.png";
+import { Link } from "react-router-dom";
 
 const CheckoutTop = () => {
   return (
@@ -16,13 +17,15 @@ const CheckoutTop = () => {
       }}
     >
       <div>
-        <img
-          src={back}
-          style={{
-            width: 24,
-            height: 24,
-          }}
-        />
+        <Link to="/">
+          <img
+            src={back}
+            style={{
+              width: 24,
+              height: 24,
+            }}
+          />
+        </Link>
       </div>
       <div>
         <img

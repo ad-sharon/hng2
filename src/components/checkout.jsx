@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Box } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import CartItem1 from "./cart_item1";
 import CartItem2 from "./cart_item2";
@@ -15,21 +16,21 @@ const Checkout = () => {
   };
 
   return (
-    <div>
-      <div
+    <Box display={{ base: "block", xl: "0" }}>
+      <Box
+        width={{ base: "100%", xl: "1200" }}
+        position={{ base: "0", xl: "absolute" }}
         style={{
-          width: 1200,
           height: 577,
           top: 204,
           left: 120,
           display: "flex",
           flexDirection: "column",
-          position: "absolute",
         }}
       >
-        <div
+        <Box
+          width={{ base: "100%", xl: "1200" }}
           style={{
-            width: 1200,
             height: 56,
             justifyContent: "space-between",
             display: "flex",
@@ -39,7 +40,7 @@ const Checkout = () => {
             padding: "12px 16px",
           }}
         >
-          <div
+          <Box
             style={{
               fontFamily: "Kanit",
               fontWeight: "400",
@@ -50,9 +51,9 @@ const Checkout = () => {
             }}
           >
             Order Summary
-          </div>
+          </Box>
 
-          <div
+          <Box
             style={{
               fontFamily: "Kanit",
               fontWeight: "400",
@@ -64,39 +65,39 @@ const Checkout = () => {
             }}
           >
             Total
-          </div>
-        </div>
+          </Box>
+        </Box>
 
-        <div
+        <Box
+          width={{ base: "100%", xl: "1200" }}
+          flexDirection={{ base: "column", xl: "row" }}
           style={{
-            width: 1200,
             height: 465,
             gap: 84,
             display: "flex",
-            flexDirection: "row",
           }}
         >
           {/* 2 cart items */}
-          <div
+          <Box
+            width={{ base: "100%", xl: "1200" }}
             style={{
-              width: 1200,
               height: 465,
               gap: 41,
               display: "flex",
               flexDirection: "column",
             }}
           >
-            <div
+            <Box
+              width={{ base: "40%", xl: "767" }}
               style={{
-                width: 767,
                 height: 465,
               }}
             >
               <CartItem1 />
-            </div>
-            <div
+            </Box>
+            <Box
+              width={{ base: "40%", xl: "767" }}
               style={{
-                width: 767,
                 height: 465,
                 gap: 41,
                 display: "flex",
@@ -104,18 +105,18 @@ const Checkout = () => {
               }}
             >
               <CartItem2 />
-            </div>
-          </div>
+            </Box>
+          </Box>
 
-          <div
+          <Box
+            width={{ base: "80%", xl: "359" }}
             style={{
-              width: 359,
               height: 425,
               display: "flex",
               flexDirection: "column",
             }}
           >
-            <div
+            <Box
               style={{
                 width: 359,
                 height: 194,
@@ -124,7 +125,7 @@ const Checkout = () => {
                 flexDirection: "column",
               }}
             >
-              <div
+              <Box
                 style={{
                   width: 349,
                   height: 50,
@@ -133,7 +134,7 @@ const Checkout = () => {
                 }}
               >
                 {/* 1 */}
-                <div
+                <Box
                   style={{
                     width: 248,
                     height: 50,
@@ -154,10 +155,10 @@ const Checkout = () => {
                   >
                     Discount Code
                   </p>
-                </div>
+                </Box>
 
                 {/* 2 */}
-                <div
+                <Box
                   style={{
                     width: 111,
                     height: 50,
@@ -179,10 +180,10 @@ const Checkout = () => {
                   >
                     Apply
                   </p>
-                </div>
-              </div>
+                </Box>
+              </Box>
 
-              <div
+              <Box
                 style={{
                   width: 359,
                   height: 32,
@@ -217,47 +218,21 @@ const Checkout = () => {
                 >
                   $0
                 </p>
-              </div>
-            </div>
+              </Box>
+            </Box>
 
-            <div
+            <Box
+              display={{ base: "column", xl: "flex" }}
               style={{
-                display: "flex",
                 border: "1px solid #D9D9D9",
                 justifyContent: "center",
                 alignItems: "center",
               }}
             >
               <Checkout_dropdown />
+            </Box>
 
-              <img
-                src={expand}
-                style={{ width: 24, height: 24 }}
-                onClick={toggle_dropdown}
-              />
-              {isOpen ? "" : ""}
-            </div>
-
-            {isOpen && (
-              <div
-                style={{
-                  width: 359,
-                  height: 54,
-                  alignItems: "center",
-                  letterSpacing: 0.09,
-                  size: 18,
-                  fontWeight: 400,
-                  fontFamily: "Kanit",
-                  color: "#B2A6A6",
-                  backgroundColor: "#fff",
-                }}
-              >
-                <option>Door Delivery</option>
-                <option>Pick Up</option>
-              </div>
-            )}
-
-            <div
+            <Box
               style={{
                 width: 359,
                 height: 231,
@@ -266,7 +241,7 @@ const Checkout = () => {
                 display: "flex",
               }}
             >
-              <div
+              <Box
                 style={{
                   width: 359,
                   height: 55,
@@ -277,7 +252,7 @@ const Checkout = () => {
                   display: "flex",
                 }}
               >
-                <div
+                <Box
                   style={{
                     width: 70,
                     height: 26,
@@ -291,9 +266,9 @@ const Checkout = () => {
                   }}
                 >
                   Subtotal
-                </div>
+                </Box>
 
-                <div
+                <Box
                   style={{
                     width: 52,
                     height: 32,
@@ -305,21 +280,21 @@ const Checkout = () => {
                   }}
                 >
                   $186
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
+                </Box>
+              </Box>
+            </Box>
+          </Box>
+        </Box>
+        <Box
           style={{
             width: 1200,
             height: 56,
             backgroundColor: "#EEE4E3",
           }}
-        ></div>
-      </div>
+        ></Box>
+      </Box>
       <CheckoutForm />
-    </div>
+    </Box>
   );
 };
 

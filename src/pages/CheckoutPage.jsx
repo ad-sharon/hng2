@@ -19,18 +19,9 @@ const theme = extendTheme({
 function CheckoutPage() {
   return (
     <ChakraProvider theme={theme}>
-      <div
-        style={{
-          height: "379.57px",
-          width: "1440px",
-          display: "flex",
-          flexDirection: "column",
-          gap: "16px",
-        }}
-      >
-        <TopBar />
-        <TimbuDiv />
-      </div>
+      <TopBar />
+      <TimbuDiv />
+
       <CheckoutTop />
       <CheckOut />
 

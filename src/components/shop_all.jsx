@@ -1,4 +1,5 @@
 import React from "react";
+import { Box } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import product1 from "..//assets/images/product1.png";
 import product2 from "..//assets/images/product2.png";
@@ -19,7 +20,8 @@ import "../hover_product.css";
 
 const ShopAll = () => {
   return (
-    <div
+    <Box
+      display={{ base: "none", xl: "block" }}
       style={{
         position: "absolute",
         width: "1200px",
@@ -2775,7 +2777,7 @@ const ShopAll = () => {
         </div>
       </div>
       <PrevNext />
-    </div>
+    </Box>
   );
 };
 

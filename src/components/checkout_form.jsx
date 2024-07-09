@@ -4,8 +4,8 @@ import visa from "../assets/images/visa_card.png";
 const CheckoutForm = () => {
   return (
     <div
+      width={{ base: "80%", xl: "548" }}
       style={{
-        width: 548,
         height: 414,
         top: 857,
         left: 446,
@@ -33,8 +33,8 @@ const CheckoutForm = () => {
       </div>
 
       <div
+        width={{ base: "80%", xl: "548" }}
         style={{
-          width: 548,
           height: 342,
           gap: 22,
           display: "flex",

@@ -1,11 +1,12 @@
 import React from "react";
+import { Box } from "@chakra-ui/react";
 import TimbuDiv from "./timbu_div";
 
 const Footer = () => {
   return (
-    <div
+    <Box
       style={{
-        position: "absolute",
+        position: "fixed",
         width: "1440px",
         height: "460px",
         top: "2164px",
@@ -16,15 +17,15 @@ const Footer = () => {
     >
       <TimbuDiv />
       {/* main footer start */}
-      <div
+      <Box
         style={{
           backgroundColor: "#EEE4E3",
           height: "402.43px",
           width: "1440px",
         }}
       >
-        {/* div for all */}
-        <div
+        {/* Box for all */}
+        <Box
           style={{
             position: "absolute",
             width: "1200px",
@@ -35,8 +36,8 @@ const Footer = () => {
             justifyContent: "space-between",
           }}
         >
-          {/* div for text and input */}
-          <div
+          {/* Box for text and input */}
+          <Box
             style={{
               width: "513px",
               height: "208px",
@@ -45,8 +46,8 @@ const Footer = () => {
               display: "inline-flex",
             }}
           >
-            {/* div for only text */}
-            <div
+            {/* Box for only text */}
+            <Box
               style={{
                 width: "513px",
                 height: "118px",
@@ -57,8 +58,8 @@ const Footer = () => {
                 display: "flex",
               }}
             >
-              {/* div for top text */}
-              <div
+              {/* Box for top text */}
+              <Box
                 style={{
                   color: "#473838",
                   fontSize: "24px",
@@ -69,10 +70,10 @@ const Footer = () => {
                 }}
               >
                 Join our Family
-              </div>
+              </Box>
 
-              {/* div for bottom text */}
-              <div
+              {/* Box for bottom text */}
+              <Box
                 style={{
                   color: "#473838",
                   fontSize: "18px",
@@ -86,11 +87,11 @@ const Footer = () => {
                 You know you want to sign up for our newsletter and receive 10%
                 off your first purchase! Be the first to hear about our new
                 product launches, tips & tricks and juicy sales.
-              </div>
-            </div>
+              </Box>
+            </Box>
 
-            {/* div for input */}
-            <div
+            {/* Box for input */}
+            <Box
               style={{
                 width: "502px",
                 //   justifyContent: "flex-start",
@@ -99,7 +100,7 @@ const Footer = () => {
               }}
             >
               {/* enter email space */}
-              <div
+              <Box
                 style={{
                   flex: "1 1 0",
                   height: "50px",
@@ -111,7 +112,7 @@ const Footer = () => {
                   display: "flex",
                 }}
               >
-                <div
+                <Box
                   style={{
                     width: "172px",
                     color: "#473838",
@@ -123,11 +124,11 @@ const Footer = () => {
                   }}
                 >
                   Enter your mail
-                </div>
-              </div>
+                </Box>
+              </Box>
 
               {/* sign up button */}
-              <div
+              <Box
                 style={{
                   width: "204px",
                   height: "50px",
@@ -138,7 +139,7 @@ const Footer = () => {
                   display: "flex",
                 }}
               >
-                <div
+                <Box
                   style={{
                     width: "246.25px",
                     textAlign: "center",
@@ -151,13 +152,13 @@ const Footer = () => {
                   }}
                 >
                   Sign up
-                </div>
-              </div>
-            </div>
-          </div>
+                </Box>
+              </Box>
+            </Box>
+          </Box>
 
           {/* other side */}
-          <div
+          <Box
             style={{
               width: "526px",
               height: "210px",
@@ -168,7 +169,7 @@ const Footer = () => {
             }}
           >
             {/* list1 */}
-            <div
+            <Box
               style={{
                 width: "169px",
                 height: "210px",
@@ -180,7 +181,7 @@ const Footer = () => {
               }}
             >
               {/* topic */}
-              <div
+              <Box
                 style={{
                   color: "#473838",
                   fontSize: "24px",
@@ -191,9 +192,9 @@ const Footer = () => {
                 }}
               >
                 Shop
-              </div>
+              </Box>
 
-              <div
+              <Box
                 style={{
                   //   alignSelf: "stretch",
                   height: "155px",
@@ -205,7 +206,7 @@ const Footer = () => {
                 }}
               >
                 {/* text1 */}
-                <div
+                <Box
                   style={{
                     // alignSelf: "stretch",
                     color: "#000",
@@ -217,10 +218,10 @@ const Footer = () => {
                   }}
                 >
                   Skincare
-                </div>
+                </Box>
 
                 {/* text2 */}
-                <div
+                <Box
                   style={{
                     // alignSelf: "stretch",
                     color: "#000",
@@ -232,10 +233,10 @@ const Footer = () => {
                   }}
                 >
                   Sets & Kits
-                </div>
+                </Box>
 
                 {/* text3 */}
-                <div
+                <Box
                   style={{
                     // alignSelf: "stretch",
                     color: "#000",
@@ -247,10 +248,10 @@ const Footer = () => {
                   }}
                 >
                   Make-up
-                </div>
+                </Box>
 
                 {/* text4 */}
-                <div
+                <Box
                   style={{
                     // alignSelf: "stretch",
                     color: "#000",
@@ -262,12 +263,12 @@ const Footer = () => {
                   }}
                 >
                   Shop by concern
-                </div>
-              </div>
-            </div>
+                </Box>
+              </Box>
+            </Box>
 
             {/* list2*/}
-            <div
+            <Box
               style={{
                 width: "74px",
                 height: "167px",
@@ -279,7 +280,7 @@ const Footer = () => {
               }}
             >
               {/* topic */}
-              <div
+              <Box
                 style={{
                   color: "#473838",
                   fontSize: "24px",
@@ -290,9 +291,9 @@ const Footer = () => {
                 }}
               >
                 Help
-              </div>
+              </Box>
 
-              <div
+              <Box
                 style={{
                   height: "112px",
                   flexDirection: "column",
@@ -302,7 +303,7 @@ const Footer = () => {
                   display: "flex",
                 }}
               >
-                <div
+                <Box
                   style={{
                     color: "#000",
                     fontSize: "18px",
@@ -313,9 +314,9 @@ const Footer = () => {
                   }}
                 >
                   FAQ
-                </div>
+                </Box>
 
-                <div
+                <Box
                   style={{
                     color: "#000",
                     fontSize: "18px",
@@ -326,9 +327,9 @@ const Footer = () => {
                   }}
                 >
                   Shipping
-                </div>
+                </Box>
 
-                <div
+                <Box
                   style={{
                     color: "#000",
                     fontSize: "18px",
@@ -339,12 +340,12 @@ const Footer = () => {
                   }}
                 >
                   Refunds
-                </div>
-              </div>
-            </div>
+                </Box>
+              </Box>
+            </Box>
 
             {/* list3 */}
-            <div
+            <Box
               style={{
                 width: "169px",
                 height: "167px",
@@ -355,7 +356,7 @@ const Footer = () => {
                 display: "inline-flex",
               }}
             >
-              <div
+              <Box
                 style={{
                   color: "#473838",
                   fontSize: "24px",
@@ -366,9 +367,9 @@ const Footer = () => {
                 }}
               >
                 Learn
-              </div>
+              </Box>
 
-              <div
+              <Box
                 style={{
                   height: "112px",
                   flexDirection: "column",
@@ -378,7 +379,7 @@ const Footer = () => {
                   display: "flex",
                 }}
               >
-                <div
+                <Box
                   style={{
                     color: "#000",
                     fontSize: "18px",
@@ -389,9 +390,9 @@ const Footer = () => {
                   }}
                 >
                   About Us
-                </div>
+                </Box>
 
-                <div
+                <Box
                   style={{
                     color: "#000",
                     fontSize: "18px",
@@ -402,9 +403,9 @@ const Footer = () => {
                   }}
                 >
                   Blog
-                </div>
+                </Box>
 
-                <div
+                <Box
                   style={{
                     color: "#000",
                     fontSize: "18px",
@@ -415,13 +416,13 @@ const Footer = () => {
                   }}
                 >
                   Career
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+                </Box>
+              </Box>
+            </Box>
+          </Box>
+        </Box>
+      </Box>
+    </Box>
   );
 };
 

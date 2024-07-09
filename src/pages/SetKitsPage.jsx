@@ -20,19 +20,9 @@ const theme = extendTheme({
 function SetKitsPage() {
   return (
     <ChakraProvider theme={theme}>
-      <div
-        style={{
-          height: "379.57px",
-          width: "1440px",
-          display: "flex",
-          flexDirection: "column",
-          gap: "16px",
-        }}
-      >
-        <TopBar />
-        <TimbuDiv />
-        <NavBar />
-      </div>
+      <TopBar />
+      <TimbuDiv />
+      <NavBar />
 
       <FilterTab />
       <SetKits />

@@ -1,5 +1,6 @@
 import React from "react";
-import { Box, ChakraProvider, extendTheme } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
+import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import TopBar from "../components/topBar";
 import TimbuDiv from "../components/timbu_div";
 import NavBar from "../components/navbar";
@@ -20,30 +21,23 @@ const theme = extendTheme({
 function CartPage() {
   return (
     <ChakraProvider theme={theme}>
-      <div
-        style={{
-          height: "379.57px",
-          width: "1440px",
-          display: "flex",
-          flexDirection: "column",
-          gap: "16px",
-        }}
-      >
-        <TopBar />
-        <TimbuDiv />
-        <NavBar />
-      </div>
-      <img
-        src={back}
-        style={{
-          width: 24,
-          height: 24,
-          left: 121,
-          top: 398,
-          gap: "16px",
-          position: "absolute",
-        }}
-      />
+      <TopBar />
+      <TimbuDiv />
+      <NavBar />
+
+      <Link to="/">
+        <img
+          src={back}
+          style={{
+            width: 24,
+            height: 24,
+            left: 121,
+            top: 398,
+            gap: "16px",
+            position: "absolute",
+          }}
+        />
+      </Link>
 
       <CartMain />
       <Footer />
