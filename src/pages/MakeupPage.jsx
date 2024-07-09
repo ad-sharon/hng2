@@ -2,7 +2,7 @@ import React from "react";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import TopBar from "../components/topBar";
 import TimbuDiv from "../components/timbu_div";
-import TitleBar from "../components/title_bar";
+import NavBar from "../components/navbar";
 import FilterTab from "../components/filter_tab";
 import SetKits from "../components/setkits";
 import Footer from "../components/footer";
@@ -31,7 +31,7 @@ function SetKitsPage() {
       >
         <TopBar />
         <TimbuDiv />
-        <TitleBar />
+        <NavBar />
       </div>
 
       <FilterTab />

@@ -43,7 +43,6 @@ const CartItem2 = () => {
           height: "140px",
           flexDirection: "column",
           display: "flex",
-          margin: "auto",
           gap: 16,
         }}
       >

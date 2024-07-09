@@ -3,11 +3,11 @@ import { Link, useLocation } from "react-router-dom";
 import women from "..//assets/images/women.png";
 import star from "..//assets//images/star.png";
 
-const TitleBar = () => {
+const NavBar = () => {
   const location = useLocation();
 
   const linkStyle = {
-    padding: "12px 16px 12px 16px",
+    padding: "12px 16px",
     display: "flex",
     justifyContent: "center",
     fontFamily: "Kanit",
@@ -26,13 +26,24 @@ const TitleBar = () => {
   };
 
   return (
-    <div style={{ width: "1440px", height: "238px" }}>
+    <div
+      style={{
+        width: "1440px",
+        height: "238px",
+        position: "relative",
+        margin: "0 auto",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+      }}
+    >
+      {/* Title */}
       <div
         style={{
           backgroundColor: "#F7AFBC",
           width: "1440px",
           height: "189px",
-          position: "relative",
+          display: "flex",
         }}
       >
         <div
@@ -42,6 +53,7 @@ const TitleBar = () => {
             height: "226.77px",
             top: "0.21px",
             left: "116.5px",
+            overflow: "hidden",
           }}
         >
           <div
@@ -115,95 +127,97 @@ const TitleBar = () => {
           </div>
         </div>
       </div>
+
+      {/* navbar */}
       <div
         style={{
           height: "50px",
           width: "1440px",
-          position: "absolute",
           backgroundColor: "#f8f8f8",
           zIndex: "3",
-          display: "flex",
-          flexDirection: "row",
-          gap: "46px",
-          justifyContent: "center",
-          alignItems: "center",
         }}
       >
         <div
           style={{
-            width: "115px",
-            height: "50px",
+            width: "1047px",
+            gap: "46px",
+            display: "flex",
+            flexDirection: "row",
+            margin: "auto",
           }}
         >
-          <Link
-            to="/"
-            style={location.pathname === "/" ? activeLinkStyle : linkStyle}
+          <div
+            style={{
+              width: "172.6px",
+              height: "50px",
+            }}
           >
-            Shop All
-          </Link>
-        </div>
-
-        <div style={{ width: "101px", height: "50px" }}>
-          <Link
-            to="/skincare"
-            style={
-              location.pathname === "/skincare" ? activeLinkStyle : linkStyle
-            }
+            <Link
+              to="/"
+              style={location.pathname === "/" ? activeLinkStyle : linkStyle}
+            >
+              Shop All
+            </Link>
+          </div>
+          <div style={{ width: "172.6px", height: "50px" }}>
+            <Link
+              to="/skincare"
+              style={
+                location.pathname === "/skincare" ? activeLinkStyle : linkStyle
+              }
+            >
+              Skincare
+            </Link>
+          </div>
+          <div
+            style={{
+              width: "172.6px",
+              height: "50px",
+            }}
           >
-            Skincare
-          </Link>
-        </div>
-
-        <div
-          style={{
-            width: "119px",
-            height: "50px",
-          }}
-        >
-          <Link
-            to="/setkits"
-            style={
-              location.pathname === "/setkits" ? activeLinkStyle : linkStyle
-            }
+            <Link
+              to="/setkits"
+              style={
+                location.pathname === "/setkits" ? activeLinkStyle : linkStyle
+              }
+            >
+              Sets & Kits
+            </Link>
+          </div>
+          <div
+            style={{
+              width: "172.6px",
+              height: "50px",
+            }}
           >
-            Sets & Kits
-          </Link>
-        </div>
-
-        <div
-          style={{
-            width: "104px",
-            height: "50px",
-          }}
-        >
-          <Link
-            to="/makeup"
-            style={
-              location.pathname === "/makeup" ? activeLinkStyle : linkStyle
-            }
+            <Link
+              to="/makeup"
+              style={
+                location.pathname === "/makeup" ? activeLinkStyle : linkStyle
+              }
+            >
+              Make-up
+            </Link>
+          </div>
+          <div
+            style={{
+              width: "172.6px",
+              height: "50px",
+            }}
           >
-            Make-up
-          </Link>
-        </div>
-
-        <div
-          style={{
-            width: "178px",
-            height: "50px",
-          }}
-        >
-          <Link
-            to="/byconcern"
-            style={
-              location.pathname === "/byconcern" ? activeLinkStyle : linkStyle
-            }
-          >
-            Shop by Concerns
-          </Link>
+            <Link
+              to="/byconcern"
+              style={
+                location.pathname === "/byconcern" ? activeLinkStyle : linkStyle
+              }
+            >
+              Shop by Concerns
+            </Link>
+          </div>
         </div>
       </div>
     </div>
   );
 };
 
-export default TitleBar;
+export default NavBar;

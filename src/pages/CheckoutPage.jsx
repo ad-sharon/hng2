@@ -2,7 +2,6 @@ import React from "react";
 import { Box, ChakraProvider, extendTheme } from "@chakra-ui/react";
 import TopBar from "../components/topBar";
 import TimbuDiv from "../components/timbu_div";
-import TitleBar from "../components/title_bar";
 import CartMain from "../components/cart_main";
 import Footer from "../components/footer";
 

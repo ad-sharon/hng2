@@ -2,9 +2,10 @@ import React from "react";
 import { Box, ChakraProvider, extendTheme } from "@chakra-ui/react";
 import TopBar from "../components/topBar";
 import TimbuDiv from "../components/timbu_div";
-import TitleBar from "../components/title_bar";
+import NavBar from "../components/navbar";
 import CartMain from "../components/cart_main";
 import Footer from "../components/footer";
+import back from "../assets/images/back.png";
 
 const theme = extendTheme({
   styles: {
@@ -30,14 +31,22 @@ function CartPage() {
       >
         <TopBar />
         <TimbuDiv />
-        <TitleBar />
+        <NavBar />
       </div>
+      <img
+        src={back}
+        style={{
+          width: 24,
+          height: 24,
+          left: 121,
+          top: 398,
+          gap: "16px",
+          position: "absolute",
+        }}
+      />
 
       <CartMain />
-
-      <div>
-        <Footer />
-      </div>
+      <Footer />
     </ChakraProvider>
   );
 }

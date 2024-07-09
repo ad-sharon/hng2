@@ -1,6 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import CheckOutButton from "./checkout_b";
+import product4 from "..//assets/images/product4.png";
+import product5 from "..//assets/images/product5.png";
+import product6 from "..//assets/images/product6.png";
+import product7 from "..//assets/images/product7.png";
+import product8 from "..//assets/images/product8.png";
+import door from "../assets/images/door_delivery.png";
+import smallStar from "..//assets/images/smallStar.png";
+import plainStar from "..//assets/images/plainStar.png";
+import "../hover_product.css";
+import station from "../assets/images/station_pickup.png";
 
 const CartSide = () => {
   return (
@@ -39,7 +49,22 @@ const CartSide = () => {
               padding: "12px 16px",
               border: "1px solid #D9D9D9",
             }}
-          ></div>
+          >
+            <img style={{ margin: "auto" }} src={door} />
+            <div
+              style={{
+                width: 111,
+                height: 26,
+                letterSpacing: 0.09,
+                size: 18,
+                fontWeight: 400,
+                fontFamily: "Kanit",
+                margin: "auto",
+              }}
+            >
+              Door Delivery
+            </div>
+          </div>
 
           {/* 2 */}
           <div
@@ -49,56 +74,72 @@ const CartSide = () => {
               padding: "12px 16px",
               border: "1px solid #D9D9D9",
             }}
-          ></div>
+          >
+            <img style={{ margin: "auto" }} src={station} />
+            <div
+              style={{
+                width: 125,
+                height: 26,
+                letterSpacing: 0.09,
+                size: 18,
+                textAlign: "center",
+                fontWeight: 400,
+                fontFamily: "Kanit",
+                margin: "auto",
+              }}
+            >
+              Station Pick Up
+            </div>
+          </div>
         </div>
 
         <div
           style={{
-            width: 359,
+            width: 324,
             height: 55,
-
             padding: "12px 16px",
             border: "1px solid #D9D9D9",
+            justifyContent: "space-between",
+            alignItems: "center",
+            flexDirection: "row",
+            display: "flex",
           }}
         >
-          <div style={{ display: "flex", flexDirection: "row" }}>
-            <div
-              style={{
-                width: 70,
-                height: 26,
-                padding: "12px 16px",
-                letterSpacing: 0.09,
-                textAlign: "center",
-                fontFamily: "Kanit",
-                fontWeight: 400,
-                size: "18px",
-                color: "#473838",
-              }}
-            >
-              Subtotal
-            </div>
+          <div
+            style={{
+              width: 70,
+              height: 26,
+              letterSpacing: 0.09,
 
-            <div
-              style={{
-                width: 52,
-                height: 32,
-                color: "#473838",
-                fontSize: 24,
-                fontFamily: "Kanit",
-                fontWeight: "700",
-                lineHeight: 32,
-                letterSpacing: 0.12,
-              }}
-            >
-              $186
-            </div>
+              fontFamily: "Kanit",
+              fontWeight: 400,
+              size: "18px",
+              color: "#473838",
+              whiteSpace: "nowrap",
+            }}
+          >
+            Subtotal
+          </div>
+
+          <div
+            style={{
+              width: 52,
+              height: 32,
+              color: "#473838",
+              fontSize: 24,
+              fontFamily: "Kanit",
+              fontWeight: "700",
+              letterSpacing: 0.12,
+            }}
+          >
+            $186
           </div>
         </div>
-      </div>
 
-      <Link to="/checkout">
-        <CheckOutButton />
-      </Link>
+        <Link to="/checkout">
+          <CheckOutButton />
+        </Link>
+      </div>
     </div>
   );
 };
