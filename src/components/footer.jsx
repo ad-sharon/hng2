@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <Box
       style={{
-        position: "fixed",
+        position: "absolute",
         width: "1440px",
         height: "460px",
         top: "2164px",
