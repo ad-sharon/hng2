@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import search from "../assets/images/search.png";
 import cart from "../assets/images/cart.png";
 import CartItem1 from "./cart_item1";
 import CartItem2 from "./cart_item2";

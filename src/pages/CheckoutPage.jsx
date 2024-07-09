@@ -1,8 +1,9 @@
 import React from "react";
-import { Box, ChakraProvider, extendTheme } from "@chakra-ui/react";
+import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import TopBar from "../components/topBar";
+import CheckoutTop from "../components/checkout_top";
 import TimbuDiv from "../components/timbu_div";
-import CartMain from "../components/cart_main";
+import CheckOut from "../components/checkout";
 import Footer from "../components/footer";
 
 const theme = extendTheme({
@@ -30,6 +31,8 @@ function CheckoutPage() {
         <TopBar />
         <TimbuDiv />
       </div>
+      <CheckoutTop />
+      <CheckOut />
 
       <div>
         <Footer />
