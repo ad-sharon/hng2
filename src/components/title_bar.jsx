@@ -1,8 +1,30 @@
 import React from "react";
+import { Link, useLocation } from "react-router-dom";
 import women from "..//assets/images/women.png";
 import star from "..//assets//images/star.png";
 
 const TitleBar = () => {
+  const location = useLocation();
+
+  const linkStyle = {
+    padding: "12px 16px 12px 16px",
+    display: "flex",
+    justifyContent: "center",
+    fontFamily: "Kanit",
+    fontWeight: "400",
+    fontSize: "18px",
+    lineHeight: "26px",
+    letterSpacing: "0.5px",
+    textAlign: "center",
+    color: "#241C1C",
+    whiteSpace: "nowrap",
+  };
+
+  const activeLinkStyle = {
+    ...linkStyle,
+    borderTop: "8px solid #ED8174",
+  };
+
   return (
     <div style={{ width: "1440px", height: "238px" }}>
       <div
@@ -111,131 +133,73 @@ const TitleBar = () => {
           style={{
             width: "115px",
             height: "50px",
-            borderTop: "8px solid #ED8174",
-            padding: "12px 16px 12px 16px",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
           }}
         >
-          <a
-            style={{
-              fontFamily: "Kanit",
-              fontWeight: "400",
-              fontSize: "18px",
-              lineHeight: "26px",
-              letterSpacing: "0.5px",
-              textAlign: "center",
-              alignItems: "center",
-              color: "#241C1C",
-            }}
-            href="#"
+          <Link
+            to="/"
+            style={location.pathname === "/" ? activeLinkStyle : linkStyle}
           >
-            Shop
-          </a>
+            Shop All
+          </Link>
         </div>
 
-        <div
-          style={{
-            width: "101px",
-            height: "50px",
-            padding: "12px 16px 12px 16px",
-            display: "flex",
-            justifyContent: "center",
-          }}
-        >
-          <a
-            style={{
-              fontFamily: "Kanit",
-              fontWeight: "400",
-              fontSize: "18px",
-              lineHeight: "26px",
-              letterSpacing: "0.5px",
-              textAlign: "center",
-              color: "#241C1C",
-            }}
-            href="#"
+        <div style={{ width: "101px", height: "50px" }}>
+          <Link
+            to="/skincare"
+            style={
+              location.pathname === "/skincare" ? activeLinkStyle : linkStyle
+            }
           >
             Skincare
-          </a>
+          </Link>
         </div>
 
         <div
           style={{
             width: "119px",
             height: "50px",
-            padding: "12px 16px 12px 16px",
-            display: "flex",
-            justifyContent: "center",
           }}
         >
-          <a
-            style={{
-              fontFamily: "Kanit",
-              fontWeight: "400",
-              fontSize: "18px",
-              lineHeight: "26px",
-              letterSpacing: "0.5px",
-              textAlign: "center",
-              color: "#241C1C",
-              whiteSpace: "nowrap",
-            }}
-            href="#"
+          <Link
+            to="/setkits"
+            style={
+              location.pathname === "/setkits" ? activeLinkStyle : linkStyle
+            }
           >
             Sets & Kits
-          </a>
+          </Link>
         </div>
 
         <div
           style={{
             width: "104px",
             height: "50px",
-            padding: "12px 16px 12px 16px",
-            display: "flex",
-            justifyContent: "center",
           }}
         >
-          <a
-            style={{
-              fontFamily: "Kanit",
-              fontWeight: "400",
-              fontSize: "18px",
-              lineHeight: "26px",
-              letterSpacing: "0.5px",
-              textAlign: "center",
-              color: "#241C1C",
-              whiteSpace: "nowrap",
-            }}
-            href="#"
+          <Link
+            to="/makeup"
+            style={
+              location.pathname === "/makeup" ? activeLinkStyle : linkStyle
+            }
           >
             Make-up
-          </a>
+          </Link>
         </div>
 
         <div
           style={{
             width: "178px",
             height: "50px",
-            padding: "12px 16px 12px 16px",
-            display: "flex",
-            justifyContent: "center",
           }}
         >
-          <a
-            style={{
-              fontFamily: "Kanit",
-              fontWeight: "400",
-              fontSize: "18px",
-              lineHeight: "26px",
-              letterSpacing: "0.5px",
-              textAlign: "center",
-              color: "#241C1C",
-              whiteSpace: "nowrap",
-            }}
-            href="#"
+          <Link
+            to="/byconcern"
+            style={
+              location.pathname === "/byconcern" ? activeLinkStyle : linkStyle
+            }
           >
             Shop by Concerns
-          </a>
+          </Link>
         </div>
       </div>
     </div>
@@ -243,230 +207,3 @@ const TitleBar = () => {
 };
 
 export default TitleBar;
-
-// <div
-// style={{
-//   width: 324,
-//   flexDirection: "column",
-//   justifyContent: "flex-start",
-//   alignItems: "flex-start",
-//   gap: 41,
-//   display: "inline-flex",
-// }}
-// >
-// <div
-//   style={{
-//     alignSelf: "stretch",
-//     height: 347,
-//     flexDirection: "column",
-//     justifyContent: "flex-start",
-//     alignItems: "flex-start",
-//     gap: 47,
-//     display: "flex",
-//   }}
-// >
-//   <div
-//     style={{
-//       alignSelf: "stretch",
-//       height: 245,
-//       flexDirection: "column",
-//       justifyContent: "flex-start",
-//       alignItems: "flex-start",
-//       gap: 49,
-//       display: "flex",
-//     }}
-//   >
-//     <div
-//       style={{
-//         alignSelf: "stretch",
-//         height: 98,
-//         paddingLeft: 16,
-//         paddingRight: 16,
-//         paddingTop: 12,
-//         paddingBottom: 12,
-//         border: "1px #D9D9D9 solid",
-//         flexDirection: "column",
-//         justifyContent: "center",
-//         alignItems: "center",
-//         display: "flex",
-//       }}
-//     >
-//       <div
-//         style={{
-//           width: 52,
-//           height: 48,
-//           position: "relative",
-//           flexDirection: "column",
-//           justifyContent: "flex-start",
-//           alignItems: "flex-start",
-//           display: "inline-flex",
-//         }}
-//       >
-//         <div
-//           style={{
-//             width: 51.42,
-//             height: 33.06,
-//             background: "#473838",
-//           }}
-//         ></div>
-//         <div
-//           style={{
-//             width: 21.63,
-//             height: 5.79,
-//             background: "#473838",
-//           }}
-//         ></div>
-//         <div
-//           style={{
-//             width: 21.81,
-//             height: 32.98,
-//             background: "#473838",
-//           }}
-//         ></div>
-//       </div>
-//       <div
-//         style={{
-//           textAlign: "center",
-//           color: "#473838",
-//           fontSize: 18,
-//           fontFamily: "Kanit",
-//           fontWeight: "400",
-//           lineHeight: 26,
-//           letterSpacing: 0.09,
-//           wordWrap: "break-word",
-//         }}
-//       >
-//         Door Delivery
-//       </div>
-//     </div>
-//     <div
-//       style={{
-//         alignSelf: "stretch",
-//         height: 98,
-//         paddingLeft: 16,
-//         paddingRight: 16,
-//         paddingTop: 12,
-//         paddingBottom: 12,
-//         border: "1px #D9D9D9 solid",
-//         flexDirection: "column",
-//         justifyContent: "center",
-//         alignItems: "center",
-//         display: "flex",
-//       }}
-//     >
-//       <div style={{ width: 52, height: 52, position: "relative" }}>
-//         <div
-//           style={{
-//             width: 33.27,
-//             height: 33.27,
-//             left: 9.37,
-//             top: 9.37,
-//             position: "absolute",
-//             background: "#473838",
-//           }}
-//         ></div>
-//         <div
-//           style={{
-//             width: 13.93,
-//             height: 10.71,
-//             left: 14.2,
-//             top: 14.2,
-//             position: "absolute",
-//             background: "#473838",
-//           }}
-//         ></div>
-//       </div>
-//       <div
-//         style={{
-//           textAlign: "center",
-//           color: "#473838",
-//           fontSize: 18,
-//           fontFamily: "Kanit",
-//           fontWeight: "400",
-//           lineHeight: 26,
-//           letterSpacing: 0.09,
-//           wordWrap: "break-word",
-//         }}
-//       >
-//         Station Pick Up
-//       </div>
-//     </div>
-//   </div>
-//   <div
-//     style={{
-//       alignSelf: "stretch",
-//       height: 55,
-//       paddingLeft: 16,
-//       paddingRight: 16,
-//       paddingTop: 12,
-//       paddingBottom: 12,
-//       border: "1px #D9D9D9 solid",
-//       justifyContent: "space-between",
-//       alignItems: "center",
-//       display: "inline-flex",
-//     }}
-//   >
-//     <div
-//       style={{
-//         color: "#473838",
-//         fontSize: 18,
-//         fontFamily: "Kanit",
-//         fontWeight: "400",
-//         lineHeight: 26,
-//         letterSpacing: 0.09,
-//         wordWrap: "break-word",
-//       }}
-//     >
-//       Subtotal
-//     </div>
-//     <div
-//       style={{
-//         textAlign: "center",
-//         color: "#473838",
-//         fontSize: 24,
-//         fontFamily: "Kanit",
-//         fontWeight: "700",
-//         lineHeight: 32,
-//         letterSpacing: 0.12,
-//         wordWrap: "break-word",
-//       }}
-//     >
-//       $186
-//     </div>
-//   </div>
-// </div>
-// <div
-//   style={{
-//     alignSelf: "stretch",
-//     height: 50,
-//     paddingLeft: 16,
-//     paddingRight: 16,
-//     paddingTop: 12,
-//     paddingBottom: 12,
-//     background: "#ED8174",
-//     justifyContent: "center",
-//     alignItems: "center",
-//     gap: 8,
-//     display: "inline-flex",
-//   }}
-// >
-//   <div
-//     style={{
-//       flex: "1 1 0",
-//       textAlign: "center",
-//       color: "white",
-//       fontSize: 18,
-//       fontFamily: "Kanit",
-//       fontWeight: "400",
-//       lineHeight: 26,
-//       letterSpacing: 0.09,
-//       wordWrap: "break-word",
-//     }}
-//   >
-//     Checkout
-//   </div>
-// </div>
-// </div>
-// </div>
-// </div>
-// </div>

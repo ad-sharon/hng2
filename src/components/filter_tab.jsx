@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import filterIcon from "..//assets/images/filter.png";
 import expandDown from "../assets/images/expand_down.png";
 import search from "../assets/images/search.png";
@@ -120,7 +121,9 @@ const FilterTab = () => {
           <img src={search} alt="" />
         </div>
         <div className="UilCart" style={{ width: 24, height: 24 }}>
-          <img src={cart} alt="" />
+          <Link to="/addcart">
+            <img src={cart} alt="" />
+          </Link>
         </div>
       </div>
     </div>

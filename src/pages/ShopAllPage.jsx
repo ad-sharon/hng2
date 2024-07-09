@@ -1,10 +1,10 @@
 import React from "react";
-import { Box, ChakraProvider, extendTheme } from "@chakra-ui/react";
+import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import TopBar from "../components/topBar";
 import TimbuDiv from "../components/timbu_div";
 import TitleBar from "../components/title_bar";
 import FilterTab from "../components/filter_tab";
-import ProductListing from "../components/product_listing";
+import ProductListing from "../components/shop_all";
 import Footer from "../components/footer";
 
 const theme = extendTheme({
@@ -17,7 +17,7 @@ const theme = extendTheme({
   },
 });
 
-function ProductPage() {
+function ShopAllPage() {
   return (
     <ChakraProvider theme={theme}>
       <div
@@ -44,4 +44,4 @@ function ProductPage() {
   );
 }
 
-export default ProductPage;
+export default ShopAllPage;

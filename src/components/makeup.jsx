@@ -1,23 +1,23 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import product1 from "..//assets/images/product1.png";
+import skincare1 from "..//assets/images/skincare1.png";
 import product2 from "..//assets/images/product2.png";
-import product3 from "..//assets/images/product3.png";
+import skincare3 from "..//assets/images/skincare3.png";
 import product4 from "..//assets/images/product4.png";
 import product5 from "..//assets/images/product5.png";
-import product6 from "..//assets/images/product6.png";
-import product7 from "..//assets/images/product7.png";
+import skincare6 from "..//assets/images/skincare6.png";
+import skincare7 from "..//assets/images/skincare7.png";
 import product8 from "..//assets/images/product8.png";
 import product9 from "..//assets/images/product9.png";
 import product10 from "..//assets/images/product10.png";
-import product11 from "..//assets/images/product11.png";
+import skincare11 from "..//assets/images/skincare11.png";
 import product12 from "..//assets/images/product12.png";
 import PrevNext from "./prev_next";
 import smallStar from "..//assets/images/smallStar.png";
 import plainStar from "..//assets/images/plainStar.png";
 import "../hover_product.css";
 
-const ProductListing = () => {
+const Makeup = () => {
   return (
     <div
       style={{
@@ -112,7 +112,7 @@ const ProductListing = () => {
               </div>
 
               <img
-                src={product1}
+                src={skincare1}
                 style={{
                   width: "232px",
                   height: "286px",
@@ -238,7 +238,7 @@ const ProductListing = () => {
                       letterSpacing: 0.09,
                     }}
                   >
-                    Lora Starter Kit
+                    Lora Starter
                   </p>
                 </div>
 
@@ -556,7 +556,7 @@ const ProductListing = () => {
                 </p>
               </div>
               <img
-                src={product3}
+                src={skincare3}
                 style={{
                   width: "232px",
                   position: "absolute",
@@ -678,7 +678,7 @@ const ProductListing = () => {
                       letterSpacing: 0.09,
                     }}
                   >
-                    Roladan Kit
+                    Body Cream
                   </p>
                 </div>
 
@@ -1230,7 +1230,7 @@ const ProductListing = () => {
                 </p>
               </div>
               <img
-                src={product6}
+                src={skincare6}
                 style={{
                   width: "232px",
                   position: "absolute",
@@ -1351,7 +1351,7 @@ const ProductListing = () => {
                       letterSpacing: 0.09,
                     }}
                   >
-                    Lim Lip Gloss
+                    Relit Scrub
                   </p>
                 </div>
 
@@ -1459,7 +1459,7 @@ const ProductListing = () => {
                 </p>
               </div>
               <img
-                src={product7}
+                src={skincare7}
                 style={{
                   width: "232px",
                   position: "absolute",
@@ -1580,7 +1580,7 @@ const ProductListing = () => {
                       letterSpacing: 0.09,
                     }}
                   >
-                    Branti Lipstick
+                    Pula Toner
                   </p>
                 </div>
 
@@ -2377,7 +2377,7 @@ const ProductListing = () => {
                 </p>
               </div>
               <img
-                src={product11}
+                src={skincare11}
                 style={{
                   width: "232px",
                   position: "absolute",
@@ -2779,4 +2779,4 @@ const ProductListing = () => {
   );
 };
 
-export default ProductListing;
+export default Makeup;
