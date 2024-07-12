@@ -23,17 +23,16 @@ const ShopAllMobile = () => {
     <Box
       display={{ base: "block", xl: "none" }}
       style={{
-        width: "90%",
-        position: "absolute",
-        h: "1596px",
-        top: "504px",
-        left: "119.5px",
-        gap: "114px",
+        width: "100%",
+        height: "1596px",
       }}
     >
       <Box
         style={{
-          width: "90%",
+          top: "504px",
+          left: "119.5px",
+          gap: "114px",
+          width: "100%",
           height: "1440px",
         }}
       >
@@ -44,6 +43,7 @@ const ShopAllMobile = () => {
             display: "flex",
             flexWrap: "wrap",
             gap: "29px",
+            margin: "auto",
             justifyContent: "center",
           }}
         >
@@ -1457,8 +1457,8 @@ const ShopAllMobile = () => {
           </Box>
         </Box>
       </Box>
-
-      <PrevNext />
+      {/* 
+      <PrevNext /> */}
     </Box>
   );
 };

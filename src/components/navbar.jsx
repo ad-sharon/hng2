@@ -46,16 +46,14 @@ const NavBar = () => {
       width="100%"
       style={{
         height: "238px",
-        position: "relative",
-        margin: "auto",
         display: "flex",
         flexDirection: "column",
-        alignItems: "center",
       }}
     >
       {/* Title for desktop */}
       <Box
         width="100%"
+        position="relative"
         display={{ base: "none", xl: "flex" }}
         style={{
           backgroundColor: "#F7AFBC",
@@ -152,7 +150,6 @@ const NavBar = () => {
         display={{ base: "block", xl: "none" }}
         style={{
           backgroundColor: "#F7AFBC",
-          height: "234.7px",
         }}
       >
         <Box
@@ -161,7 +158,6 @@ const NavBar = () => {
             height: "88px",
             top: "51px",
             left: "481px",
-            gap: "4px",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
@@ -170,7 +166,7 @@ const NavBar = () => {
         >
           <Box
             style={{
-              maxWidth: "90%",
+              width: "100%",
               fontWeight: "600",
               color: "#fff",
               fontSize: "20px",
@@ -320,7 +316,7 @@ const NavBar = () => {
         </Box>
       </Box>
 
-      <Box display={{ base: "block", xl: "none" }} padding={"8px 0px"}>
+      {/* <Box display={{ base: "none", xl: "none" }} padding={"8px 0px"}>
         <Box
           style={{
             width: "100%",
@@ -408,8 +404,7 @@ const NavBar = () => {
               <img style={{ width: 24, height: 24 }} src={cart} alt="" />
             </Link>
           </Box>
-        </Box>
-      </Box>
+        </Box> */}
     </Box>
   );
 };

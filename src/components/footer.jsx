@@ -7,7 +7,7 @@ const Footer = () => {
     <Box
       style={{
         position: "absolute",
-        width: "1440px",
+        width: "100%",
         height: "460px",
         top: "2164px",
         display: "flex",

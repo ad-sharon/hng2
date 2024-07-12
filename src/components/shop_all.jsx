@@ -1,6 +1,7 @@
 import React from "react";
 import { Box } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
+import RatingStars from "./rating_stars";
 import product1 from "..//assets/images/product1.png";
 import product2 from "..//assets/images/product2.png";
 import product3 from "..//assets/images/product3.png";
@@ -14,51 +15,45 @@ import product10 from "..//assets/images/product10.png";
 import product11 from "..//assets/images/product11.png";
 import product12 from "..//assets/images/product12.png";
 import PrevNext from "./prev_next";
-import smallStar from "..//assets/images/smallStar.png";
-import plainStar from "..//assets/images/plainStar.png";
 import "../hover_product.css";
 
 const ShopAll = () => {
   return (
     <Box
-      display={{ base: "none", xl: "block" }}
       style={{
+        width: "100%",
+        height: "1596px",
         position: "absolute",
-        width: "1200px",
-        h: "1596px",
-        top: "504px",
-        left: "119.5px",
         gap: "114px",
+
+        top: "504px",
       }}
     >
-      <div
+      <Box
         style={{
-          width: "1200px",
+          width: "100%",
           height: "1440px",
-          display: "flex",
-          flexDirection: "column",
-          gap: "48px",
         }}
       >
         <div
           style={{
-            width: "1200px",
+            width: "90%",
             height: "448px",
             display: "flex",
+            flexWrap: "wrap",
             gap: "29px",
+            margin: "auto",
+            justifyContent: "center",
           }}
         >
+          {/* one card image */}
           <div
             style={{
               width: "278.25px",
               height: "448px",
               gap: "8px",
-              display: "flex",
-              flexDirection: "column",
             }}
           >
-            {/* one card image */}
-
             <div
               className="hover_product"
               style={{
@@ -149,137 +144,76 @@ const ShopAll = () => {
                   display: "flex",
                 }}
               >
+                <RatingStars />
+
                 <div
                   style={{
                     justifyContent: "center",
                     height: "26px",
                     display: "flex",
-                    flexDirection: "row",
+                    flexDirection: "column",
                     alignItems: "center",
-                    gap: "8px",
+                    gap: "8x",
                   }}
                 >
                   <div
                     style={{
+                      height: "26px",
                       display: "flex",
-                      justifyContent: "flex-start",
-                      width: 132,
-                      height: 24,
-                      gap: "3px",
+                      alignItems: "center",
                     }}
                   >
-                    <img
-                      src={smallStar}
-                      alt=""
+                    <p
                       style={{
-                        width: 24,
-                        height: 24,
+                        textAlign: "center",
+                        color: "#473838",
+                        fontSize: 18,
+                        fontFamily: "Kanit",
+                        fontWeight: "400",
+                        letterSpacing: 0.09,
                       }}
-                    />
-                    <img
-                      src={smallStar}
-                      alt=""
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      alt=""
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      alt=""
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={plainStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
+                    >
+                      Lora Starter Kit
+                    </p>
                   </div>
 
                   <div
                     style={{
-                      color: "#473838",
-                      fontSize: 18,
-                      fontFamily: "Kanit",
-                      fontWeight: "400",
-                      lineHeight: 26,
-                      letterSpacing: 0.09,
+                      gap: 8,
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      height: "26px",
                     }}
                   >
-                    4 (5)
-                  </div>
-                </div>
+                    <div
+                      style={{
+                        textAlign: "center",
+                        color: "#473838",
+                        fontSize: 24,
+                        fontFamily: "Kanit",
+                        fontWeight: "400",
+                        textDecoration: "line-through",
+                        lineHeight: 32,
+                        letterSpacing: 0.12,
+                      }}
+                    >
+                      $200
+                    </div>
 
-                <div
-                  style={{
-                    height: "26px",
-                    display: "flex",
-                    alignItems: "center",
-                  }}
-                >
-                  <p
-                    style={{
-                      textAlign: "center",
-                      color: "#473838",
-                      fontSize: 18,
-                      fontFamily: "Kanit",
-                      fontWeight: "400",
-                      letterSpacing: 0.09,
-                    }}
-                  >
-                    Lora Starter Kit
-                  </p>
-                </div>
-
-                <div
-                  style={{
-                    gap: 8,
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    height: "26px",
-                  }}
-                >
-                  <div
-                    style={{
-                      textAlign: "center",
-                      color: "#473838",
-                      fontSize: 24,
-                      fontFamily: "Kanit",
-                      fontWeight: "400",
-                      textDecoration: "line-through",
-                      lineHeight: 32,
-                      letterSpacing: 0.12,
-                    }}
-                  >
-                    $200
-                  </div>
-
-                  <div
-                    style={{
-                      textAlign: "center",
-                      color: "#F7AFBC",
-                      fontSize: 24,
-                      fontFamily: "Kanit",
-                      fontWeight: "700",
-                      lineHeight: 32,
-                      letterSpacing: 0.12,
-                    }}
-                  >
-                    $186
+                    <div
+                      style={{
+                        textAlign: "center",
+                        color: "#F7AFBC",
+                        fontSize: 24,
+                        fontFamily: "Kanit",
+                        fontWeight: "700",
+                        lineHeight: 32,
+                        letterSpacing: 0.12,
+                      }}
+                    >
+                      $186
+                    </div>
                   </div>
                 </div>
               </div>
@@ -289,9 +223,9 @@ const ShopAll = () => {
           {/* one card image */}
           <div
             style={{
-              width: "1200px",
+              width: "278.25px",
               height: "448px",
-              gap: "29px",
+              gap: "8px",
             }}
           >
             <div
@@ -301,7 +235,6 @@ const ShopAll = () => {
                 height: "340px",
                 backgroundColor: "#f1f0f0",
                 display: "flex",
-                position: "relative",
               }}
             >
               <div
@@ -329,7 +262,8 @@ const ShopAll = () => {
                   top: "-1px",
                   left: "-1px",
                   padding: "4px 8px 4px 8px",
-                  backgroundColor: "#EEE4E3",
+                  backgroundColor: "#EEE4E3 ",
+                  zIndex: "2",
                 }}
               >
                 <p
@@ -347,10 +281,12 @@ const ShopAll = () => {
                   Save 10%
                 </p>
               </div>
+
               <img
                 src={product2}
                 style={{
                   width: "232px",
+                  height: "286px",
                   position: "absolute",
                   height: "286px",
                   top: "27px",
@@ -382,142 +318,86 @@ const ShopAll = () => {
                   display: "flex",
                 }}
               >
+                <RatingStars />
+
                 <div
                   style={{
                     justifyContent: "center",
                     height: "26px",
                     display: "flex",
-                    flexDirection: "row",
+                    flexDirection: "column",
                     alignItems: "center",
-                    gap: "8px",
+                    gap: "8x",
                   }}
                 >
                   <div
                     style={{
+                      height: "26px",
                       display: "flex",
-                      justifyContent: "flex-start",
-                      width: 132,
-                      height: 24,
-                      gap: "3px",
+                      alignItems: "center",
                     }}
                   >
-                    <img
-                      src={smallStar}
+                    <p
                       style={{
-                        width: 24,
-                        height: 24,
+                        textAlign: "center",
+                        color: "#473838",
+                        fontSize: 18,
+                        fontFamily: "Kanit",
+                        fontWeight: "400",
+                        letterSpacing: 0.09,
                       }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={plainStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
+                    >
+                      Lora Starter Kit
+                    </p>
                   </div>
 
                   <div
                     style={{
-                      color: "#473838",
-                      fontSize: 18,
-                      fontFamily: "Kanit",
-                      fontWeight: "400",
-                      lineHeight: 26,
-                      letterSpacing: 0.09,
+                      gap: 8,
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      height: "26px",
                     }}
                   >
-                    4 (5)
-                  </div>
-                </div>
+                    <div
+                      style={{
+                        textAlign: "center",
+                        color: "#473838",
+                        fontSize: 24,
+                        fontFamily: "Kanit",
+                        fontWeight: "400",
+                        textDecoration: "line-through",
+                        lineHeight: 32,
+                        letterSpacing: 0.12,
+                      }}
+                    >
+                      $200
+                    </div>
 
-                <div
-                  style={{
-                    height: "26px",
-                    display: "flex",
-                    alignItems: "center",
-                  }}
-                >
-                  <p
-                    style={{
-                      textAlign: "center",
-                      color: "#473838",
-                      fontSize: 18,
-                      fontFamily: "Kanit",
-                      fontWeight: "400",
-                      letterSpacing: 0.09,
-                    }}
-                  >
-                    Sekine Serum
-                  </p>
-                </div>
-
-                <div
-                  style={{
-                    gap: 8,
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    height: "26px",
-                  }}
-                >
-                  <div
-                    style={{
-                      textAlign: "center",
-                      color: "#473838",
-                      fontSize: 24,
-                      fontFamily: "Kanit",
-                      fontWeight: "400",
-                      textDecoration: "line-through",
-                      lineHeight: 32,
-                      letterSpacing: 0.12,
-                    }}
-                  >
-                    $280
-                  </div>
-
-                  <div
-                    style={{
-                      textAlign: "center",
-                      color: "#F7AFBC",
-                      fontSize: 24,
-                      fontFamily: "Kanit",
-                      fontWeight: "700",
-                      lineHeight: 32,
-                      letterSpacing: 0.12,
-                    }}
-                  >
-                    $186
+                    <div
+                      style={{
+                        textAlign: "center",
+                        color: "#F7AFBC",
+                        fontSize: 24,
+                        fontFamily: "Kanit",
+                        fontWeight: "700",
+                        lineHeight: 32,
+                        letterSpacing: 0.12,
+                      }}
+                    >
+                      $186
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
+          {/* one card image */}
           <div
             style={{
-              width: "1200px",
+              width: "278.25px",
               height: "448px",
               gap: "29px",
             }}
@@ -593,76 +473,7 @@ const ShopAll = () => {
                   display: "flex",
                 }}
               >
-                <div
-                  style={{
-                    justifyContent: "center",
-                    height: "26px",
-                    display: "flex",
-                    flexDirection: "row",
-                    alignItems: "center",
-                    gap: "8px",
-                  }}
-                >
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "flex-start",
-                      width: 132,
-                      height: 24,
-                      gap: "3px",
-                    }}
-                  >
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={plainStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                  </div>
-
-                  <div
-                    style={{
-                      color: "#473838",
-                      fontSize: 18,
-                      fontFamily: "Kanit",
-                      fontWeight: "400",
-                      lineHeight: 26,
-                      letterSpacing: 0.09,
-                    }}
-                  >
-                    4 (5)
-                  </div>
-                </div>
-
+                <RatingStars />
                 <div
                   style={{
                     height: "26px",
@@ -726,14 +537,14 @@ const ShopAll = () => {
             </div>
           </div>
 
+          {/* one card image */}
           <div
             style={{
-              width: "1200px",
+              width: "278.25px",
               height: "448px",
-              gap: "29px",
+              gap: "8px",
             }}
           >
-            {/* one card image */}
             <div
               className="hover_product"
               style={{
@@ -823,76 +634,7 @@ const ShopAll = () => {
                   display: "flex",
                 }}
               >
-                <div
-                  style={{
-                    justifyContent: "center",
-                    height: "26px",
-                    display: "flex",
-                    flexDirection: "row",
-                    alignItems: "center",
-                    gap: "8px",
-                  }}
-                >
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "flex-start",
-                      width: 132,
-                      height: 24,
-                      gap: "3px",
-                    }}
-                  >
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={plainStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                  </div>
-
-                  <div
-                    style={{
-                      color: "#473838",
-                      fontSize: 18,
-                      fontFamily: "Kanit",
-                      fontWeight: "400",
-                      lineHeight: 26,
-                      letterSpacing: 0.09,
-                    }}
-                  >
-                    4 (5)
-                  </div>
-                </div>
-
+                <RatingStars />
                 <div
                   style={{
                     height: "26px",
@@ -955,17 +697,16 @@ const ShopAll = () => {
               </div>
             </div>
           </div>
-        </div>
 
-        {/* second role of four cards */}
-        <div className="" style={{ display: "flex", gap: "29px" }}>
+          {/* one card image */}
+
           <div
             style={{
-              width: "1200px",
+              width: "278.25px",
               height: "448px",
+              gap: "8px",
             }}
           >
-            {/* one card image */}
             <div
               style={{
                 width: "278.25px",
@@ -1037,76 +778,7 @@ const ShopAll = () => {
                   display: "flex",
                 }}
               >
-                <div
-                  style={{
-                    justifyContent: "center",
-                    height: "26px",
-                    display: "flex",
-                    flexDirection: "row",
-                    alignItems: "center",
-                    gap: "8px",
-                  }}
-                >
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "flex-start",
-                      width: 132,
-                      height: 24,
-                      gap: "3px",
-                    }}
-                  >
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={plainStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                  </div>
-
-                  <div
-                    style={{
-                      color: "#473838",
-                      fontSize: 18,
-                      fontFamily: "Kanit",
-                      fontWeight: "400",
-                      lineHeight: 26,
-                      letterSpacing: 0.09,
-                    }}
-                  >
-                    4 (5)
-                  </div>
-                </div>
-
+                <RatingStars />
                 <div
                   style={{
                     height: "26px",
@@ -1170,14 +842,14 @@ const ShopAll = () => {
             </div>
           </div>
 
+          {/* one card image */}
           <div
             style={{
-              width: "1200px",
+              width: "278.25px",
               height: "448px",
               gap: "29px",
             }}
           >
-            {/* one card image */}
             <div
               className="hover_product"
               style={{
@@ -1266,76 +938,7 @@ const ShopAll = () => {
                   display: "flex",
                 }}
               >
-                <div
-                  style={{
-                    justifyContent: "center",
-                    height: "26px",
-                    display: "flex",
-                    flexDirection: "row",
-                    alignItems: "center",
-                    gap: "8px",
-                  }}
-                >
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "flex-start",
-                      width: 132,
-                      height: 24,
-                      gap: "3px",
-                    }}
-                  >
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={plainStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                  </div>
-
-                  <div
-                    style={{
-                      color: "#473838",
-                      fontSize: 18,
-                      fontFamily: "Kanit",
-                      fontWeight: "400",
-                      lineHeight: 26,
-                      letterSpacing: 0.09,
-                    }}
-                  >
-                    4 (5)
-                  </div>
-                </div>
-
+                <RatingStars />
                 <div
                   style={{
                     height: "26px",
@@ -1399,14 +1002,14 @@ const ShopAll = () => {
             </div>
           </div>
 
+          {/* one card image */}
           <div
             style={{
-              width: "1200px",
+              width: "278.25px",
               height: "448px",
-              gap: "29px",
+              gap: "8px",
             }}
           >
-            {/* one card image */}
             <div
               className="hover_product"
               style={{
@@ -1495,76 +1098,7 @@ const ShopAll = () => {
                   display: "flex",
                 }}
               >
-                <div
-                  style={{
-                    justifyContent: "center",
-                    height: "26px",
-                    display: "flex",
-                    flexDirection: "row",
-                    alignItems: "center",
-                    gap: "8px",
-                  }}
-                >
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "flex-start",
-                      width: 132,
-                      height: 24,
-                      gap: "3px",
-                    }}
-                  >
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={plainStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                  </div>
-
-                  <div
-                    style={{
-                      color: "#473838",
-                      fontSize: 18,
-                      fontFamily: "Kanit",
-                      fontWeight: "400",
-                      lineHeight: 26,
-                      letterSpacing: 0.09,
-                    }}
-                  >
-                    4 (5)
-                  </div>
-                </div>
-
+                <RatingStars />
                 <div
                   style={{
                     height: "26px",
@@ -1628,14 +1162,14 @@ const ShopAll = () => {
             </div>
           </div>
 
+          {/* one card image */}
           <div
             style={{
-              width: "1200px",
+              width: "278.25px",
               height: "448px",
-              gap: "29px",
+              gap: "8px",
             }}
           >
-            {/* one card image */}
             <div
               className="hover_product"
               style={{
@@ -1724,76 +1258,7 @@ const ShopAll = () => {
                   display: "flex",
                 }}
               >
-                <div
-                  style={{
-                    justifyContent: "center",
-                    height: "26px",
-                    display: "flex",
-                    flexDirection: "row",
-                    alignItems: "center",
-                    gap: "8px",
-                  }}
-                >
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "flex-start",
-                      width: 132,
-                      height: 24,
-                      gap: "3px",
-                    }}
-                  >
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={plainStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                  </div>
-
-                  <div
-                    style={{
-                      color: "#473838",
-                      fontSize: 18,
-                      fontFamily: "Kanit",
-                      fontWeight: "400",
-                      lineHeight: 26,
-                      letterSpacing: 0.09,
-                    }}
-                  >
-                    4 (5)
-                  </div>
-                </div>
-
+                <RatingStars />
                 <div
                   style={{
                     height: "26px",
@@ -1856,17 +1321,14 @@ const ShopAll = () => {
               </div>
             </div>
           </div>
-        </div>
 
-        {/* third role of four cards */}
-        <div className="" style={{ display: "flex", gap: "29px" }}>
+          {/* one card image */}
           <div
             style={{
-              width: "1200px",
+              width: "278.25px",
               height: "448px",
             }}
           >
-            {/* one card image */}
             <div
               className="hover_product"
               style={{
@@ -1955,76 +1417,7 @@ const ShopAll = () => {
                   display: "flex",
                 }}
               >
-                <div
-                  style={{
-                    justifyContent: "center",
-                    height: "26px",
-                    display: "flex",
-                    flexDirection: "row",
-                    alignItems: "center",
-                    gap: "8px",
-                  }}
-                >
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "flex-start",
-                      width: 132,
-                      height: 24,
-                      gap: "3px",
-                    }}
-                  >
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={plainStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                  </div>
-
-                  <div
-                    style={{
-                      color: "#473838",
-                      fontSize: 18,
-                      fontFamily: "Kanit",
-                      fontWeight: "400",
-                      lineHeight: 26,
-                      letterSpacing: 0.09,
-                    }}
-                  >
-                    4 (5)
-                  </div>
-                </div>
-
+                <RatingStars />
                 <div
                   style={{
                     height: "26px",
@@ -2088,14 +1481,14 @@ const ShopAll = () => {
             </div>
           </div>
 
+          {/* one card image */}
           <div
             style={{
-              width: "1200px",
+              width: "278.25px",
               height: "448px",
-              gap: "29px",
+              gap: "8px",
             }}
           >
-            {/* one card image */}
             <div
               className="hover_product"
               style={{
@@ -2184,76 +1577,7 @@ const ShopAll = () => {
                   display: "flex",
                 }}
               >
-                <div
-                  style={{
-                    justifyContent: "center",
-                    height: "26px",
-                    display: "flex",
-                    flexDirection: "row",
-                    alignItems: "center",
-                    gap: "8px",
-                  }}
-                >
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "flex-start",
-                      width: 132,
-                      height: 24,
-                      gap: "3px",
-                    }}
-                  >
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={plainStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                  </div>
-
-                  <div
-                    style={{
-                      color: "#473838",
-                      fontSize: 18,
-                      fontFamily: "Kanit",
-                      fontWeight: "400",
-                      lineHeight: 26,
-                      letterSpacing: 0.09,
-                    }}
-                  >
-                    4 (5)
-                  </div>
-                </div>
-
+                <RatingStars />
                 <div
                   style={{
                     height: "26px",
@@ -2317,14 +1641,14 @@ const ShopAll = () => {
             </div>
           </div>
 
+          {/* one card image */}
           <div
             style={{
-              width: "1200px",
+              width: "278.25px",
               height: "448px",
-              gap: "29px",
+              gap: "8px",
             }}
           >
-            {/* one card image */}
             <div
               className="hover_product"
               style={{
@@ -2413,76 +1737,7 @@ const ShopAll = () => {
                   display: "flex",
                 }}
               >
-                <div
-                  style={{
-                    justifyContent: "center",
-                    height: "26px",
-                    display: "flex",
-                    flexDirection: "row",
-                    alignItems: "center",
-                    gap: "8px",
-                  }}
-                >
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "flex-start",
-                      width: 132,
-                      height: 24,
-                      gap: "3px",
-                    }}
-                  >
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={plainStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                  </div>
-
-                  <div
-                    style={{
-                      color: "#473838",
-                      fontSize: 18,
-                      fontFamily: "Kanit",
-                      fontWeight: "400",
-                      lineHeight: 26,
-                      letterSpacing: 0.09,
-                    }}
-                  >
-                    4 (5)
-                  </div>
-                </div>
-
+                <RatingStars />
                 <div
                   style={{
                     height: "26px",
@@ -2546,14 +1801,14 @@ const ShopAll = () => {
             </div>
           </div>
 
+          {/* one card image */}
           <div
             style={{
-              width: "1200px",
+              width: "278.25px",
               height: "448px",
-              gap: "29px",
+              gap: "8px",
             }}
           >
-            {/* one card image */}
             <div
               className="hover_product"
               style={{
@@ -2642,76 +1897,7 @@ const ShopAll = () => {
                   display: "flex",
                 }}
               >
-                <div
-                  style={{
-                    justifyContent: "center",
-                    height: "26px",
-                    display: "flex",
-                    flexDirection: "row",
-                    alignItems: "center",
-                    gap: "8px",
-                  }}
-                >
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "flex-start",
-                      width: 132,
-                      height: 24,
-                      gap: "3px",
-                    }}
-                  >
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={plainStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                  </div>
-
-                  <div
-                    style={{
-                      color: "#473838",
-                      fontSize: 18,
-                      fontFamily: "Kanit",
-                      fontWeight: "400",
-                      lineHeight: 26,
-                      letterSpacing: 0.09,
-                    }}
-                  >
-                    4 (5)
-                  </div>
-                </div>
-
+                <RatingStars />
                 <div
                   style={{
                     height: "26px",
@@ -2775,8 +1961,8 @@ const ShopAll = () => {
             </div>
           </div>
         </div>
-      </div>
-      <PrevNext />
+      </Box>
+      {/* <PrevNext /> */}
     </Box>
   );
 };

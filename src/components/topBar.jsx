@@ -12,7 +12,7 @@ const TopBar = () => {
       style={{
         backgroundColor: "#EEE4E3",
         height: "52px",
-        minWidth: "100%",
+        width: "100%",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -21,15 +21,6 @@ const TopBar = () => {
       <Box
         style={{
           height: "26px",
-          width: {
-            base: "90%",
-            sm: "90%",
-            md: "90%",
-            lg: "449px",
-            xl: "449px",
-            "2xl": "449px",
-          },
-
           top: "14px",
           left: "470px",
         }}
@@ -37,15 +28,8 @@ const TopBar = () => {
         <h3
           style={{
             fontWeight: "400",
+            fontSize: "90%",
 
-            fontSize: {
-              base: "14px",
-              sm: "14px",
-              md: "18px",
-              lg: "18px",
-              xl: "18px",
-              "2xl": "18px",
-            },
             color: "#241C1C",
             fontFamily: "Kanit",
             lineHeight: "26px",

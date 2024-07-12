@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { Box } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import filterIcon from "..//assets/images/filter.png";
@@ -7,25 +7,43 @@ import search from "../assets/images/search.png";
 import cart from "../assets/images/cart.png";
 
 const FilterTab = () => {
+  const screenW = useRef(null);
+
+  useEffect(() => {
+    if (screenW.current) {
+      screenW.current.style.width =
+        window.innerWidth >= 1315 ? "1200px" : "80%";
+    }
+  }, [screenW]);
+
+  window.addEventListener("resize", () => {
+    if (screenW.current) {
+      screenW.current.style.width =
+        window.innerWidth >= 1315 ? "1200px" : "80%";
+    }
+  });
+
   return (
     <Box
+      ref={screenW}
       display={{ base: "none", md: "flex" }}
+      maxWidth="1200px"
+      justifyContent="space-between"
+      flexWrap="wrap"
       style={{
-        width: 1200,
         position: "absolute",
+        flexDirection: "row",
         height: 26,
         top: 426,
         left: "119px",
-        justifyContent: "space-between",
       }}
     >
       <Box
         style={{
           width: "352px",
           height: "26px",
-          top: "425.75px",
-          left: "119px",
           gap: "22px",
+
           display: "flex",
           backgroundColor: "#f8f8f8",
         }}
@@ -35,6 +53,7 @@ const FilterTab = () => {
             width: "107px",
             height: "26px",
             display: "flex",
+            flex: 1,
             gap: "8px",
           }}
         >
@@ -113,8 +132,8 @@ const FilterTab = () => {
         style={{
           width: 85,
           height: 24,
-          alignItems: "flex-end",
           display: "flex",
+
           justifyContent: "space-between",
         }}
       >

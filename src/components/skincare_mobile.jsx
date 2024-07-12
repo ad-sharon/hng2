@@ -13,9 +13,9 @@ const SkinCareMobile = () => {
     <Box
       display={{ base: "block", xl: "none" }}
       style={{
-        width: "90%",
-        position: "absolute",
-        h: "1596px",
+        width: "100%",
+        margin: "auto",
+        height: "1596px",
         top: "504px",
         left: "119.5px",
         gap: "114px",
