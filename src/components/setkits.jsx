@@ -1,5 +1,7 @@
 import React from "react";
+import { Box } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
+import RatingStars from "./rating_stars";
 import product1 from "..//assets/images/product1.png";
 import product2 from "..//assets/images/product2.png";
 import product3 from "..//assets/images/product3.png";
@@ -13,51 +15,45 @@ import product10 from "..//assets/images/product10.png";
 import product11 from "..//assets/images/product11.png";
 import product12 from "..//assets/images/product12.png";
 import PrevNext from "./prev_next";
-import smallStar from "..//assets/images/smallStar.png";
-import plainStar from "..//assets/images/plainStar.png";
 import "../hover_product.css";
 
 const SetKits = () => {
   return (
-    <div
+    <Box
       style={{
+        width: "100%",
+        height: "1596px",
         position: "absolute",
-        width: "1200px",
-        h: "1596px",
-        top: "504px",
-        left: "119.5px",
         gap: "114px",
+        top: "504px",
       }}
     >
-      <div
+      <Box
         style={{
-          width: "1200px",
+          width: "100%",
           height: "1440px",
-          display: "flex",
-          flexDirection: "column",
-          gap: "48px",
         }}
       >
-        <div
+        <Box
           style={{
-            width: "1200px",
+            width: "90%",
             height: "448px",
             display: "flex",
+            flexWrap: "wrap",
             gap: "29px",
+            margin: "auto",
+            justifyContent: "center",
           }}
         >
-          <div
+          {/* one card image */}
+          <Box
             style={{
               width: "278.25px",
               height: "448px",
               gap: "8px",
-              display: "flex",
-              flexDirection: "column",
             }}
           >
-            {/* one card image */}
-
-            <div
+            <Box
               className="hover_product"
               style={{
                 width: "278.25px",
@@ -66,7 +62,7 @@ const SetKits = () => {
                 display: "flex",
               }}
             >
-              <div
+              <Box
                 className="hover_content"
                 style={{
                   position: "absolute",
@@ -82,8 +78,8 @@ const SetKits = () => {
                 <Link to="/addcart" className="hover_button">
                   Add to Cart
                 </Link>
-              </div>
-              <div
+              </Box>
+              <Box
                 style={{
                   position: "absolute",
                   maxWidth: "92px",
@@ -109,7 +105,7 @@ const SetKits = () => {
                 >
                   Save 14%
                 </p>
-              </div>
+              </Box>
 
               <img
                 src={product1}
@@ -122,10 +118,10 @@ const SetKits = () => {
                   left: "23px",
                 }}
               />
-            </div>
+            </Box>
 
             {/* CAPTION */}
-            <div
+            <Box
               className="Info"
               style={{
                 width: 278.25,
@@ -138,7 +134,7 @@ const SetKits = () => {
                 display: "flex",
               }}
             >
-              <div
+              <Box
                 style={{
                   height: "100px",
                   gap: 8,
@@ -147,162 +143,98 @@ const SetKits = () => {
                   display: "flex",
                 }}
               >
-                <div
+                <Box
                   style={{
-                    justifyContent: "center",
-                    height: "26px",
-                    display: "flex",
-                    flexDirection: "row",
-                    alignItems: "center",
-                    gap: "8px",
-                  }}
-                >
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "flex-start",
-                      width: 132,
-                      height: 24,
-                      gap: "3px",
-                    }}
-                  >
-                    <img
-                      src={smallStar}
-                      alt=""
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      alt=""
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      alt=""
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      alt=""
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={plainStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                  </div>
-
-                  <div
-                    style={{
-                      color: "#473838",
-                      fontSize: 18,
-                      fontFamily: "Kanit",
-                      fontWeight: "400",
-                      lineHeight: 26,
-                      letterSpacing: 0.09,
-                    }}
-                  >
-                    4 (5)
-                  </div>
-                </div>
-
-                <div
-                  style={{
-                    height: "26px",
-                    display: "flex",
-                    alignItems: "center",
-                  }}
-                >
-                  <p
-                    style={{
-                      textAlign: "center",
-                      color: "#473838",
-                      fontSize: 18,
-                      fontFamily: "Kanit",
-                      fontWeight: "400",
-                      letterSpacing: 0.09,
-                    }}
-                  >
-                    Lora Starter Kit
-                  </p>
-                </div>
-
-                <div
-                  style={{
+                    height: "100px",
                     gap: 8,
-                    display: "flex",
-                    justifyContent: "center",
                     alignItems: "center",
-                    height: "26px",
+                    flexDirection: "column",
+                    display: "flex",
                   }}
                 >
-                  <div
+                  <RatingStars />
+                  <Box
                     style={{
-                      textAlign: "center",
-                      color: "#473838",
-                      fontSize: 24,
-                      fontFamily: "Kanit",
-                      fontWeight: "400",
-                      textDecoration: "line-through",
-                      lineHeight: 32,
-                      letterSpacing: 0.12,
+                      height: "26px",
+                      display: "flex",
+                      alignItems: "center",
                     }}
                   >
-                    $200
-                  </div>
+                    <p
+                      style={{
+                        textAlign: "center",
+                        color: "#473838",
+                        fontSize: 18,
+                        fontFamily: "Kanit",
+                        fontWeight: "400",
+                        letterSpacing: 0.09,
+                      }}
+                    >
+                      Lora Starter Kit
+                    </p>
+                  </Box>
 
-                  <div
+                  <Box
                     style={{
-                      textAlign: "center",
-                      color: "#F7AFBC",
-                      fontSize: 24,
-                      fontFamily: "Kanit",
-                      fontWeight: "700",
-                      lineHeight: 32,
-                      letterSpacing: 0.12,
+                      gap: 8,
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      height: "26px",
                     }}
                   >
-                    $186
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+                    <Box
+                      style={{
+                        textAlign: "center",
+                        color: "#473838",
+                        fontSize: 24,
+                        fontFamily: "Kanit",
+                        fontWeight: "400",
+                        textDecoration: "line-through",
+                        lineHeight: 32,
+                        letterSpacing: 0.12,
+                      }}
+                    >
+                      $200
+                    </Box>
+
+                    <Box
+                      style={{
+                        textAlign: "center",
+                        color: "#F7AFBC",
+                        fontSize: 24,
+                        fontFamily: "Kanit",
+                        fontWeight: "700",
+                        lineHeight: 32,
+                        letterSpacing: 0.12,
+                      }}
+                    >
+                      $186
+                    </Box>
+                  </Box>
+                </Box>
+              </Box>
+            </Box>
+          </Box>
 
           {/* one card image */}
-          <div
+          <Box
             style={{
-              width: "1200px",
+              width: "278.25px",
               height: "448px",
-              gap: "29px",
+              gap: "8px",
             }}
           >
-            <div
+            <Box
               className="hover_product"
               style={{
                 width: "278.25px",
                 height: "340px",
                 backgroundColor: "#f1f0f0",
                 display: "flex",
-                position: "relative",
               }}
             >
-              <div
+              <Box
                 className="hover_content"
                 style={{
                   position: "absolute",
@@ -318,8 +250,8 @@ const SetKits = () => {
                 <Link to="/addcart" className="hover_button">
                   Add to Cart
                 </Link>
-              </div>
-              <div
+              </Box>
+              <Box
                 style={{
                   position: "absolute",
                   maxWidth: "92px",
@@ -327,7 +259,8 @@ const SetKits = () => {
                   top: "-1px",
                   left: "-1px",
                   padding: "4px 8px 4px 8px",
-                  backgroundColor: "#EEE4E3",
+                  backgroundColor: "#EEE4E3 ",
+                  zIndex: "2",
                 }}
               >
                 <p
@@ -344,21 +277,23 @@ const SetKits = () => {
                 >
                   Save 10%
                 </p>
-              </div>
+              </Box>
+
               <img
                 src={product2}
                 style={{
                   width: "232px",
+                  height: "286px",
                   position: "absolute",
                   height: "286px",
                   top: "27px",
                   left: "23px",
                 }}
               />
-            </div>
+            </Box>
 
             {/* CAPTION */}
-            <div
+            <Box
               className="Info"
               style={{
                 width: 278.25,
@@ -371,7 +306,7 @@ const SetKits = () => {
                 display: "flex",
               }}
             >
-              <div
+              <Box
                 style={{
                   height: "100px",
                   gap: 8,
@@ -380,147 +315,89 @@ const SetKits = () => {
                   display: "flex",
                 }}
               >
-                <div
+                <Box
                   style={{
-                    justifyContent: "center",
-                    height: "26px",
-                    display: "flex",
-                    flexDirection: "row",
-                    alignItems: "center",
-                    gap: "8px",
-                  }}
-                >
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "flex-start",
-                      width: 132,
-                      height: 24,
-                      gap: "3px",
-                    }}
-                  >
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={plainStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                  </div>
-
-                  <div
-                    style={{
-                      color: "#473838",
-                      fontSize: 18,
-                      fontFamily: "Kanit",
-                      fontWeight: "400",
-                      lineHeight: 26,
-                      letterSpacing: 0.09,
-                    }}
-                  >
-                    4 (5)
-                  </div>
-                </div>
-
-                <div
-                  style={{
-                    height: "26px",
-                    display: "flex",
-                    alignItems: "center",
-                  }}
-                >
-                  <p
-                    style={{
-                      textAlign: "center",
-                      color: "#473838",
-                      fontSize: 18,
-                      fontFamily: "Kanit",
-                      fontWeight: "400",
-                      letterSpacing: 0.09,
-                    }}
-                  >
-                    Sekine Serum
-                  </p>
-                </div>
-
-                <div
-                  style={{
+                    height: "100px",
                     gap: 8,
-                    display: "flex",
-                    justifyContent: "center",
                     alignItems: "center",
-                    height: "26px",
+                    flexDirection: "column",
+                    display: "flex",
                   }}
                 >
-                  <div
+                  <RatingStars />
+                  <Box
                     style={{
-                      textAlign: "center",
-                      color: "#473838",
-                      fontSize: 24,
-                      fontFamily: "Kanit",
-                      fontWeight: "400",
-                      textDecoration: "line-through",
-                      lineHeight: 32,
-                      letterSpacing: 0.12,
+                      height: "26px",
+                      display: "flex",
+                      alignItems: "center",
                     }}
                   >
-                    $280
-                  </div>
+                    <p
+                      style={{
+                        textAlign: "center",
+                        color: "#473838",
+                        fontSize: 18,
+                        fontFamily: "Kanit",
+                        fontWeight: "400",
+                        letterSpacing: 0.09,
+                      }}
+                    >
+                      Sekine Serum
+                    </p>
+                  </Box>
 
-                  <div
+                  <Box
                     style={{
-                      textAlign: "center",
-                      color: "#F7AFBC",
-                      fontSize: 24,
-                      fontFamily: "Kanit",
-                      fontWeight: "700",
-                      lineHeight: 32,
-                      letterSpacing: 0.12,
+                      gap: 8,
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      height: "26px",
                     }}
                   >
-                    $186
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+                    <Box
+                      style={{
+                        textAlign: "center",
+                        color: "#473838",
+                        fontSize: 24,
+                        fontFamily: "Kanit",
+                        fontWeight: "400",
+                        textDecoration: "line-through",
+                        lineHeight: 32,
+                        letterSpacing: 0.12,
+                      }}
+                    >
+                      $200
+                    </Box>
 
-          <div
+                    <Box
+                      style={{
+                        textAlign: "center",
+                        color: "#F7AFBC",
+                        fontSize: 24,
+                        fontFamily: "Kanit",
+                        fontWeight: "700",
+                        lineHeight: 32,
+                        letterSpacing: 0.12,
+                      }}
+                    >
+                      $186
+                    </Box>
+                  </Box>
+                </Box>
+              </Box>
+            </Box>
+          </Box>
+
+          {/* one card image */}
+          <Box
             style={{
-              width: "1200px",
+              width: "278.25px",
               height: "448px",
               gap: "29px",
             }}
           >
-            <div
+            <Box
               style={{
                 width: "278.25px",
                 height: "340px",
@@ -529,7 +406,7 @@ const SetKits = () => {
                 position: "relative",
               }}
             >
-              <div
+              <Box
                 style={{
                   position: "absolute",
                   maxWidth: "92px",
@@ -554,7 +431,7 @@ const SetKits = () => {
                 >
                   Sold Out
                 </p>
-              </div>
+              </Box>
               <img
                 src={product3}
                 style={{
@@ -566,10 +443,10 @@ const SetKits = () => {
                   zIndex: "1",
                 }}
               />
-            </div>
+            </Box>
 
             {/* CAPTION */}
-            <div
+            <Box
               className="Info"
               style={{
                 width: 278.25,
@@ -582,7 +459,7 @@ const SetKits = () => {
                 display: "flex",
               }}
             >
-              <div
+              <Box
                 style={{
                   height: "100px",
                   gap: 8,
@@ -591,77 +468,8 @@ const SetKits = () => {
                   display: "flex",
                 }}
               >
-                <div
-                  style={{
-                    justifyContent: "center",
-                    height: "26px",
-                    display: "flex",
-                    flexDirection: "row",
-                    alignItems: "center",
-                    gap: "8px",
-                  }}
-                >
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "flex-start",
-                      width: 132,
-                      height: 24,
-                      gap: "3px",
-                    }}
-                  >
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={plainStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                  </div>
-
-                  <div
-                    style={{
-                      color: "#473838",
-                      fontSize: 18,
-                      fontFamily: "Kanit",
-                      fontWeight: "400",
-                      lineHeight: 26,
-                      letterSpacing: 0.09,
-                    }}
-                  >
-                    4 (5)
-                  </div>
-                </div>
-
-                <div
+                <RatingStars />
+                <Box
                   style={{
                     height: "26px",
                     display: "flex",
@@ -680,9 +488,9 @@ const SetKits = () => {
                   >
                     Roladan Kit
                   </p>
-                </div>
+                </Box>
 
-                <div
+                <Box
                   style={{
                     gap: 8,
                     display: "flex",
@@ -691,7 +499,7 @@ const SetKits = () => {
                     height: "26px",
                   }}
                 >
-                  <div
+                  <Box
                     style={{
                       textAlign: "center",
                       color: "#473838",
@@ -704,9 +512,9 @@ const SetKits = () => {
                     }}
                   >
                     $500
-                  </div>
+                  </Box>
 
-                  <div
+                  <Box
                     style={{
                       textAlign: "center",
                       color: "#F7AFBC",
@@ -718,21 +526,21 @@ const SetKits = () => {
                     }}
                   >
                     $186
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+                  </Box>
+                </Box>
+              </Box>
+            </Box>
+          </Box>
 
-          <div
+          {/* one card image */}
+          <Box
             style={{
-              width: "1200px",
+              width: "278.25px",
               height: "448px",
-              gap: "29px",
+              gap: "8px",
             }}
           >
-            {/* one card image */}
-            <div
+            <Box
               className="hover_product"
               style={{
                 width: "278.25px",
@@ -743,7 +551,7 @@ const SetKits = () => {
                 position: "relative",
               }}
             >
-              <div
+              <Box
                 className="hover_content"
                 style={{
                   position: "absolute",
@@ -759,8 +567,8 @@ const SetKits = () => {
                 <Link to="/addcart" className="hover_button">
                   Add to Cart
                 </Link>
-              </div>
-              <div
+              </Box>
+              <Box
                 style={{
                   position: "absolute",
                   maxWidth: "92px",
@@ -785,7 +593,7 @@ const SetKits = () => {
                 >
                   Save 14%
                 </p>
-              </div>
+              </Box>
               <img
                 src={product4}
                 style={{
@@ -796,10 +604,10 @@ const SetKits = () => {
                   left: "23px",
                 }}
               />
-            </div>
+            </Box>
 
             {/* CAPTION */}
-            <div
+            <Box
               className="Info"
               style={{
                 width: 278.25,
@@ -812,7 +620,7 @@ const SetKits = () => {
                 display: "flex",
               }}
             >
-              <div
+              <Box
                 style={{
                   height: "100px",
                   gap: 8,
@@ -821,77 +629,8 @@ const SetKits = () => {
                   display: "flex",
                 }}
               >
-                <div
-                  style={{
-                    justifyContent: "center",
-                    height: "26px",
-                    display: "flex",
-                    flexDirection: "row",
-                    alignItems: "center",
-                    gap: "8px",
-                  }}
-                >
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "flex-start",
-                      width: 132,
-                      height: 24,
-                      gap: "3px",
-                    }}
-                  >
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={plainStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                  </div>
-
-                  <div
-                    style={{
-                      color: "#473838",
-                      fontSize: 18,
-                      fontFamily: "Kanit",
-                      fontWeight: "400",
-                      lineHeight: 26,
-                      letterSpacing: 0.09,
-                    }}
-                  >
-                    4 (5)
-                  </div>
-                </div>
-
-                <div
+                <RatingStars />
+                <Box
                   style={{
                     height: "26px",
                     display: "flex",
@@ -910,9 +649,9 @@ const SetKits = () => {
                   >
                     Lano Serum
                   </p>
-                </div>
+                </Box>
 
-                <div
+                <Box
                   style={{
                     gap: 8,
                     display: "flex",
@@ -921,7 +660,7 @@ const SetKits = () => {
                     height: "26px",
                   }}
                 >
-                  <div
+                  <Box
                     style={{
                       textAlign: "center",
                       color: "#473838",
@@ -934,9 +673,9 @@ const SetKits = () => {
                     }}
                   >
                     $200
-                  </div>
+                  </Box>
 
-                  <div
+                  <Box
                     style={{
                       textAlign: "center",
                       color: "#F7AFBC",
@@ -948,23 +687,22 @@ const SetKits = () => {
                     }}
                   >
                     $186
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+                  </Box>
+                </Box>
+              </Box>
+            </Box>
+          </Box>
 
-        {/* second role of four cards */}
-        <div className="" style={{ display: "flex", gap: "29px" }}>
-          <div
+          {/* one card image */}
+
+          <Box
             style={{
-              width: "1200px",
+              width: "278.25px",
               height: "448px",
+              gap: "8px",
             }}
           >
-            {/* one card image */}
-            <div
+            <Box
               style={{
                 width: "278.25px",
                 height: "340px",
@@ -973,7 +711,7 @@ const SetKits = () => {
                 position: "relative",
               }}
             >
-              <div
+              <Box
                 style={{
                   position: "absolute",
                   maxWidth: "92px",
@@ -998,7 +736,7 @@ const SetKits = () => {
                 >
                   Sold Out
                 </p>
-              </div>
+              </Box>
               <img
                 src={product5}
                 style={{
@@ -1010,10 +748,10 @@ const SetKits = () => {
                   zIndex: "1",
                 }}
               />
-            </div>
+            </Box>
 
             {/* CAPTION */}
-            <div
+            <Box
               className="Info"
               style={{
                 width: 278.25,
@@ -1026,7 +764,7 @@ const SetKits = () => {
                 display: "flex",
               }}
             >
-              <div
+              <Box
                 style={{
                   height: "100px",
                   gap: 8,
@@ -1035,77 +773,8 @@ const SetKits = () => {
                   display: "flex",
                 }}
               >
-                <div
-                  style={{
-                    justifyContent: "center",
-                    height: "26px",
-                    display: "flex",
-                    flexDirection: "row",
-                    alignItems: "center",
-                    gap: "8px",
-                  }}
-                >
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "flex-start",
-                      width: 132,
-                      height: 24,
-                      gap: "3px",
-                    }}
-                  >
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={plainStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                  </div>
-
-                  <div
-                    style={{
-                      color: "#473838",
-                      fontSize: 18,
-                      fontFamily: "Kanit",
-                      fontWeight: "400",
-                      lineHeight: 26,
-                      letterSpacing: 0.09,
-                    }}
-                  >
-                    4 (5)
-                  </div>
-                </div>
-
-                <div
+                <RatingStars />
+                <Box
                   style={{
                     height: "26px",
                     display: "flex",
@@ -1124,9 +793,9 @@ const SetKits = () => {
                   >
                     Lip Balm
                   </p>
-                </div>
+                </Box>
 
-                <div
+                <Box
                   style={{
                     gap: 8,
                     display: "flex",
@@ -1135,7 +804,7 @@ const SetKits = () => {
                     height: "26px",
                   }}
                 >
-                  <div
+                  <Box
                     style={{
                       textAlign: "center",
                       color: "#473838",
@@ -1148,9 +817,9 @@ const SetKits = () => {
                     }}
                   >
                     $20
-                  </div>
+                  </Box>
 
-                  <div
+                  <Box
                     style={{
                       textAlign: "center",
                       color: "#F7AFBC",
@@ -1162,21 +831,21 @@ const SetKits = () => {
                     }}
                   >
                     $15
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+                  </Box>
+                </Box>
+              </Box>
+            </Box>
+          </Box>
 
-          <div
+          {/* one card image */}
+          <Box
             style={{
-              width: "1200px",
+              width: "278.25px",
               height: "448px",
               gap: "29px",
             }}
           >
-            {/* one card image */}
-            <div
+            <Box
               className="hover_product"
               style={{
                 width: "278.25px",
@@ -1186,7 +855,7 @@ const SetKits = () => {
                 position: "relative",
               }}
             >
-              <div
+              <Box
                 className="hover_content"
                 style={{
                   position: "absolute",
@@ -1202,8 +871,8 @@ const SetKits = () => {
                 <Link to="/addcart" className="hover_button">
                   Add to Cart
                 </Link>
-              </div>
-              <div
+              </Box>
+              <Box
                 style={{
                   position: "absolute",
                   maxWidth: "92px",
@@ -1228,7 +897,7 @@ const SetKits = () => {
                 >
                   Save 5%
                 </p>
-              </div>
+              </Box>
               <img
                 src={product6}
                 style={{
@@ -1239,10 +908,10 @@ const SetKits = () => {
                   left: "23px",
                 }}
               />
-            </div>
+            </Box>
 
             {/* CAPTION */}
-            <div
+            <Box
               className="Info"
               style={{
                 width: 278.25,
@@ -1255,7 +924,7 @@ const SetKits = () => {
                 display: "flex",
               }}
             >
-              <div
+              <Box
                 style={{
                   height: "100px",
                   gap: 8,
@@ -1264,77 +933,8 @@ const SetKits = () => {
                   display: "flex",
                 }}
               >
-                <div
-                  style={{
-                    justifyContent: "center",
-                    height: "26px",
-                    display: "flex",
-                    flexDirection: "row",
-                    alignItems: "center",
-                    gap: "8px",
-                  }}
-                >
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "flex-start",
-                      width: 132,
-                      height: 24,
-                      gap: "3px",
-                    }}
-                  >
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={plainStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                  </div>
-
-                  <div
-                    style={{
-                      color: "#473838",
-                      fontSize: 18,
-                      fontFamily: "Kanit",
-                      fontWeight: "400",
-                      lineHeight: 26,
-                      letterSpacing: 0.09,
-                    }}
-                  >
-                    4 (5)
-                  </div>
-                </div>
-
-                <div
+                <RatingStars />
+                <Box
                   style={{
                     height: "26px",
                     display: "flex",
@@ -1353,9 +953,9 @@ const SetKits = () => {
                   >
                     Lim Lip Gloss
                   </p>
-                </div>
+                </Box>
 
-                <div
+                <Box
                   style={{
                     gap: 8,
                     display: "flex",
@@ -1364,7 +964,7 @@ const SetKits = () => {
                     height: "26px",
                   }}
                 >
-                  <div
+                  <Box
                     style={{
                       textAlign: "center",
                       color: "#473838",
@@ -1377,9 +977,9 @@ const SetKits = () => {
                     }}
                   >
                     $200
-                  </div>
+                  </Box>
 
-                  <div
+                  <Box
                     style={{
                       textAlign: "center",
                       color: "#F7AFBC",
@@ -1391,21 +991,21 @@ const SetKits = () => {
                     }}
                   >
                     $186
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+                  </Box>
+                </Box>
+              </Box>
+            </Box>
+          </Box>
 
-          <div
+          {/* one card image */}
+          <Box
             style={{
-              width: "1200px",
+              width: "278.25px",
               height: "448px",
-              gap: "29px",
+              gap: "8px",
             }}
           >
-            {/* one card image */}
-            <div
+            <Box
               className="hover_product"
               style={{
                 width: "278.25px",
@@ -1415,7 +1015,7 @@ const SetKits = () => {
                 position: "relative",
               }}
             >
-              <div
+              <Box
                 className="hover_content"
                 style={{
                   position: "absolute",
@@ -1431,8 +1031,8 @@ const SetKits = () => {
                 <Link to="/addcart" className="hover_button">
                   Add to Cart
                 </Link>
-              </div>
-              <div
+              </Box>
+              <Box
                 style={{
                   position: "absolute",
                   maxWidth: "92px",
@@ -1457,7 +1057,7 @@ const SetKits = () => {
                 >
                   Save 14%
                 </p>
-              </div>
+              </Box>
               <img
                 src={product7}
                 style={{
@@ -1468,10 +1068,10 @@ const SetKits = () => {
                   left: "23px",
                 }}
               />
-            </div>
+            </Box>
 
             {/* CAPTION */}
-            <div
+            <Box
               className="Info"
               style={{
                 width: 278.25,
@@ -1484,7 +1084,7 @@ const SetKits = () => {
                 display: "flex",
               }}
             >
-              <div
+              <Box
                 style={{
                   height: "100px",
                   gap: 8,
@@ -1493,77 +1093,8 @@ const SetKits = () => {
                   display: "flex",
                 }}
               >
-                <div
-                  style={{
-                    justifyContent: "center",
-                    height: "26px",
-                    display: "flex",
-                    flexDirection: "row",
-                    alignItems: "center",
-                    gap: "8px",
-                  }}
-                >
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "flex-start",
-                      width: 132,
-                      height: 24,
-                      gap: "3px",
-                    }}
-                  >
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={plainStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                  </div>
-
-                  <div
-                    style={{
-                      color: "#473838",
-                      fontSize: 18,
-                      fontFamily: "Kanit",
-                      fontWeight: "400",
-                      lineHeight: 26,
-                      letterSpacing: 0.09,
-                    }}
-                  >
-                    4 (5)
-                  </div>
-                </div>
-
-                <div
+                <RatingStars />
+                <Box
                   style={{
                     height: "26px",
                     display: "flex",
@@ -1582,9 +1113,9 @@ const SetKits = () => {
                   >
                     Branti Lipstick
                   </p>
-                </div>
+                </Box>
 
-                <div
+                <Box
                   style={{
                     gap: 8,
                     display: "flex",
@@ -1593,7 +1124,7 @@ const SetKits = () => {
                     height: "26px",
                   }}
                 >
-                  <div
+                  <Box
                     style={{
                       textAlign: "center",
                       color: "#473838",
@@ -1606,9 +1137,9 @@ const SetKits = () => {
                     }}
                   >
                     $200
-                  </div>
+                  </Box>
 
-                  <div
+                  <Box
                     style={{
                       textAlign: "center",
                       color: "#F7AFBC",
@@ -1620,21 +1151,21 @@ const SetKits = () => {
                     }}
                   >
                     $186
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+                  </Box>
+                </Box>
+              </Box>
+            </Box>
+          </Box>
 
-          <div
+          {/* one card image */}
+          <Box
             style={{
-              width: "1200px",
+              width: "278.25px",
               height: "448px",
-              gap: "29px",
+              gap: "8px",
             }}
           >
-            {/* one card image */}
-            <div
+            <Box
               className="hover_product"
               style={{
                 width: "278.25px",
@@ -1644,7 +1175,7 @@ const SetKits = () => {
                 position: "relative",
               }}
             >
-              <div
+              <Box
                 className="hover_content"
                 style={{
                   position: "absolute",
@@ -1660,8 +1191,8 @@ const SetKits = () => {
                 <Link to="/addcart" className="hover_button">
                   Add to Cart
                 </Link>
-              </div>
-              <div
+              </Box>
+              <Box
                 style={{
                   position: "absolute",
                   maxWidth: "92px",
@@ -1686,7 +1217,7 @@ const SetKits = () => {
                 >
                   Save 14%
                 </p>
-              </div>
+              </Box>
               <img
                 src={product8}
                 style={{
@@ -1697,10 +1228,10 @@ const SetKits = () => {
                   left: "23px",
                 }}
               />
-            </div>
+            </Box>
 
             {/* CAPTION */}
-            <div
+            <Box
               className="Info"
               style={{
                 width: 278.25,
@@ -1713,7 +1244,7 @@ const SetKits = () => {
                 display: "flex",
               }}
             >
-              <div
+              <Box
                 style={{
                   height: "100px",
                   gap: 8,
@@ -1722,77 +1253,8 @@ const SetKits = () => {
                   display: "flex",
                 }}
               >
-                <div
-                  style={{
-                    justifyContent: "center",
-                    height: "26px",
-                    display: "flex",
-                    flexDirection: "row",
-                    alignItems: "center",
-                    gap: "8px",
-                  }}
-                >
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "flex-start",
-                      width: 132,
-                      height: 24,
-                      gap: "3px",
-                    }}
-                  >
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={plainStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                  </div>
-
-                  <div
-                    style={{
-                      color: "#473838",
-                      fontSize: 18,
-                      fontFamily: "Kanit",
-                      fontWeight: "400",
-                      lineHeight: 26,
-                      letterSpacing: 0.09,
-                    }}
-                  >
-                    4 (5)
-                  </div>
-                </div>
-
-                <div
+                <RatingStars />
+                <Box
                   style={{
                     height: "26px",
                     display: "flex",
@@ -1811,9 +1273,9 @@ const SetKits = () => {
                   >
                     Sekine Shower Gel
                   </p>
-                </div>
+                </Box>
 
-                <div
+                <Box
                   style={{
                     gap: 8,
                     display: "flex",
@@ -1822,7 +1284,7 @@ const SetKits = () => {
                     height: "26px",
                   }}
                 >
-                  <div
+                  <Box
                     style={{
                       textAlign: "center",
                       color: "#473838",
@@ -1835,9 +1297,9 @@ const SetKits = () => {
                     }}
                   >
                     $430
-                  </div>
+                  </Box>
 
-                  <div
+                  <Box
                     style={{
                       textAlign: "center",
                       color: "#F7AFBC",
@@ -1849,23 +1311,20 @@ const SetKits = () => {
                     }}
                   >
                     $400
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+                  </Box>
+                </Box>
+              </Box>
+            </Box>
+          </Box>
 
-        {/* third role of four cards */}
-        <div className="" style={{ display: "flex", gap: "29px" }}>
-          <div
+          {/* one card image */}
+          <Box
             style={{
-              width: "1200px",
+              width: "278.25px",
               height: "448px",
             }}
           >
-            {/* one card image */}
-            <div
+            <Box
               className="hover_product"
               style={{
                 width: "278.25px",
@@ -1875,7 +1334,7 @@ const SetKits = () => {
                 position: "relative",
               }}
             >
-              <div
+              <Box
                 className="hover_content"
                 style={{
                   position: "absolute",
@@ -1891,8 +1350,8 @@ const SetKits = () => {
                 <Link to="/addcart" className="hover_button">
                   Add to Cart
                 </Link>
-              </div>
-              <div
+              </Box>
+              <Box
                 style={{
                   position: "absolute",
                   maxWidth: "92px",
@@ -1917,7 +1376,7 @@ const SetKits = () => {
                 >
                   Save 14%
                 </p>
-              </div>
+              </Box>
               <img
                 src={product9}
                 style={{
@@ -1928,10 +1387,10 @@ const SetKits = () => {
                   left: "23px",
                 }}
               />
-            </div>
+            </Box>
 
             {/* CAPTION */}
-            <div
+            <Box
               className="Info"
               style={{
                 width: 278.25,
@@ -1944,7 +1403,7 @@ const SetKits = () => {
                 display: "flex",
               }}
             >
-              <div
+              <Box
                 style={{
                   height: "100px",
                   gap: 8,
@@ -1953,77 +1412,8 @@ const SetKits = () => {
                   display: "flex",
                 }}
               >
-                <div
-                  style={{
-                    justifyContent: "center",
-                    height: "26px",
-                    display: "flex",
-                    flexDirection: "row",
-                    alignItems: "center",
-                    gap: "8px",
-                  }}
-                >
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "flex-start",
-                      width: 132,
-                      height: 24,
-                      gap: "3px",
-                    }}
-                  >
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={plainStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                  </div>
-
-                  <div
-                    style={{
-                      color: "#473838",
-                      fontSize: 18,
-                      fontFamily: "Kanit",
-                      fontWeight: "400",
-                      lineHeight: 26,
-                      letterSpacing: 0.09,
-                    }}
-                  >
-                    4 (5)
-                  </div>
-                </div>
-
-                <div
+                <RatingStars />
+                <Box
                   style={{
                     height: "26px",
                     display: "flex",
@@ -2042,9 +1432,9 @@ const SetKits = () => {
                   >
                     Kora Body Wash
                   </p>
-                </div>
+                </Box>
 
-                <div
+                <Box
                   style={{
                     gap: 8,
                     display: "flex",
@@ -2053,7 +1443,7 @@ const SetKits = () => {
                     height: "26px",
                   }}
                 >
-                  <div
+                  <Box
                     style={{
                       textAlign: "center",
                       color: "#473838",
@@ -2066,9 +1456,9 @@ const SetKits = () => {
                     }}
                   >
                     $200
-                  </div>
+                  </Box>
 
-                  <div
+                  <Box
                     style={{
                       textAlign: "center",
                       color: "#F7AFBC",
@@ -2080,21 +1470,21 @@ const SetKits = () => {
                     }}
                   >
                     $186
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+                  </Box>
+                </Box>
+              </Box>
+            </Box>
+          </Box>
 
-          <div
+          {/* one card image */}
+          <Box
             style={{
-              width: "1200px",
+              width: "278.25px",
               height: "448px",
-              gap: "29px",
+              gap: "8px",
             }}
           >
-            {/* one card image */}
-            <div
+            <Box
               className="hover_product"
               style={{
                 width: "278.25px",
@@ -2104,7 +1494,7 @@ const SetKits = () => {
                 position: "relative",
               }}
             >
-              <div
+              <Box
                 className="hover_content"
                 style={{
                   position: "absolute",
@@ -2120,8 +1510,8 @@ const SetKits = () => {
                 <Link to="/addcart" className="hover_button">
                   Add to Cart
                 </Link>
-              </div>
-              <div
+              </Box>
+              <Box
                 style={{
                   position: "absolute",
                   maxWidth: "92px",
@@ -2146,9 +1536,9 @@ const SetKits = () => {
                 >
                   Save 14%
                 </p>
-              </div>
+              </Box>
               <img
-                src={product1}
+                src={product10}
                 style={{
                   width: "232px",
                   position: "absolute",
@@ -2157,10 +1547,10 @@ const SetKits = () => {
                   left: "23px",
                 }}
               />
-            </div>
+            </Box>
 
             {/* CAPTION */}
-            <div
+            <Box
               className="Info"
               style={{
                 width: 278.25,
@@ -2173,7 +1563,7 @@ const SetKits = () => {
                 display: "flex",
               }}
             >
-              <div
+              <Box
                 style={{
                   height: "100px",
                   gap: 8,
@@ -2182,77 +1572,8 @@ const SetKits = () => {
                   display: "flex",
                 }}
               >
-                <div
-                  style={{
-                    justifyContent: "center",
-                    height: "26px",
-                    display: "flex",
-                    flexDirection: "row",
-                    alignItems: "center",
-                    gap: "8px",
-                  }}
-                >
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "flex-start",
-                      width: 132,
-                      height: 24,
-                      gap: "3px",
-                    }}
-                  >
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={plainStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                  </div>
-
-                  <div
-                    style={{
-                      color: "#473838",
-                      fontSize: 18,
-                      fontFamily: "Kanit",
-                      fontWeight: "400",
-                      lineHeight: 26,
-                      letterSpacing: 0.09,
-                    }}
-                  >
-                    4 (5)
-                  </div>
-                </div>
-
-                <div
+                <RatingStars />
+                <Box
                   style={{
                     height: "26px",
                     display: "flex",
@@ -2269,11 +1590,11 @@ const SetKits = () => {
                       letterSpacing: 0.09,
                     }}
                   >
-                    Jami Set
+                    Jami Face Cream
                   </p>
-                </div>
+                </Box>
 
-                <div
+                <Box
                   style={{
                     gap: 8,
                     display: "flex",
@@ -2282,7 +1603,7 @@ const SetKits = () => {
                     height: "26px",
                   }}
                 >
-                  <div
+                  <Box
                     style={{
                       textAlign: "center",
                       color: "#473838",
@@ -2295,9 +1616,9 @@ const SetKits = () => {
                     }}
                   >
                     $200
-                  </div>
+                  </Box>
 
-                  <div
+                  <Box
                     style={{
                       textAlign: "center",
                       color: "#F7AFBC",
@@ -2309,21 +1630,21 @@ const SetKits = () => {
                     }}
                   >
                     $186
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+                  </Box>
+                </Box>
+              </Box>
+            </Box>
+          </Box>
 
-          <div
+          {/* one card image */}
+          <Box
             style={{
-              width: "1200px",
+              width: "278.25px",
               height: "448px",
-              gap: "29px",
+              gap: "8px",
             }}
           >
-            {/* one card image */}
-            <div
+            <Box
               className="hover_product"
               style={{
                 width: "278.25px",
@@ -2333,7 +1654,7 @@ const SetKits = () => {
                 position: "relative",
               }}
             >
-              <div
+              <Box
                 className="hover_content"
                 style={{
                   position: "absolute",
@@ -2349,8 +1670,8 @@ const SetKits = () => {
                 <Link to="/addcart" className="hover_button">
                   Add to Cart
                 </Link>
-              </div>
-              <div
+              </Box>
+              <Box
                 style={{
                   position: "absolute",
                   maxWidth: "92px",
@@ -2375,7 +1696,7 @@ const SetKits = () => {
                 >
                   Save 14%
                 </p>
-              </div>
+              </Box>
               <img
                 src={product11}
                 style={{
@@ -2386,10 +1707,10 @@ const SetKits = () => {
                   left: "23px",
                 }}
               />
-            </div>
+            </Box>
 
             {/* CAPTION */}
-            <div
+            <Box
               className="Info"
               style={{
                 width: 278.25,
@@ -2402,7 +1723,7 @@ const SetKits = () => {
                 display: "flex",
               }}
             >
-              <div
+              <Box
                 style={{
                   height: "100px",
                   gap: 8,
@@ -2411,77 +1732,8 @@ const SetKits = () => {
                   display: "flex",
                 }}
               >
-                <div
-                  style={{
-                    justifyContent: "center",
-                    height: "26px",
-                    display: "flex",
-                    flexDirection: "row",
-                    alignItems: "center",
-                    gap: "8px",
-                  }}
-                >
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "flex-start",
-                      width: 132,
-                      height: 24,
-                      gap: "3px",
-                    }}
-                  >
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={plainStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                  </div>
-
-                  <div
-                    style={{
-                      color: "#473838",
-                      fontSize: 18,
-                      fontFamily: "Kanit",
-                      fontWeight: "400",
-                      lineHeight: 26,
-                      letterSpacing: 0.09,
-                    }}
-                  >
-                    4 (5)
-                  </div>
-                </div>
-
-                <div
+                <RatingStars />
+                <Box
                   style={{
                     height: "26px",
                     display: "flex",
@@ -2500,9 +1752,9 @@ const SetKits = () => {
                   >
                     Sekine Make-up Kit
                   </p>
-                </div>
+                </Box>
 
-                <div
+                <Box
                   style={{
                     gap: 8,
                     display: "flex",
@@ -2511,7 +1763,7 @@ const SetKits = () => {
                     height: "26px",
                   }}
                 >
-                  <div
+                  <Box
                     style={{
                       textAlign: "center",
                       color: "#473838",
@@ -2524,9 +1776,9 @@ const SetKits = () => {
                     }}
                   >
                     $200
-                  </div>
+                  </Box>
 
-                  <div
+                  <Box
                     style={{
                       textAlign: "center",
                       color: "#F7AFBC",
@@ -2538,21 +1790,21 @@ const SetKits = () => {
                     }}
                   >
                     $186
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+                  </Box>
+                </Box>
+              </Box>
+            </Box>
+          </Box>
 
-          <div
+          {/* one card image */}
+          <Box
             style={{
-              width: "1200px",
+              width: "278.25px",
               height: "448px",
-              gap: "29px",
+              gap: "8px",
             }}
           >
-            {/* one card image */}
-            <div
+            <Box
               className="hover_product"
               style={{
                 width: "278.25px",
@@ -2562,7 +1814,7 @@ const SetKits = () => {
                 position: "relative",
               }}
             >
-              <div
+              <Box
                 className="hover_content"
                 style={{
                   position: "absolute",
@@ -2578,8 +1830,8 @@ const SetKits = () => {
                 <Link to="/addcart" className="hover_button">
                   Add to Cart
                 </Link>
-              </div>
-              <div
+              </Box>
+              <Box
                 style={{
                   position: "absolute",
                   maxWidth: "92px",
@@ -2604,9 +1856,9 @@ const SetKits = () => {
                 >
                   Save 14%
                 </p>
-              </div>
+              </Box>
               <img
-                src={product11}
+                src={product12}
                 style={{
                   width: "232px",
                   position: "absolute",
@@ -2615,10 +1867,10 @@ const SetKits = () => {
                   left: "23px",
                 }}
               />
-            </div>
+            </Box>
 
             {/* CAPTION */}
-            <div
+            <Box
               className="Info"
               style={{
                 width: 278.25,
@@ -2631,7 +1883,7 @@ const SetKits = () => {
                 display: "flex",
               }}
             >
-              <div
+              <Box
                 style={{
                   height: "100px",
                   gap: 8,
@@ -2640,77 +1892,8 @@ const SetKits = () => {
                   display: "flex",
                 }}
               >
-                <div
-                  style={{
-                    justifyContent: "center",
-                    height: "26px",
-                    display: "flex",
-                    flexDirection: "row",
-                    alignItems: "center",
-                    gap: "8px",
-                  }}
-                >
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "flex-start",
-                      width: 132,
-                      height: 24,
-                      gap: "3px",
-                    }}
-                  >
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={smallStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                    <img
-                      src={plainStar}
-                      style={{
-                        width: 24,
-                        height: 24,
-                      }}
-                    />
-                  </div>
-
-                  <div
-                    style={{
-                      color: "#473838",
-                      fontSize: 18,
-                      fontFamily: "Kanit",
-                      fontWeight: "400",
-                      lineHeight: 26,
-                      letterSpacing: 0.09,
-                    }}
-                  >
-                    4 (5)
-                  </div>
-                </div>
-
-                <div
+                <RatingStars />
+                <Box
                   style={{
                     height: "26px",
                     display: "flex",
@@ -2729,9 +1912,9 @@ const SetKits = () => {
                   >
                     Ora Face Cream
                   </p>
-                </div>
+                </Box>
 
-                <div
+                <Box
                   style={{
                     gap: 8,
                     display: "flex",
@@ -2740,7 +1923,7 @@ const SetKits = () => {
                     height: "26px",
                   }}
                 >
-                  <div
+                  <Box
                     style={{
                       textAlign: "center",
                       color: "#473838",
@@ -2753,9 +1936,9 @@ const SetKits = () => {
                     }}
                   >
                     $200
-                  </div>
+                  </Box>
 
-                  <div
+                  <Box
                     style={{
                       textAlign: "center",
                       color: "#F7AFBC",
@@ -2767,15 +1950,15 @@ const SetKits = () => {
                     }}
                   >
                     $186
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+                  </Box>
+                </Box>
+              </Box>
+            </Box>
+          </Box>
+        </Box>
+      </Box>
       <PrevNext />
-    </div>
+    </Box>
   );
 };
 

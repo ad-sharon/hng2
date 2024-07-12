@@ -25,7 +25,6 @@ const ShopAll = () => {
         height: "1596px",
         position: "absolute",
         gap: "114px",
-
         top: "504px",
       }}
     >
@@ -35,7 +34,7 @@ const ShopAll = () => {
           height: "1440px",
         }}
       >
-        <div
+        <Box
           style={{
             width: "90%",
             height: "448px",
@@ -47,14 +46,14 @@ const ShopAll = () => {
           }}
         >
           {/* one card image */}
-          <div
+          <Box
             style={{
               width: "278.25px",
               height: "448px",
               gap: "8px",
             }}
           >
-            <div
+            <Box
               className="hover_product"
               style={{
                 width: "278.25px",
@@ -63,7 +62,7 @@ const ShopAll = () => {
                 display: "flex",
               }}
             >
-              <div
+              <Box
                 className="hover_content"
                 style={{
                   position: "absolute",
@@ -79,8 +78,8 @@ const ShopAll = () => {
                 <Link to="/addcart" className="hover_button">
                   Add to Cart
                 </Link>
-              </div>
-              <div
+              </Box>
+              <Box
                 style={{
                   position: "absolute",
                   maxWidth: "92px",
@@ -106,7 +105,7 @@ const ShopAll = () => {
                 >
                   Save 14%
                 </p>
-              </div>
+              </Box>
 
               <img
                 src={product1}
@@ -119,10 +118,10 @@ const ShopAll = () => {
                   left: "23px",
                 }}
               />
-            </div>
+            </Box>
 
             {/* CAPTION */}
-            <div
+            <Box
               className="Info"
               style={{
                 width: 278.25,
@@ -135,7 +134,7 @@ const ShopAll = () => {
                 display: "flex",
               }}
             >
-              <div
+              <Box
                 style={{
                   height: "100px",
                   gap: 8,
@@ -144,19 +143,17 @@ const ShopAll = () => {
                   display: "flex",
                 }}
               >
-                <RatingStars />
-
-                <div
+                <Box
                   style={{
-                    justifyContent: "center",
-                    height: "26px",
-                    display: "flex",
-                    flexDirection: "column",
+                    height: "100px",
+                    gap: 8,
                     alignItems: "center",
-                    gap: "8x",
+                    flexDirection: "column",
+                    display: "flex",
                   }}
                 >
-                  <div
+                  <RatingStars />
+                  <Box
                     style={{
                       height: "26px",
                       display: "flex",
@@ -175,9 +172,9 @@ const ShopAll = () => {
                     >
                       Lora Starter Kit
                     </p>
-                  </div>
+                  </Box>
 
-                  <div
+                  <Box
                     style={{
                       gap: 8,
                       display: "flex",
@@ -186,7 +183,7 @@ const ShopAll = () => {
                       height: "26px",
                     }}
                   >
-                    <div
+                    <Box
                       style={{
                         textAlign: "center",
                         color: "#473838",
@@ -199,9 +196,9 @@ const ShopAll = () => {
                       }}
                     >
                       $200
-                    </div>
+                    </Box>
 
-                    <div
+                    <Box
                       style={{
                         textAlign: "center",
                         color: "#F7AFBC",
@@ -213,22 +210,22 @@ const ShopAll = () => {
                       }}
                     >
                       $186
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+                    </Box>
+                  </Box>
+                </Box>
+              </Box>
+            </Box>
+          </Box>
 
           {/* one card image */}
-          <div
+          <Box
             style={{
               width: "278.25px",
               height: "448px",
               gap: "8px",
             }}
           >
-            <div
+            <Box
               className="hover_product"
               style={{
                 width: "278.25px",
@@ -237,7 +234,7 @@ const ShopAll = () => {
                 display: "flex",
               }}
             >
-              <div
+              <Box
                 className="hover_content"
                 style={{
                   position: "absolute",
@@ -253,8 +250,8 @@ const ShopAll = () => {
                 <Link to="/addcart" className="hover_button">
                   Add to Cart
                 </Link>
-              </div>
-              <div
+              </Box>
+              <Box
                 style={{
                   position: "absolute",
                   maxWidth: "92px",
@@ -280,7 +277,7 @@ const ShopAll = () => {
                 >
                   Save 10%
                 </p>
-              </div>
+              </Box>
 
               <img
                 src={product2}
@@ -293,10 +290,10 @@ const ShopAll = () => {
                   left: "23px",
                 }}
               />
-            </div>
+            </Box>
 
             {/* CAPTION */}
-            <div
+            <Box
               className="Info"
               style={{
                 width: 278.25,
@@ -309,7 +306,7 @@ const ShopAll = () => {
                 display: "flex",
               }}
             >
-              <div
+              <Box
                 style={{
                   height: "100px",
                   gap: 8,
@@ -318,19 +315,17 @@ const ShopAll = () => {
                   display: "flex",
                 }}
               >
-                <RatingStars />
-
-                <div
+                <Box
                   style={{
-                    justifyContent: "center",
-                    height: "26px",
-                    display: "flex",
-                    flexDirection: "column",
+                    height: "100px",
+                    gap: 8,
                     alignItems: "center",
-                    gap: "8x",
+                    flexDirection: "column",
+                    display: "flex",
                   }}
                 >
-                  <div
+                  <RatingStars />
+                  <Box
                     style={{
                       height: "26px",
                       display: "flex",
@@ -347,11 +342,11 @@ const ShopAll = () => {
                         letterSpacing: 0.09,
                       }}
                     >
-                      Lora Starter Kit
+                      Sekine Serum
                     </p>
-                  </div>
+                  </Box>
 
-                  <div
+                  <Box
                     style={{
                       gap: 8,
                       display: "flex",
@@ -360,7 +355,7 @@ const ShopAll = () => {
                       height: "26px",
                     }}
                   >
-                    <div
+                    <Box
                       style={{
                         textAlign: "center",
                         color: "#473838",
@@ -373,9 +368,9 @@ const ShopAll = () => {
                       }}
                     >
                       $200
-                    </div>
+                    </Box>
 
-                    <div
+                    <Box
                       style={{
                         textAlign: "center",
                         color: "#F7AFBC",
@@ -387,22 +382,22 @@ const ShopAll = () => {
                       }}
                     >
                       $186
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+                    </Box>
+                  </Box>
+                </Box>
+              </Box>
+            </Box>
+          </Box>
 
           {/* one card image */}
-          <div
+          <Box
             style={{
               width: "278.25px",
               height: "448px",
               gap: "29px",
             }}
           >
-            <div
+            <Box
               style={{
                 width: "278.25px",
                 height: "340px",
@@ -411,7 +406,7 @@ const ShopAll = () => {
                 position: "relative",
               }}
             >
-              <div
+              <Box
                 style={{
                   position: "absolute",
                   maxWidth: "92px",
@@ -436,7 +431,7 @@ const ShopAll = () => {
                 >
                   Sold Out
                 </p>
-              </div>
+              </Box>
               <img
                 src={product3}
                 style={{
@@ -448,10 +443,10 @@ const ShopAll = () => {
                   zIndex: "1",
                 }}
               />
-            </div>
+            </Box>
 
             {/* CAPTION */}
-            <div
+            <Box
               className="Info"
               style={{
                 width: 278.25,
@@ -464,7 +459,7 @@ const ShopAll = () => {
                 display: "flex",
               }}
             >
-              <div
+              <Box
                 style={{
                   height: "100px",
                   gap: 8,
@@ -474,7 +469,7 @@ const ShopAll = () => {
                 }}
               >
                 <RatingStars />
-                <div
+                <Box
                   style={{
                     height: "26px",
                     display: "flex",
@@ -493,9 +488,9 @@ const ShopAll = () => {
                   >
                     Roladan Kit
                   </p>
-                </div>
+                </Box>
 
-                <div
+                <Box
                   style={{
                     gap: 8,
                     display: "flex",
@@ -504,7 +499,7 @@ const ShopAll = () => {
                     height: "26px",
                   }}
                 >
-                  <div
+                  <Box
                     style={{
                       textAlign: "center",
                       color: "#473838",
@@ -517,9 +512,9 @@ const ShopAll = () => {
                     }}
                   >
                     $500
-                  </div>
+                  </Box>
 
-                  <div
+                  <Box
                     style={{
                       textAlign: "center",
                       color: "#F7AFBC",
@@ -531,21 +526,21 @@ const ShopAll = () => {
                     }}
                   >
                     $186
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+                  </Box>
+                </Box>
+              </Box>
+            </Box>
+          </Box>
 
           {/* one card image */}
-          <div
+          <Box
             style={{
               width: "278.25px",
               height: "448px",
               gap: "8px",
             }}
           >
-            <div
+            <Box
               className="hover_product"
               style={{
                 width: "278.25px",
@@ -556,7 +551,7 @@ const ShopAll = () => {
                 position: "relative",
               }}
             >
-              <div
+              <Box
                 className="hover_content"
                 style={{
                   position: "absolute",
@@ -572,8 +567,8 @@ const ShopAll = () => {
                 <Link to="/addcart" className="hover_button">
                   Add to Cart
                 </Link>
-              </div>
-              <div
+              </Box>
+              <Box
                 style={{
                   position: "absolute",
                   maxWidth: "92px",
@@ -598,7 +593,7 @@ const ShopAll = () => {
                 >
                   Save 14%
                 </p>
-              </div>
+              </Box>
               <img
                 src={product4}
                 style={{
@@ -609,10 +604,10 @@ const ShopAll = () => {
                   left: "23px",
                 }}
               />
-            </div>
+            </Box>
 
             {/* CAPTION */}
-            <div
+            <Box
               className="Info"
               style={{
                 width: 278.25,
@@ -625,7 +620,7 @@ const ShopAll = () => {
                 display: "flex",
               }}
             >
-              <div
+              <Box
                 style={{
                   height: "100px",
                   gap: 8,
@@ -635,7 +630,7 @@ const ShopAll = () => {
                 }}
               >
                 <RatingStars />
-                <div
+                <Box
                   style={{
                     height: "26px",
                     display: "flex",
@@ -654,9 +649,9 @@ const ShopAll = () => {
                   >
                     Lano Serum
                   </p>
-                </div>
+                </Box>
 
-                <div
+                <Box
                   style={{
                     gap: 8,
                     display: "flex",
@@ -665,7 +660,7 @@ const ShopAll = () => {
                     height: "26px",
                   }}
                 >
-                  <div
+                  <Box
                     style={{
                       textAlign: "center",
                       color: "#473838",
@@ -678,9 +673,9 @@ const ShopAll = () => {
                     }}
                   >
                     $200
-                  </div>
+                  </Box>
 
-                  <div
+                  <Box
                     style={{
                       textAlign: "center",
                       color: "#F7AFBC",
@@ -692,22 +687,22 @@ const ShopAll = () => {
                     }}
                   >
                     $186
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+                  </Box>
+                </Box>
+              </Box>
+            </Box>
+          </Box>
 
           {/* one card image */}
 
-          <div
+          <Box
             style={{
               width: "278.25px",
               height: "448px",
               gap: "8px",
             }}
           >
-            <div
+            <Box
               style={{
                 width: "278.25px",
                 height: "340px",
@@ -716,7 +711,7 @@ const ShopAll = () => {
                 position: "relative",
               }}
             >
-              <div
+              <Box
                 style={{
                   position: "absolute",
                   maxWidth: "92px",
@@ -741,7 +736,7 @@ const ShopAll = () => {
                 >
                   Sold Out
                 </p>
-              </div>
+              </Box>
               <img
                 src={product5}
                 style={{
@@ -753,10 +748,10 @@ const ShopAll = () => {
                   zIndex: "1",
                 }}
               />
-            </div>
+            </Box>
 
             {/* CAPTION */}
-            <div
+            <Box
               className="Info"
               style={{
                 width: 278.25,
@@ -769,7 +764,7 @@ const ShopAll = () => {
                 display: "flex",
               }}
             >
-              <div
+              <Box
                 style={{
                   height: "100px",
                   gap: 8,
@@ -779,7 +774,7 @@ const ShopAll = () => {
                 }}
               >
                 <RatingStars />
-                <div
+                <Box
                   style={{
                     height: "26px",
                     display: "flex",
@@ -798,9 +793,9 @@ const ShopAll = () => {
                   >
                     Lip Balm
                   </p>
-                </div>
+                </Box>
 
-                <div
+                <Box
                   style={{
                     gap: 8,
                     display: "flex",
@@ -809,7 +804,7 @@ const ShopAll = () => {
                     height: "26px",
                   }}
                 >
-                  <div
+                  <Box
                     style={{
                       textAlign: "center",
                       color: "#473838",
@@ -822,9 +817,9 @@ const ShopAll = () => {
                     }}
                   >
                     $20
-                  </div>
+                  </Box>
 
-                  <div
+                  <Box
                     style={{
                       textAlign: "center",
                       color: "#F7AFBC",
@@ -836,21 +831,21 @@ const ShopAll = () => {
                     }}
                   >
                     $15
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+                  </Box>
+                </Box>
+              </Box>
+            </Box>
+          </Box>
 
           {/* one card image */}
-          <div
+          <Box
             style={{
               width: "278.25px",
               height: "448px",
               gap: "29px",
             }}
           >
-            <div
+            <Box
               className="hover_product"
               style={{
                 width: "278.25px",
@@ -860,7 +855,7 @@ const ShopAll = () => {
                 position: "relative",
               }}
             >
-              <div
+              <Box
                 className="hover_content"
                 style={{
                   position: "absolute",
@@ -876,8 +871,8 @@ const ShopAll = () => {
                 <Link to="/addcart" className="hover_button">
                   Add to Cart
                 </Link>
-              </div>
-              <div
+              </Box>
+              <Box
                 style={{
                   position: "absolute",
                   maxWidth: "92px",
@@ -902,7 +897,7 @@ const ShopAll = () => {
                 >
                   Save 5%
                 </p>
-              </div>
+              </Box>
               <img
                 src={product6}
                 style={{
@@ -913,10 +908,10 @@ const ShopAll = () => {
                   left: "23px",
                 }}
               />
-            </div>
+            </Box>
 
             {/* CAPTION */}
-            <div
+            <Box
               className="Info"
               style={{
                 width: 278.25,
@@ -929,7 +924,7 @@ const ShopAll = () => {
                 display: "flex",
               }}
             >
-              <div
+              <Box
                 style={{
                   height: "100px",
                   gap: 8,
@@ -939,7 +934,7 @@ const ShopAll = () => {
                 }}
               >
                 <RatingStars />
-                <div
+                <Box
                   style={{
                     height: "26px",
                     display: "flex",
@@ -958,9 +953,9 @@ const ShopAll = () => {
                   >
                     Lim Lip Gloss
                   </p>
-                </div>
+                </Box>
 
-                <div
+                <Box
                   style={{
                     gap: 8,
                     display: "flex",
@@ -969,7 +964,7 @@ const ShopAll = () => {
                     height: "26px",
                   }}
                 >
-                  <div
+                  <Box
                     style={{
                       textAlign: "center",
                       color: "#473838",
@@ -982,9 +977,9 @@ const ShopAll = () => {
                     }}
                   >
                     $200
-                  </div>
+                  </Box>
 
-                  <div
+                  <Box
                     style={{
                       textAlign: "center",
                       color: "#F7AFBC",
@@ -996,21 +991,21 @@ const ShopAll = () => {
                     }}
                   >
                     $186
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+                  </Box>
+                </Box>
+              </Box>
+            </Box>
+          </Box>
 
           {/* one card image */}
-          <div
+          <Box
             style={{
               width: "278.25px",
               height: "448px",
               gap: "8px",
             }}
           >
-            <div
+            <Box
               className="hover_product"
               style={{
                 width: "278.25px",
@@ -1020,7 +1015,7 @@ const ShopAll = () => {
                 position: "relative",
               }}
             >
-              <div
+              <Box
                 className="hover_content"
                 style={{
                   position: "absolute",
@@ -1036,8 +1031,8 @@ const ShopAll = () => {
                 <Link to="/addcart" className="hover_button">
                   Add to Cart
                 </Link>
-              </div>
-              <div
+              </Box>
+              <Box
                 style={{
                   position: "absolute",
                   maxWidth: "92px",
@@ -1062,7 +1057,7 @@ const ShopAll = () => {
                 >
                   Save 14%
                 </p>
-              </div>
+              </Box>
               <img
                 src={product7}
                 style={{
@@ -1073,10 +1068,10 @@ const ShopAll = () => {
                   left: "23px",
                 }}
               />
-            </div>
+            </Box>
 
             {/* CAPTION */}
-            <div
+            <Box
               className="Info"
               style={{
                 width: 278.25,
@@ -1089,7 +1084,7 @@ const ShopAll = () => {
                 display: "flex",
               }}
             >
-              <div
+              <Box
                 style={{
                   height: "100px",
                   gap: 8,
@@ -1099,7 +1094,7 @@ const ShopAll = () => {
                 }}
               >
                 <RatingStars />
-                <div
+                <Box
                   style={{
                     height: "26px",
                     display: "flex",
@@ -1118,9 +1113,9 @@ const ShopAll = () => {
                   >
                     Branti Lipstick
                   </p>
-                </div>
+                </Box>
 
-                <div
+                <Box
                   style={{
                     gap: 8,
                     display: "flex",
@@ -1129,7 +1124,7 @@ const ShopAll = () => {
                     height: "26px",
                   }}
                 >
-                  <div
+                  <Box
                     style={{
                       textAlign: "center",
                       color: "#473838",
@@ -1142,9 +1137,9 @@ const ShopAll = () => {
                     }}
                   >
                     $200
-                  </div>
+                  </Box>
 
-                  <div
+                  <Box
                     style={{
                       textAlign: "center",
                       color: "#F7AFBC",
@@ -1156,21 +1151,21 @@ const ShopAll = () => {
                     }}
                   >
                     $186
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+                  </Box>
+                </Box>
+              </Box>
+            </Box>
+          </Box>
 
           {/* one card image */}
-          <div
+          <Box
             style={{
               width: "278.25px",
               height: "448px",
               gap: "8px",
             }}
           >
-            <div
+            <Box
               className="hover_product"
               style={{
                 width: "278.25px",
@@ -1180,7 +1175,7 @@ const ShopAll = () => {
                 position: "relative",
               }}
             >
-              <div
+              <Box
                 className="hover_content"
                 style={{
                   position: "absolute",
@@ -1196,8 +1191,8 @@ const ShopAll = () => {
                 <Link to="/addcart" className="hover_button">
                   Add to Cart
                 </Link>
-              </div>
-              <div
+              </Box>
+              <Box
                 style={{
                   position: "absolute",
                   maxWidth: "92px",
@@ -1222,7 +1217,7 @@ const ShopAll = () => {
                 >
                   Save 14%
                 </p>
-              </div>
+              </Box>
               <img
                 src={product8}
                 style={{
@@ -1233,10 +1228,10 @@ const ShopAll = () => {
                   left: "23px",
                 }}
               />
-            </div>
+            </Box>
 
             {/* CAPTION */}
-            <div
+            <Box
               className="Info"
               style={{
                 width: 278.25,
@@ -1249,7 +1244,7 @@ const ShopAll = () => {
                 display: "flex",
               }}
             >
-              <div
+              <Box
                 style={{
                   height: "100px",
                   gap: 8,
@@ -1259,7 +1254,7 @@ const ShopAll = () => {
                 }}
               >
                 <RatingStars />
-                <div
+                <Box
                   style={{
                     height: "26px",
                     display: "flex",
@@ -1278,9 +1273,9 @@ const ShopAll = () => {
                   >
                     Sekine Shower Gel
                   </p>
-                </div>
+                </Box>
 
-                <div
+                <Box
                   style={{
                     gap: 8,
                     display: "flex",
@@ -1289,7 +1284,7 @@ const ShopAll = () => {
                     height: "26px",
                   }}
                 >
-                  <div
+                  <Box
                     style={{
                       textAlign: "center",
                       color: "#473838",
@@ -1302,9 +1297,9 @@ const ShopAll = () => {
                     }}
                   >
                     $430
-                  </div>
+                  </Box>
 
-                  <div
+                  <Box
                     style={{
                       textAlign: "center",
                       color: "#F7AFBC",
@@ -1316,20 +1311,20 @@ const ShopAll = () => {
                     }}
                   >
                     $400
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+                  </Box>
+                </Box>
+              </Box>
+            </Box>
+          </Box>
 
           {/* one card image */}
-          <div
+          <Box
             style={{
               width: "278.25px",
               height: "448px",
             }}
           >
-            <div
+            <Box
               className="hover_product"
               style={{
                 width: "278.25px",
@@ -1339,7 +1334,7 @@ const ShopAll = () => {
                 position: "relative",
               }}
             >
-              <div
+              <Box
                 className="hover_content"
                 style={{
                   position: "absolute",
@@ -1355,8 +1350,8 @@ const ShopAll = () => {
                 <Link to="/addcart" className="hover_button">
                   Add to Cart
                 </Link>
-              </div>
-              <div
+              </Box>
+              <Box
                 style={{
                   position: "absolute",
                   maxWidth: "92px",
@@ -1381,7 +1376,7 @@ const ShopAll = () => {
                 >
                   Save 14%
                 </p>
-              </div>
+              </Box>
               <img
                 src={product9}
                 style={{
@@ -1392,10 +1387,10 @@ const ShopAll = () => {
                   left: "23px",
                 }}
               />
-            </div>
+            </Box>
 
             {/* CAPTION */}
-            <div
+            <Box
               className="Info"
               style={{
                 width: 278.25,
@@ -1408,7 +1403,7 @@ const ShopAll = () => {
                 display: "flex",
               }}
             >
-              <div
+              <Box
                 style={{
                   height: "100px",
                   gap: 8,
@@ -1418,7 +1413,7 @@ const ShopAll = () => {
                 }}
               >
                 <RatingStars />
-                <div
+                <Box
                   style={{
                     height: "26px",
                     display: "flex",
@@ -1437,9 +1432,9 @@ const ShopAll = () => {
                   >
                     Kora Body Wash
                   </p>
-                </div>
+                </Box>
 
-                <div
+                <Box
                   style={{
                     gap: 8,
                     display: "flex",
@@ -1448,7 +1443,7 @@ const ShopAll = () => {
                     height: "26px",
                   }}
                 >
-                  <div
+                  <Box
                     style={{
                       textAlign: "center",
                       color: "#473838",
@@ -1461,9 +1456,9 @@ const ShopAll = () => {
                     }}
                   >
                     $200
-                  </div>
+                  </Box>
 
-                  <div
+                  <Box
                     style={{
                       textAlign: "center",
                       color: "#F7AFBC",
@@ -1475,21 +1470,21 @@ const ShopAll = () => {
                     }}
                   >
                     $186
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+                  </Box>
+                </Box>
+              </Box>
+            </Box>
+          </Box>
 
           {/* one card image */}
-          <div
+          <Box
             style={{
               width: "278.25px",
               height: "448px",
               gap: "8px",
             }}
           >
-            <div
+            <Box
               className="hover_product"
               style={{
                 width: "278.25px",
@@ -1499,7 +1494,7 @@ const ShopAll = () => {
                 position: "relative",
               }}
             >
-              <div
+              <Box
                 className="hover_content"
                 style={{
                   position: "absolute",
@@ -1515,8 +1510,8 @@ const ShopAll = () => {
                 <Link to="/addcart" className="hover_button">
                   Add to Cart
                 </Link>
-              </div>
-              <div
+              </Box>
+              <Box
                 style={{
                   position: "absolute",
                   maxWidth: "92px",
@@ -1541,7 +1536,7 @@ const ShopAll = () => {
                 >
                   Save 14%
                 </p>
-              </div>
+              </Box>
               <img
                 src={product10}
                 style={{
@@ -1552,10 +1547,10 @@ const ShopAll = () => {
                   left: "23px",
                 }}
               />
-            </div>
+            </Box>
 
             {/* CAPTION */}
-            <div
+            <Box
               className="Info"
               style={{
                 width: 278.25,
@@ -1568,7 +1563,7 @@ const ShopAll = () => {
                 display: "flex",
               }}
             >
-              <div
+              <Box
                 style={{
                   height: "100px",
                   gap: 8,
@@ -1578,7 +1573,7 @@ const ShopAll = () => {
                 }}
               >
                 <RatingStars />
-                <div
+                <Box
                   style={{
                     height: "26px",
                     display: "flex",
@@ -1597,9 +1592,9 @@ const ShopAll = () => {
                   >
                     Jami Face Cream
                   </p>
-                </div>
+                </Box>
 
-                <div
+                <Box
                   style={{
                     gap: 8,
                     display: "flex",
@@ -1608,7 +1603,7 @@ const ShopAll = () => {
                     height: "26px",
                   }}
                 >
-                  <div
+                  <Box
                     style={{
                       textAlign: "center",
                       color: "#473838",
@@ -1621,9 +1616,9 @@ const ShopAll = () => {
                     }}
                   >
                     $200
-                  </div>
+                  </Box>
 
-                  <div
+                  <Box
                     style={{
                       textAlign: "center",
                       color: "#F7AFBC",
@@ -1635,21 +1630,21 @@ const ShopAll = () => {
                     }}
                   >
                     $186
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+                  </Box>
+                </Box>
+              </Box>
+            </Box>
+          </Box>
 
           {/* one card image */}
-          <div
+          <Box
             style={{
               width: "278.25px",
               height: "448px",
               gap: "8px",
             }}
           >
-            <div
+            <Box
               className="hover_product"
               style={{
                 width: "278.25px",
@@ -1659,7 +1654,7 @@ const ShopAll = () => {
                 position: "relative",
               }}
             >
-              <div
+              <Box
                 className="hover_content"
                 style={{
                   position: "absolute",
@@ -1675,8 +1670,8 @@ const ShopAll = () => {
                 <Link to="/addcart" className="hover_button">
                   Add to Cart
                 </Link>
-              </div>
-              <div
+              </Box>
+              <Box
                 style={{
                   position: "absolute",
                   maxWidth: "92px",
@@ -1701,7 +1696,7 @@ const ShopAll = () => {
                 >
                   Save 14%
                 </p>
-              </div>
+              </Box>
               <img
                 src={product11}
                 style={{
@@ -1712,10 +1707,10 @@ const ShopAll = () => {
                   left: "23px",
                 }}
               />
-            </div>
+            </Box>
 
             {/* CAPTION */}
-            <div
+            <Box
               className="Info"
               style={{
                 width: 278.25,
@@ -1728,7 +1723,7 @@ const ShopAll = () => {
                 display: "flex",
               }}
             >
-              <div
+              <Box
                 style={{
                   height: "100px",
                   gap: 8,
@@ -1738,7 +1733,7 @@ const ShopAll = () => {
                 }}
               >
                 <RatingStars />
-                <div
+                <Box
                   style={{
                     height: "26px",
                     display: "flex",
@@ -1757,9 +1752,9 @@ const ShopAll = () => {
                   >
                     Sekine Make-up Kit
                   </p>
-                </div>
+                </Box>
 
-                <div
+                <Box
                   style={{
                     gap: 8,
                     display: "flex",
@@ -1768,7 +1763,7 @@ const ShopAll = () => {
                     height: "26px",
                   }}
                 >
-                  <div
+                  <Box
                     style={{
                       textAlign: "center",
                       color: "#473838",
@@ -1781,9 +1776,9 @@ const ShopAll = () => {
                     }}
                   >
                     $200
-                  </div>
+                  </Box>
 
-                  <div
+                  <Box
                     style={{
                       textAlign: "center",
                       color: "#F7AFBC",
@@ -1795,21 +1790,21 @@ const ShopAll = () => {
                     }}
                   >
                     $186
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+                  </Box>
+                </Box>
+              </Box>
+            </Box>
+          </Box>
 
           {/* one card image */}
-          <div
+          <Box
             style={{
               width: "278.25px",
               height: "448px",
               gap: "8px",
             }}
           >
-            <div
+            <Box
               className="hover_product"
               style={{
                 width: "278.25px",
@@ -1819,7 +1814,7 @@ const ShopAll = () => {
                 position: "relative",
               }}
             >
-              <div
+              <Box
                 className="hover_content"
                 style={{
                   position: "absolute",
@@ -1835,8 +1830,8 @@ const ShopAll = () => {
                 <Link to="/addcart" className="hover_button">
                   Add to Cart
                 </Link>
-              </div>
-              <div
+              </Box>
+              <Box
                 style={{
                   position: "absolute",
                   maxWidth: "92px",
@@ -1861,7 +1856,7 @@ const ShopAll = () => {
                 >
                   Save 14%
                 </p>
-              </div>
+              </Box>
               <img
                 src={product12}
                 style={{
@@ -1872,10 +1867,10 @@ const ShopAll = () => {
                   left: "23px",
                 }}
               />
-            </div>
+            </Box>
 
             {/* CAPTION */}
-            <div
+            <Box
               className="Info"
               style={{
                 width: 278.25,
@@ -1888,7 +1883,7 @@ const ShopAll = () => {
                 display: "flex",
               }}
             >
-              <div
+              <Box
                 style={{
                   height: "100px",
                   gap: 8,
@@ -1898,7 +1893,7 @@ const ShopAll = () => {
                 }}
               >
                 <RatingStars />
-                <div
+                <Box
                   style={{
                     height: "26px",
                     display: "flex",
@@ -1917,9 +1912,9 @@ const ShopAll = () => {
                   >
                     Ora Face Cream
                   </p>
-                </div>
+                </Box>
 
-                <div
+                <Box
                   style={{
                     gap: 8,
                     display: "flex",
@@ -1928,7 +1923,7 @@ const ShopAll = () => {
                     height: "26px",
                   }}
                 >
-                  <div
+                  <Box
                     style={{
                       textAlign: "center",
                       color: "#473838",
@@ -1941,9 +1936,9 @@ const ShopAll = () => {
                     }}
                   >
                     $200
-                  </div>
+                  </Box>
 
-                  <div
+                  <Box
                     style={{
                       textAlign: "center",
                       color: "#F7AFBC",
@@ -1955,14 +1950,14 @@ const ShopAll = () => {
                     }}
                   >
                     $186
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+                  </Box>
+                </Box>
+              </Box>
+            </Box>
+          </Box>
+        </Box>
       </Box>
-      {/* <PrevNext /> */}
+      <PrevNext />
     </Box>
   );
 };

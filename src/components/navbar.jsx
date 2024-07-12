@@ -238,8 +238,8 @@ const NavBar = () => {
       >
         <Box
           width={{ base: "none", md: "100%", lg: "90%", xl: "970px" }}
+          gap={{ md: "40px", lg: "46px" }}
           style={{
-            gap: "46px",
             display: "flex",
             flexDirection: "row",
             margin: "auto",
