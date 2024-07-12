@@ -25,9 +25,7 @@ function CheckoutPage() {
       <CheckoutTop />
       <CheckOut />
 
-      <div>
-        <Footer />
-      </div>
+      <div>{/* <Footer /> */}</div>
     </ChakraProvider>
   );
 }

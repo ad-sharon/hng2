@@ -27,7 +27,7 @@ function SetKitsPage() {
       <FilterTab />
       <SetKits />
 
-      <Footer />
+      {/* <Footer /> */}
     </ChakraProvider>
   );
 }

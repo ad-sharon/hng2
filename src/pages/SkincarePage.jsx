@@ -23,13 +23,10 @@ function SkincarePage() {
       <TopBar />
       <TimbuDiv />
       <NavBar />
-
       <FilterTab />
       <Skincare />
-
-      <div>
-        <Footer />
-      </div>
+      =
+      <Footer />
     </ChakraProvider>
   );
 }

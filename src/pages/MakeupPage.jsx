@@ -27,7 +27,7 @@ function MakeupPage() {
       <FilterTab />
       <Makeup />
 
-      <Footer />
+      {/* <Footer /> */}
     </ChakraProvider>
   );
 }

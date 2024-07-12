@@ -1957,7 +1957,6 @@ const ShopAll = () => {
           </Box>
         </Box>
       </Box>
-      <PrevNext />
     </Box>
   );
 };

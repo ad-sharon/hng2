@@ -29,7 +29,8 @@ function ShopAllPage() {
       </div>
 
       <ShopAll />
-      <Footer />
+
+      {/* <Footer /> */}
     </ChakraProvider>
   );
 }

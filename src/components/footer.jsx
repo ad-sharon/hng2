@@ -1,34 +1,38 @@
 import React from "react";
-import { Box } from "@chakra-ui/react";
+import { Box, useBreakpointValue } from "@chakra-ui/react";
 import TimbuDiv from "./timbu_div";
 
 const Footer = () => {
+  const footer = useBreakpointValue({ base: "column", xl: "row" });
+
   return (
     <Box
       style={{
-        position: "absolute",
         width: "100%",
-        height: "460px",
-        top: "2164px",
         display: "flex",
         flexDirection: "column",
-        alignItems: "center",
+        marginBottom: "auto",
       }}
     >
       <TimbuDiv />
+
       {/* main footer start */}
       <Box
+        height={{ base: "706px", xl: "402.43px" }}
         style={{
+          marginY: "auto",
           backgroundColor: "#EEE4E3",
-          height: "402.43px",
-          width: "1440px",
+          display: "flex",
+          justifyContent: "space-between",
         }}
       >
         {/* Box for all */}
         <Box
+          flexDirection={footer}
           style={{
+            gap: "16px",
             position: "absolute",
-            width: "1200px",
+            width: "100%",
             height: "210px",
             top: "144px",
             left: "121px",
@@ -38,22 +42,19 @@ const Footer = () => {
         >
           {/* Box for text and input */}
           <Box
+            gap="40px"
+            width={{ base: "90%", xl: "513px" }}
             style={{
-              width: "513px",
               height: "208px",
-              gap: "40px",
               flexDirection: "column",
-              display: "inline-flex",
+              display: "-flex",
             }}
           >
             {/* Box for only text */}
             <Box
               style={{
-                width: "513px",
                 height: "118px",
                 flexDirection: "column",
-                //   justifyContent: "flex-start",
-                //   alignItems: "flex-start",
                 gap: "8px",
                 display: "flex",
               }}
@@ -74,6 +75,7 @@ const Footer = () => {
 
               {/* Box for bottom text */}
               <Box
+                width={{ base: "80%", xl: "100%" }}
                 style={{
                   color: "#473838",
                   fontSize: "18px",
@@ -92,10 +94,8 @@ const Footer = () => {
 
             {/* Box for input */}
             <Box
+              width={{ base: "80%", xl: "502px" }}
               style={{
-                width: "502px",
-                //   justifyContent: "flex-start",
-                alignItems: "center",
                 display: "inline-flex",
               }}
             >
@@ -106,10 +106,8 @@ const Footer = () => {
                   height: "50px",
                   padding: "12px 16px",
                   backgroundColor: "#F8F8F8",
-                  // justifyContent: "flex-start",
                   alignItems: "center",
                   gap: "8px",
-                  display: "flex",
                 }}
               >
                 <Box
@@ -159,12 +157,11 @@ const Footer = () => {
 
           {/* other side */}
           <Box
+            flexDirection={footer}
+            gap={{ base: "16px", xl: "57px" }}
             style={{
               width: "526px",
-              height: "210px",
-              justifyContent: "flex-end",
-              alignItems: "flex-start",
-              gap: "57px",
+              height: "100%",
               display: "flex",
             }}
           >
@@ -196,7 +193,6 @@ const Footer = () => {
 
               <Box
                 style={{
-                  //   alignSelf: "stretch",
                   height: "155px",
                   flexDirection: "column",
                   justifyContent: "flex-start",
@@ -208,7 +204,6 @@ const Footer = () => {
                 {/* text1 */}
                 <Box
                   style={{
-                    // alignSelf: "stretch",
                     color: "#000",
                     fontSize: "18px",
                     fontFamily: "Kanit,sans-serif",
