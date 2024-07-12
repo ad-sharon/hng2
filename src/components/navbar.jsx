@@ -56,7 +56,7 @@ const NavBar = () => {
       {/* Title for desktop */}
       <Box
         width="100%"
-        display={{ base: "none", lg: "flex" }}
+        display={{ base: "none", xl: "flex" }}
         style={{
           backgroundColor: "#F7AFBC",
           height: "189px",
@@ -149,7 +149,7 @@ const NavBar = () => {
       {/* title for mobile */}
       <Box
         width="100%"
-        display={{ base: "block", lg: "none" }}
+        display={{ base: "block", xl: "none" }}
         style={{
           backgroundColor: "#F7AFBC",
           height: "234.7px",
@@ -165,11 +165,12 @@ const NavBar = () => {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
+            justifyContent: "center",
           }}
         >
           <Box
             style={{
-              width: "60%",
+              maxWidth: "90%",
               fontWeight: "600",
               color: "#fff",
               fontSize: "20px",
@@ -177,7 +178,6 @@ const NavBar = () => {
               lineHeight: "52px",
               letterSpacing: "-0.1px",
               textAlign: "center",
-              whiteSpace: "nowrap",
             }}
           >
             Radiant beauty for every skin glow

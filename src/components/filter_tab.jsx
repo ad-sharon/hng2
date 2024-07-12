@@ -9,7 +9,7 @@ import cart from "../assets/images/cart.png";
 const FilterTab = () => {
   return (
     <Box
-      display={{ base: "none", xl: "flex" }}
+      display={{ base: "none", md: "flex" }}
       style={{
         width: 1200,
         position: "absolute",

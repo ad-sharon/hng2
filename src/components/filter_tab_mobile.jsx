@@ -3,7 +3,7 @@ import { Box } from "@chakra-ui/react";
 
 const FilterMobile = () => {
   return (
-    <Box display={{ base: "block", xl: "none" }}>
+    <Box display={{ base: "block", md: "none" }}>
       <Box
         style={{
           display: "flex",

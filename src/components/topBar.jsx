@@ -12,7 +12,7 @@ const TopBar = () => {
       style={{
         backgroundColor: "#EEE4E3",
         height: "52px",
-        width: "100%",
+        minWidth: "100%",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -49,6 +49,7 @@ const TopBar = () => {
             color: "#241C1C",
             fontFamily: "Kanit",
             lineHeight: "26px",
+            whiteSpace: "nowrap",
           }}
         >
           {displayText}
