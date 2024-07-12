@@ -4,7 +4,7 @@ import TopBar from "../components/topBar";
 import TimbuDiv from "../components/timbu_div";
 import NavBar from "../components/navbar";
 import FilterTab from "../components/filter_tab";
-import SetKits from "../components/setkits";
+import Makeup from "../components/makeup";
 import Footer from "../components/footer";
 
 const theme = extendTheme({
@@ -17,7 +17,7 @@ const theme = extendTheme({
   },
 });
 
-function SetKitsPage() {
+function MakeupPage() {
   return (
     <ChakraProvider theme={theme}>
       <TopBar />
@@ -25,13 +25,11 @@ function SetKitsPage() {
       <NavBar />
 
       <FilterTab />
-      <SetKits />
+      <Makeup />
 
-      <div>
-        <Footer />
-      </div>
+      <Footer />
     </ChakraProvider>
   );
 }
 
-export default SetKitsPage;
+export default MakeupPage;

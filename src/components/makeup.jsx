@@ -1,5 +1,7 @@
 import React from "react";
+import { Box } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
+import RatingStars from "./rating_stars";
 import skincare1 from "..//assets/images/skincare1.png";
 import product2 from "..//assets/images/product2.png";
 import skincare3 from "..//assets/images/skincare3.png";
@@ -25,7 +27,7 @@ const Makeup = () => {
         height: "1596px",
         position: "absolute",
         gap: "114px",
-        top: "504px",
+        top: "554px",
       }}
     >
       <Box
@@ -108,7 +110,7 @@ const Makeup = () => {
               </Box>
 
               <img
-                src={product1}
+                src={skincare1}
                 style={{
                   width: "232px",
                   height: "286px",
@@ -433,7 +435,7 @@ const Makeup = () => {
                 </p>
               </Box>
               <img
-                src={product3}
+                src={skincare3}
                 style={{
                   width: "232px",
                   position: "absolute",
@@ -899,7 +901,7 @@ const Makeup = () => {
                 </p>
               </Box>
               <img
-                src={product6}
+                src={skincare6}
                 style={{
                   width: "232px",
                   position: "absolute",
@@ -1059,7 +1061,7 @@ const Makeup = () => {
                 </p>
               </Box>
               <img
-                src={product7}
+                src={skincare7}
                 style={{
                   width: "232px",
                   position: "absolute",
@@ -1698,7 +1700,7 @@ const Makeup = () => {
                 </p>
               </Box>
               <img
-                src={product11}
+                src={skincare11}
                 style={{
                   width: "232px",
                   position: "absolute",

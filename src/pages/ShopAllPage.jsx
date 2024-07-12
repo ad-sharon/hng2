@@ -5,7 +5,6 @@ import TimbuDiv from "../components/timbu_div";
 import NavBar from "../components/navbar";
 import FilterTab from "../components/filter_tab";
 import Footer from "../components/footer";
-import FilterMobile from "../components/filter_tab_mobile";
 import ShopAll from "../components/shop_all";
 
 const theme = extendTheme({
@@ -25,10 +24,12 @@ function ShopAllPage() {
       <TimbuDiv />
       <NavBar />
 
-      <FilterTab />
-      <FilterMobile />
+      <div>
+        <FilterTab />
+      </div>
+
       <ShopAll />
-      <div>{/* <Footer /> */}</div>
+      <Footer />
     </ChakraProvider>
   );
 }

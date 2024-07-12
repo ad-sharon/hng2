@@ -27,7 +27,7 @@ const Skincare = () => {
         height: "1596px",
         position: "absolute",
         gap: "114px",
-        top: "504px",
+        top: "554px",
       }}
     >
       <Box

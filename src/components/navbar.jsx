@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Box } from "@chakra-ui/react";
 import { Link, useLocation } from "react-router-dom";
 import women from "..//assets/images/women.png";
@@ -10,17 +10,38 @@ import cart from "..//assets/images/cart.png";
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [title, setTitle] = useState("");
+  const location = useLocation();
 
   const toggle_dropdown = () => {
     setIsOpen(!isOpen);
   };
 
-  const handleLinkClick = (e, path) => {
-    // Perform any action you need here
-    console.log("Navigating to:", path);
-  };
+  const handleLinkClick = (e, path) => {};
 
-  const location = useLocation();
+  // to change page title during page navigation
+  useEffect(() => {
+    switch (location.pathname) {
+      case "/":
+        setTitle("Shop All");
+        break;
+      case "/skincare":
+        setTitle("Skincare");
+        break;
+      case "/setkits":
+        setTitle("Sets & Kits");
+        break;
+      case "/makeup":
+        setTitle("Makeup");
+        break;
+      case "/byconcern":
+        setTitle("Shop by concern");
+        break;
+      default:
+        setTitle("Initial Title");
+    }
+    document.title = title;
+  }, [location]);
 
   const linkStyle = {
     padding: "12px 16px",
@@ -226,7 +247,7 @@ const NavBar = () => {
       </Box>
       {/* title for mobile end */}
 
-      {/* navbar */}
+      {/* navbar for desktop */}
       <Box
         display={{ base: "none", md: "block" }}
         width="100%"
@@ -316,81 +337,100 @@ const NavBar = () => {
         </Box>
       </Box>
 
-      {/* <Box display={{ base: "none", xl: "none" }} padding={"8px 0px"}>
+      {/* navbar for mobile */}
+      <Box
+        width={"80%"}
+        height={138}
+        top={318}
+        gap={16}
+        margin="auto"
+        display={{ base: "block", md: "none" }}
+        padding={"8px"}
+      >
         <Box
           style={{
-            width: "100%",
+            width: "90%",
             display: "flex",
             flexDirection: "row",
             backgroundColor: "#f8f8f8",
             justifyContent: "space-between",
+            cursor: "pointer",
           }}
         >
-          <img
-            src={hamburger}
-            style={{ width: 24, height: 24 }}
-            onClick={toggle_dropdown}
-          />{" "}
-          {isOpen ? "" : ""}
-          {isOpen && (
-            <div
-              style={{
-                width: 359,
-                height: "fit-content",
-                alignItems: "center",
-                letterSpacing: 0.09,
-                size: 18,
-                fontWeight: 400,
-                fontFamily: "Kanit",
-                color: "#000",
-                backgroundColor: "#fff",
-                display: "block",
-                opacity: 1,
-              }}
-            >
-              <Box>
-                {" "}
-                <Link to="/" onClick={(e) => handleLinkClick(e, "/shopall")}>
-                  Shop All
-                </Link>
-              </Box>
-              <Box>
-                {" "}
-                <Link
-                  to="/skincare"
-                  onClick={(e) => handleLinkClick(e, "/skincare")}
-                >
-                  Skincare
-                </Link>
-              </Box>
-              <Box>
-                <Link
-                  to="/setkits"
-                  onClick={(e) => handleLinkClick(e, "/setkits")}
-                >
-                  Sets & Kits
-                </Link>
-              </Box>
-              <Box>
-                {" "}
-                <Link
-                  to="/makeup"
-                  onClick={(e) => handleLinkClick(e, "/makeup")}
-                >
-                  Makeup
-                </Link>
-              </Box>
-              <Box>
-                {" "}
-                <Link
-                  to="/byconcern"
-                  onClick={(e) => handleLinkClick(e, "/byconcern")}
-                >
-                  Shop by concern
-                </Link>
-              </Box>
-            </div>
-          )}
+          <Box flexDirection="column">
+            <img
+              src={hamburger}
+              style={{ width: 24, height: 24 }}
+              onClick={toggle_dropdown}
+            />
+            {isOpen && (
+              <div
+                style={{
+                  maxWidth: 198,
+                  padding: "16px 16px",
+                  height: "fit-content",
+                  alignItems: "center",
+                  letterSpacing: 0.09,
+                  size: 18,
+                  fontWeight: 400,
+                  fontFamily: "Kanit",
+                  color: "#000",
+                  backgroundColor: "#fff",
+                  display: "block",
+                  opacity: 1,
+                  zIndex: "5",
+                  position: "absolute",
+                }}
+              >
+                <Box>
+                  {" "}
+                  <Link
+                    to="/"
+                    onClick={(e) => {
+                      handleLinkClick(e, "/", "Shop All");
+                    }}
+                  >
+                    Shop All
+                  </Link>
+                </Box>
+                <Box>
+                  <Link
+                    to="/skincare"
+                    onClick={(e) => {
+                      handleLinkClick(e, "/skincare");
+                    }}
+                  >
+                    Skincare
+                  </Link>
+                </Box>
+                <Box>
+                  <Link
+                    to="/setkits"
+                    onClick={(e) => handleLinkClick(e, "/setkits")}
+                  >
+                    Sets & Kits
+                  </Link>
+                </Box>
+                <Box>
+                  <Link
+                    to="/makeup"
+                    onClick={(e) => handleLinkClick(e, "/makeup")}
+                  >
+                    Makeup
+                  </Link>
+                </Box>
+                <Box>
+                  <Link
+                    to="/byconcern"
+                    onClick={(e) => handleLinkClick(e, "/byconcern")}
+                  >
+                    Shop by concern
+                  </Link>
+                </Box>
+              </div>
+            )}
+          </Box>
+
           <Box
             style={{
               height: "50px",
@@ -400,11 +440,73 @@ const NavBar = () => {
           >
             <img style={{ width: 24, height: 24 }} src={search} />
 
-            <Link to="/addcart">
+            <Link to="/cart">
               <img style={{ width: 24, height: 24 }} src={cart} alt="" />
             </Link>
           </Box>
-        </Box> */}
+        </Box>
+
+        <Box width="80%">
+          <Box
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              fontFamily: "Kanit",
+              fontWeight: "400",
+              fontSize: "18px",
+              lineHeight: "26px",
+              letterSpacing: "0.5px",
+              color: "#241C1C",
+              whiteSpace: "nowrap",
+            }}
+          >
+            <p style={{ padding: "12px 16px" }}>{title}</p>
+
+            <Box
+              style={{
+                width: 342,
+                height: 48,
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                gap: 10,
+                padding: "12px 16px",
+              }}
+            >
+              <Box>
+                <select
+                  style={{
+                    width: 161,
+                    height: 48,
+                    border: " 1px solid #d9d9d9",
+                    background: "transparent",
+                    color: "#473838",
+                  }}
+                >
+                  <option>Availability</option>
+                  <option>In stock</option>
+                  <option>Out of Stock</option>
+                </select>
+              </Box>
+              <Box>
+                <select
+                  style={{
+                    width: 161,
+                    height: 48,
+                    border: " 1px solid #d9d9d9",
+                    background: "transparent",
+                    color: "#473838",
+                  }}
+                >
+                  <option>Price</option>
+                  <option>Low to High</option>
+                  <option>High to Low</option>
+                </select>
+              </Box>
+            </Box>
+          </Box>
+        </Box>
+      </Box>
     </Box>
   );
 };
