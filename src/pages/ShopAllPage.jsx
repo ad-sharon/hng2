@@ -13,7 +13,7 @@ const theme = extendTheme({
   styles: {
     global: {
       body: {
-        bg: "#f8f8f8", // Using a color from Chakra's color palette
+        bg: "#f8f8f8",
       },
     },
   },

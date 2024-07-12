@@ -12,7 +12,7 @@ const TimbuBox = () => {
           md: "100%",
           lg: "100%",
           xl: "100%",
-          "2xl": "1440px",
+          "2xl": "100%",
         },
         height: "57.57px",
         backgroundColor: "#F8F8F8",
@@ -21,7 +21,7 @@ const TimbuBox = () => {
         alignItems: "center",
         gap: 6.86,
         display: "flex",
-        zIndex: "20",
+        zIndex: "2",
       }}
     >
       <Box

@@ -43,72 +43,35 @@ const NavBar = () => {
 
   return (
     <Box
-      width={{ base: "100%", "2xl": "1440px" }}
+      width="100%"
       style={{
         height: "238px",
         position: "relative",
-        margin: "0 auto",
+        margin: "auto",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
       }}
     >
-      {/* Title */}
+      {/* Title for desktop */}
       <Box
-        width={{ base: "100%", "2xl": "1440px" }}
-        display={{ base: "block", "2xl": "flex" }}
+        width="100%"
+        display={{ base: "none", lg: "flex" }}
         style={{
           backgroundColor: "#F7AFBC",
           height: "189px",
         }}
       >
         <Box
-          margin={{ base: "auto", xl: 0, "2xl": 0 }}
+          margin="0px"
           style={{
             width: "349.08px",
             height: "226.77px",
             top: "0.21px",
             left: "116.5px",
-            overflow: "hidden",
           }}
         >
           <Box
-            width={{ base: "80&", xl: "795px" }}
-            style={{
-              fontWeight: "600",
-              color: "#fff",
-              fontSize: "20px",
-              fontFamily: "Taviraj, sans-serif",
-              lineHeight: "52px",
-              letterSpacing: "-0.88px",
-              textAlign: "center",
-            }}
-          >
-            Radiant beauty for every skin glow
-          </Box>
-
-          <Box
-            width={{ base: "80&", xl: "795px" }}
-            style={{
-              height: "32px",
-              fontWeight: "400",
-              color: "#fff",
-              fontSize: "16px",
-              fontFamily: "Kanit, sans-serif",
-              lineHeight: "32px",
-              letterSpacing: "0.12px",
-              textAlign: "center",
-            }}
-          >
-            Inclusive skincare for every complexion, from light to deep
-          </Box>
-
-          <Box
-            display={{
-              base: "none",
-              xl: "block",
-              "2xl": "block",
-            }}
             className="Star1"
             style={{
               width: 188.26,
@@ -122,11 +85,6 @@ const NavBar = () => {
             <img src={star} />
           </Box>
           <Box
-            display={{
-              base: "none",
-              xl: "block",
-              "2xl": "block",
-            }}
             style={{
               position: "absolute",
               width: "279.48px",
@@ -140,11 +98,6 @@ const NavBar = () => {
         </Box>
 
         <Box
-          display={{
-            base: "none",
-            xl: "flex",
-            "2xl": "flex",
-          }}
           style={{
             position: "absolute",
             width: "795px",
@@ -152,6 +105,10 @@ const NavBar = () => {
             top: "51px",
             left: "481px",
             flexDirection: "column",
+            display: {
+              base: "none",
+              xl: "flex",
+            },
             gap: "4px",
           }}
         >
@@ -165,14 +122,6 @@ const NavBar = () => {
               lineHeight: "52px",
               letterSpacing: "-0.88px",
               textAlign: "center",
-              display: {
-                base: "none",
-                sm: "none",
-                md: "none",
-                lg: "none",
-                xl: "flex",
-                "2xl": "flex",
-              },
             }}
           >
             Radiant beauty for every skin glow
@@ -193,47 +142,98 @@ const NavBar = () => {
           >
             Inclusive skincare for every complexion, from light to deep
           </Box>
+        </Box>
+      </Box>
+      {/* title for desktop end */}
+
+      {/* title for mobile */}
+      <Box
+        width="100%"
+        display={{ base: "block", lg: "none" }}
+        style={{
+          backgroundColor: "#F7AFBC",
+          height: "234.7px",
+        }}
+      >
+        <Box
+          style={{
+            width: "100%",
+            height: "88px",
+            top: "51px",
+            left: "481px",
+            gap: "4px",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          <Box
+            style={{
+              width: "60%",
+              fontWeight: "600",
+              color: "#fff",
+              fontSize: "20px",
+              fontFamily: "Taviraj, sans-serif",
+              lineHeight: "52px",
+              letterSpacing: "-0.1px",
+              textAlign: "center",
+              whiteSpace: "nowrap",
+            }}
+          >
+            Radiant beauty for every skin glow
+          </Box>
 
           <Box
-            display={{
-              base: "block",
-              xl: "none",
-              "2xl": "none",
+            style={{
+              height: "32px",
+              width: "70%",
+              fontWeight: "400",
+              color: "#fff",
+              fontSize: "16px",
+              fontFamily: "Kanit, sans-serif",
+              lineHeight: "32px",
+              letterSpacing: "0.32px",
+              textAlign: "center",
             }}
+          >
+            Inclusive skincare for every complexion, from light to deep
+          </Box>
+        </Box>
+
+        <Box
+          display="flex"
+          alignItems="flex-end"
+          marginTop="33px"
+          justifyContent="center"
+          width="100%"
+          height="129.7px"
+        >
+          <Box
             className="Star1"
             style={{
               width: 114,
               height: 112.7,
-              left: 91.49,
-              top: 122,
-              position: "absolute",
               color: "#473838",
             }}
           >
             <img src={star} />
           </Box>
           <Box
-            display={{
-              base: "block",
-              xl: "none",
-              "2xl": "none",
-            }}
             style={{
-              position: "absolute",
-              width: "279.48px",
-              height: "200.21px",
-              top: "0.21px",
-              left: "186.1px",
+              width: "167.53px",
+              height: "129px",
             }}
           >
             <img src={women} alt="women" />
           </Box>
         </Box>
       </Box>
+      {/* title for mobile end */}
 
       {/* navbar */}
       <Box
-        width={{ base: "80%", xl: "1440px" }}
+        display={{ base: "none", md: "block" }}
+        width="100%"
         style={{
           height: "50px",
           backgroundColor: "#f8f8f8",
@@ -241,9 +241,8 @@ const NavBar = () => {
         }}
       >
         <Box
-          display={{ base: "none", xl: "block" }}
+          width={{ base: "none", md: "100%", lg: "90%", xl: "970px" }}
           style={{
-            width: "1047px",
             gap: "46px",
             display: "flex",
             flexDirection: "row",
@@ -251,7 +250,6 @@ const NavBar = () => {
           }}
         >
           <Box
-            display={{ base: "none", xl: "block" }}
             style={{
               width: "172.6px",
               height: "50px",
@@ -264,10 +262,7 @@ const NavBar = () => {
               Shop All
             </Link>
           </Box>
-          <Box
-            style={{ width: "172.6px", height: "50px" }}
-            display={{ base: "none", xl: "block" }}
-          >
+          <Box style={{ width: "172.6px", height: "50px" }}>
             <Link
               to="/skincare"
               style={
@@ -278,7 +273,6 @@ const NavBar = () => {
             </Link>
           </Box>
           <Box
-            display={{ base: "none", xl: "block" }}
             style={{
               width: "172.6px",
               height: "50px",
@@ -294,7 +288,6 @@ const NavBar = () => {
             </Link>
           </Box>
           <Box
-            display={{ base: "none", xl: "block" }}
             style={{
               width: "172.6px",
               height: "50px",
@@ -310,7 +303,6 @@ const NavBar = () => {
             </Link>
           </Box>
           <Box
-            display={{ base: "none", xl: "block" }}
             style={{
               width: "172.6px",
               height: "50px",
@@ -326,95 +318,95 @@ const NavBar = () => {
             </Link>
           </Box>
         </Box>
+      </Box>
 
-        <Box display={{ base: "block", xl: "none" }} padding={"8px 0px"}>
-          <Box
-            style={{
-              width: "100%",
-              display: "flex",
-              flexDirection: "row",
-              backgroundColor: "#f8f8f8",
-              justifyContent: "space-between",
-            }}
-          >
-            <img
-              src={hamburger}
-              style={{ width: 24, height: 24 }}
-              onClick={toggle_dropdown}
-            />{" "}
-            {isOpen ? "" : ""}
-            {isOpen && (
-              <div
-                style={{
-                  width: 359,
-                  height: "fit-content",
-                  alignItems: "center",
-                  letterSpacing: 0.09,
-                  size: 18,
-                  fontWeight: 400,
-                  fontFamily: "Kanit",
-                  color: "#000",
-                  backgroundColor: "#fff",
-                  display: "block",
-                  opacity: 1,
-                }}
-              >
-                <Box>
-                  {" "}
-                  <Link to="/" onClick={(e) => handleLinkClick(e, "/shopall")}>
-                    Shop All
-                  </Link>
-                </Box>
-                <Box>
-                  {" "}
-                  <Link
-                    to="/skincare"
-                    onClick={(e) => handleLinkClick(e, "/skincare")}
-                  >
-                    Skincare
-                  </Link>
-                </Box>
-                <Box>
-                  <Link
-                    to="/setkits"
-                    onClick={(e) => handleLinkClick(e, "/setkits")}
-                  >
-                    Sets & Kits
-                  </Link>
-                </Box>
-                <Box>
-                  {" "}
-                  <Link
-                    to="/makeup"
-                    onClick={(e) => handleLinkClick(e, "/makeup")}
-                  >
-                    Makeup
-                  </Link>
-                </Box>
-                <Box>
-                  {" "}
-                  <Link
-                    to="/byconcern"
-                    onClick={(e) => handleLinkClick(e, "/byconcern")}
-                  >
-                    Shop by concern
-                  </Link>
-                </Box>
-              </div>
-            )}
-            <Box
+      <Box display={{ base: "block", xl: "none" }} padding={"8px 0px"}>
+        <Box
+          style={{
+            width: "100%",
+            display: "flex",
+            flexDirection: "row",
+            backgroundColor: "#f8f8f8",
+            justifyContent: "space-between",
+          }}
+        >
+          <img
+            src={hamburger}
+            style={{ width: 24, height: 24 }}
+            onClick={toggle_dropdown}
+          />{" "}
+          {isOpen ? "" : ""}
+          {isOpen && (
+            <div
               style={{
-                height: "50px",
-                display: "flex",
-                gap: 8,
+                width: 359,
+                height: "fit-content",
+                alignItems: "center",
+                letterSpacing: 0.09,
+                size: 18,
+                fontWeight: 400,
+                fontFamily: "Kanit",
+                color: "#000",
+                backgroundColor: "#fff",
+                display: "block",
+                opacity: 1,
               }}
             >
-              <img style={{ width: 24, height: 24 }} src={search} />
+              <Box>
+                {" "}
+                <Link to="/" onClick={(e) => handleLinkClick(e, "/shopall")}>
+                  Shop All
+                </Link>
+              </Box>
+              <Box>
+                {" "}
+                <Link
+                  to="/skincare"
+                  onClick={(e) => handleLinkClick(e, "/skincare")}
+                >
+                  Skincare
+                </Link>
+              </Box>
+              <Box>
+                <Link
+                  to="/setkits"
+                  onClick={(e) => handleLinkClick(e, "/setkits")}
+                >
+                  Sets & Kits
+                </Link>
+              </Box>
+              <Box>
+                {" "}
+                <Link
+                  to="/makeup"
+                  onClick={(e) => handleLinkClick(e, "/makeup")}
+                >
+                  Makeup
+                </Link>
+              </Box>
+              <Box>
+                {" "}
+                <Link
+                  to="/byconcern"
+                  onClick={(e) => handleLinkClick(e, "/byconcern")}
+                >
+                  Shop by concern
+                </Link>
+              </Box>
+            </div>
+          )}
+          <Box
+            style={{
+              height: "50px",
+              display: "flex",
+              gap: 8,
+            }}
+          >
+            <img style={{ width: 24, height: 24 }} src={search} />
 
-              <Link to="/addcart">
-                <img style={{ width: 24, height: 24 }} src={cart} alt="" />
-              </Link>
-            </Box>
+            <Link to="/addcart">
+              <img style={{ width: 24, height: 24 }} src={cart} alt="" />
+            </Link>
           </Box>
         </Box>
       </Box>
