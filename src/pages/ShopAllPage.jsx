@@ -5,6 +5,7 @@ import TimbuDiv from "../components/timbu_div";
 import NavBar from "../components/navbar";
 import FilterTab from "../components/filter_tab";
 import Footer from "../components/footer";
+import PrevNext from "../components/prev_next";
 import ShopAll from "../components/shop_all";
 
 const theme = extendTheme({
@@ -29,6 +30,7 @@ function ShopAllPage() {
       </div>
 
       <ShopAll />
+      <PrevNext />
 
       {/* <Footer /> */}
     </ChakraProvider>

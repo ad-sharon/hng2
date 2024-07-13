@@ -2,15 +2,14 @@ import React from "react";
 import arrow_left from "..//assets/images/arrow_left.png";
 import arrow_right from "..//assets/images/arrow_right.png";
 
-const PrevNext = () => {
+const PrevNext = (currentPage, totalPages, onPageChange) => {
   return (
     <div
       style={{
-        width: "1200px",
-        height: "235px",
+        width: "100%",
         display: "flex",
-        justifyContent: "center", // Align content to the bottom
         alignItems: "center",
+        justifyContent: "center",
       }}
     >
       <div
@@ -33,6 +32,7 @@ const PrevNext = () => {
             gap: "8px",
             display: "flex",
           }}
+          onClick={() => currentPage > 1 && onPageChange(currentPage - 1)}
         >
           <div
             style={{
@@ -64,137 +64,38 @@ const PrevNext = () => {
           </div>
         </div>
 
-        {/* numbers */}
+        {/* Page Numbers */}
         <div
           style={{
             width: "207px",
             height: "38px",
+            display: "flex",
             alignItems: "center",
             gap: "8px",
-            display: "flex",
           }}
         >
-          <div
-            style={{
-              width: 32,
-              height: 28,
-              padding: "8px 12px",
-              backgroundColor: "#ED8174",
-              borderRadius: "8px",
-              flexDirection: "column",
-              justifyContent: "center",
-              display: "flex",
-            }}
-          >
+          {[...Array(totalPages)].map((_, index) => (
             <div
+              key={index}
               style={{
-                color: "#fff",
-                fontSize: "18px",
-                fontFamily: "Kanit, sans-serif",
-                fontWeight: "400",
-                lineHeight: "26px",
-                letterSpacing: "0.09px",
+                width: "32px",
+                height: "28px",
+                padding: "8px 12px",
+                backgroundColor:
+                  currentPage === index + 1 ? "#ED8174" : "transparent",
+                borderRadius: "8px",
+                display: "flex",
+                justifyContent: "center",
+                cursor: "pointer",
+                color: currentPage === index + 1 ? "#fff" : "#473838",
               }}
+              onClick={() => onPageChange(index + 1)}
             >
-              1
+              <div style={{ fontSize: "18px", fontFamily: "Kanit" }}>
+                {index + 1}
+              </div>
             </div>
-          </div>
-
-          <div
-            style={{
-              width: "32px",
-              height: "28px",
-              padding: "8px 12px",
-              flexDirection: "column",
-              justifyContent: "center",
-              display: "flex",
-            }}
-          >
-            <div
-              style={{
-                color: "#473838",
-                fontSize: "18px",
-                fontFamily: "Kanit, sans-serif",
-                fontWeight: "400",
-                lineHeight: "26px",
-                letterSpacing: "0.09px",
-              }}
-            >
-              2
-            </div>
-          </div>
-
-          <div
-            style={{
-              width: "32px",
-              height: "28px",
-              padding: "8px 12px",
-              flexDirection: "column",
-              justifyContent: "center",
-              display: "flex",
-            }}
-          >
-            <div
-              style={{
-                color: "#473838",
-                fontSize: "18px",
-                fontFamily: "Kanit, sans-serif",
-                fontWeight: "400",
-                lineHeight: "26px",
-                letterSpacing: "0.09px",
-              }}
-            >
-              3
-            </div>
-          </div>
-          <div
-            style={{
-              paddingLeft: 16,
-              paddingRight: 16,
-              paddingTop: 8,
-              paddingBottom: 8,
-              borderRadius: 8,
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-              display: "inline-flex",
-            }}
-          >
-            <div
-              style={{
-                color: "#000",
-                fontSize: "16px",
-                fontFamily: "Inter, sans-serif",
-                fontWeight: "700",
-                lineHeight: "22.4px",
-              }}
-            >
-              ...
-            </div>
-          </div>
-          <div
-            style={{
-              width: "32px",
-              height: "28px",
-              padding: "8px 12px",
-              flexDirection: "column",
-              justifyContent: "center",
-              display: "flex",
-            }}
-          >
-            <div
-              style={{
-                color: "#473838",
-                fontSize: "18px",
-                fontFamily: "Kanit, sans-serif",
-                fontWeight: "400",
-                lineHeight: "26px",
-                letterSpacing: "0.09px",
-              }}
-            >
-              5
-            </div>
-          </div>
+          ))}
         </div>
 
         <div
