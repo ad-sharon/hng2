@@ -19,7 +19,6 @@ const ShopAll = () => {
       try {
         const data = await fetchProducts();
         setProducts(data || []);
-        console.log("Products:", data);
       } catch (err) {
         setError("Error fetching products");
       } finally {
@@ -43,7 +42,6 @@ const ShopAll = () => {
         top: "554px",
       }}
     >
-      {" "}
       {products.length > 0 ? (
         <Box
           style={{
@@ -62,190 +60,185 @@ const ShopAll = () => {
               justifyContent: "center",
             }}
           >
-            {products.map(
-              (product) => (
-                console.log("Product photos:", product.photos),
-                (
+            {products.map((product) => (
+              <Box
+                key={product.unique_id}
+                style={{
+                  width: "278.25px",
+                  height: "448px",
+                  gap: "8px",
+                }}
+              >
+                <Box
+                  className="hover_product"
+                  style={{
+                    width: "278.25px",
+                    height: "340px",
+                    backgroundColor: "#f1f0f0",
+                    display: "flex",
+                  }}
+                >
                   <Box
-                    key={product.unique_id}
+                    className="hover_content"
                     style={{
-                      width: "278.25px",
-                      height: "448px",
-                      gap: "8px",
+                      position: "absolute",
+                      top: "0",
+                      left: "0",
+                      right: "0",
+                      bottom: "0",
+                      display: "flex",
+                      flexDirection: "column",
+                      zIndex: "1",
+                    }}
+                  >
+                    <Link to="/addcart" className="hover_button">
+                      Add to Cart
+                    </Link>
+                  </Box>
+                  <Box
+                    style={{
+                      position: "absolute",
+                      maxWidth: "92px",
+                      maxHeight: "30px",
+                      top: "-1px",
+                      left: "-1px",
+                      padding: "4px 8px 4px 8px",
+                      backgroundColor: "#EEE4E3 ",
+                      zIndex: "2",
+                    }}
+                  >
+                    <p
+                      style={{
+                        width: "56px",
+                        fontFamily: "Kanit",
+                        fontWeight: "400",
+                        fontSize: "14px",
+                        lineHeight: "22px",
+                        letterSpacing: "0.07px",
+                        textAlign: "center",
+                        whiteSpace: "nowrap",
+                      }}
+                    >
+                      Save 14%
+                    </p>
+                  </Box>
+
+                  <img
+                    src={`https://api.timbu.cloud/images/${product.photos[0].url}`}
+                    alt={product.name}
+                    style={{
+                      width: "232px",
+                      height: "286px",
+                      position: "absolute",
+                      height: "286px",
+                      top: "27px",
+                      left: "23px",
+                    }}
+                  />
+                </Box>
+
+                {/* CAPTION */}
+                <Box
+                  className="Info"
+                  style={{
+                    width: 278.25,
+                    height: 100,
+                    position: "relative",
+                    flexDirection: "column",
+                    justifyContent: "flex-start",
+                    alignItems: "center",
+                    gap: 24,
+                    display: "flex",
+                  }}
+                >
+                  <Box
+                    style={{
+                      height: "100px",
+                      gap: 8,
+                      alignItems: "center",
+                      flexDirection: "column",
+                      display: "flex",
                     }}
                   >
                     <Box
-                      className="hover_product"
                       style={{
-                        width: "278.25px",
-                        height: "340px",
-                        backgroundColor: "#f1f0f0",
+                        height: "100px",
+                        gap: 8,
+                        alignItems: "center",
+                        flexDirection: "column",
                         display: "flex",
                       }}
                     >
+                      <RatingStars />
+
                       <Box
-                        className="hover_content"
                         style={{
-                          position: "absolute",
-                          top: "0",
-                          left: "0",
-                          right: "0",
-                          bottom: "0",
+                          height: "26px",
                           display: "flex",
-                          flexDirection: "column",
-                          zIndex: "1",
-                        }}
-                      >
-                        <Link to="/addcart" className="hover_button">
-                          Add to Cart
-                        </Link>
-                      </Box>
-                      <Box
-                        style={{
-                          position: "absolute",
-                          maxWidth: "92px",
-                          maxHeight: "30px",
-                          top: "-1px",
-                          left: "-1px",
-                          padding: "4px 8px 4px 8px",
-                          backgroundColor: "#EEE4E3 ",
-                          zIndex: "2",
+                          alignItems: "center",
                         }}
                       >
                         <p
                           style={{
-                            width: "56px",
+                            textAlign: "center",
+                            color: "#473838",
+                            fontSize: 18,
                             fontFamily: "Kanit",
                             fontWeight: "400",
-                            fontSize: "14px",
-                            lineHeight: "22px",
-                            letterSpacing: "0.07px",
-                            textAlign: "center",
-                            whiteSpace: "nowrap",
+                            letterSpacing: 0.09,
                           }}
                         >
-                          Save 14%
+                          {product.name}
                         </p>
                       </Box>
 
-                      <img
-                        src={`https://api.timbu.cloud/images/${product.photos[0].url}`}
-                        alt={product.name}
-                        style={{
-                          width: "232px",
-                          height: "286px",
-                          position: "absolute",
-                          height: "286px",
-                          top: "27px",
-                          left: "23px",
-                        }}
-                      />
-                    </Box>
-
-                    {/* CAPTION */}
-                    <Box
-                      className="Info"
-                      style={{
-                        width: 278.25,
-                        height: 100,
-                        position: "relative",
-                        flexDirection: "column",
-                        justifyContent: "flex-start",
-                        alignItems: "center",
-                        gap: 24,
-                        display: "flex",
-                      }}
-                    >
                       <Box
                         style={{
-                          height: "100px",
                           gap: 8,
-                          alignItems: "center",
-                          flexDirection: "column",
                           display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                          height: "26px",
                         }}
                       >
                         <Box
                           style={{
-                            height: "100px",
-                            gap: 8,
-                            alignItems: "center",
-                            flexDirection: "column",
-                            display: "flex",
+                            textAlign: "center",
+                            color: "#473838",
+                            fontSize: 24,
+                            fontFamily: "Kanit",
+                            fontWeight: "400",
+                            textDecoration: "line-through",
+                            lineHeight: 32,
+                            letterSpacing: 0.12,
                           }}
                         >
-                          <RatingStars />
+                          $200
+                        </Box>
 
-                          <Box
-                            style={{
-                              height: "26px",
-                              display: "flex",
-                              alignItems: "center",
-                            }}
-                          >
-                            <p
-                              style={{
-                                textAlign: "center",
-                                color: "#473838",
-                                fontSize: 18,
-                                fontFamily: "Kanit",
-                                fontWeight: "400",
-                                letterSpacing: 0.09,
-                              }}
-                            >
-                              {product.name}
-                            </p>
-                          </Box>
-
-                          <Box
-                            style={{
-                              gap: 8,
-                              display: "flex",
-                              justifyContent: "center",
-                              alignItems: "center",
-                              height: "26px",
-                            }}
-                          >
-                            <Box
-                              style={{
-                                textAlign: "center",
-                                color: "#473838",
-                                fontSize: 24,
-                                fontFamily: "Kanit",
-                                fontWeight: "400",
-                                textDecoration: "line-through",
-                                lineHeight: 32,
-                                letterSpacing: 0.12,
-                              }}
-                            >
-                              $200
-                            </Box>
-
-                            <Box
-                              style={{
-                                textAlign: "center",
-                                color: "#F7AFBC",
-                                fontSize: 24,
-                                fontFamily: "Kanit",
-                                fontWeight: "700",
-                                lineHeight: 32,
-                                letterSpacing: 0.12,
-                              }}
-                            >
-                              {product.current_price[0]?.NGN[0]}
-                            </Box>
-                          </Box>
+                        <Box
+                          style={{
+                            textAlign: "center",
+                            color: "#F7AFBC",
+                            fontSize: 24,
+                            fontFamily: "Kanit",
+                            fontWeight: "700",
+                            lineHeight: 32,
+                            letterSpacing: 0.12,
+                          }}
+                        >
+                          {product.current_price[0]?.NGN[0]}
                         </Box>
                       </Box>
                     </Box>
                   </Box>
-                )
-              )
-            )}
+                </Box>
+              </Box>
+            ))}
           </Box>
         </Box>
       ) : (
-        <div>None</div>
+        <div>No products available</div>
       )}
       <PrevNext />
     </Box>
