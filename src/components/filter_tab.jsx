@@ -5,6 +5,7 @@ import filterIcon from "..//assets/images/filter.png";
 import expandDown from "../assets/images/expand_down.png";
 import search from "../assets/images/search.png";
 import cart from "../assets/images/cart.png";
+import { useCart } from "../cart_context";
 
 const FilterTab = () => {
   // to handle navbar responsive on mobile
@@ -47,6 +48,8 @@ const FilterTab = () => {
     setSelectedOption2(option);
     setIsOpen2(false);
   };
+
+  const { cartCount } = useCart();
 
   return (
     <Box
@@ -231,6 +234,24 @@ const FilterTab = () => {
         <Box style={{ width: 24, height: 24 }}>
           <Link to="/cart">
             <img src={cart} alt="" />
+            {cartCount > 0 && (
+              <div
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  right: 0,
+                  width: "10px",
+                  height: "10px",
+                  borderRadius: "50%",
+                  backgroundColor: "red",
+                  color: "white",
+                  textAlign: "center",
+                  fontSize: "12px",
+                }}
+              >
+                {cartCount}
+              </div>
+            )}
           </Link>
         </Box>
       </Box>

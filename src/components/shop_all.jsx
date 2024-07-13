@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { Box } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import RatingStars from "./rating_stars";
 import PrevNext from "./prev_next";
 import "../hover_product.css";
 import { fetchProducts } from "../utils/requests";
+import { CartContext } from "../cart_context";
 
 const ShopAll = () => {
   // to show products
+  const { addToCart } = useContext(CartContext);
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -91,7 +93,10 @@ const ShopAll = () => {
                       zIndex: "1",
                     }}
                   >
-                    <Link to="/addcart" className="hover_button">
+                    <Link
+                      onClick={() => addToCart(product)}
+                      className="hover_button"
+                    >
                       Add to Cart
                     </Link>
                   </Box>

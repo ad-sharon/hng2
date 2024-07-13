@@ -7,8 +7,6 @@ import product6 from "..//assets/images/product6.png";
 import product7 from "..//assets/images/product7.png";
 import product8 from "..//assets/images/product8.png";
 import door from "../assets/images/door_delivery.png";
-import smallStar from "..//assets/images/smallStar.png";
-import plainStar from "..//assets/images/plainStar.png";
 import "../hover_product.css";
 import station from "../assets/images/station_pickup.png";
 

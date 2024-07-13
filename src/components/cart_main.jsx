@@ -1,8 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import cart from "../assets/images/cart.png";
-import CartItem1 from "./cart_item1";
-import CartItem2 from "./cart_item2";
+import CartItem1 from "./cart_item";
 import CartSide from "./cart_side";
 import product5 from "..//assets/images/product5.png";
 import product6 from "..//assets/images/product6.png";
@@ -29,7 +28,7 @@ const CartMain = () => {
       {/* cart tab div */}
       <div
         style={{
-          width: 1199,
+          width: "100%",
           height: 32,
           justifyContent: "space-between",
           display: "flex",
@@ -64,42 +63,24 @@ const CartMain = () => {
 
       <div
         style={{
-          width: 1200,
+          width: "100%",
           height: 465,
           gap: 120,
           display: "flex",
           flexDirection: "row",
         }}
       >
-        {/* 2 cart items */}
+        {/*cart items */}
         <div
           style={{
-            width: 1200,
+            width: "100%",
             height: 465,
             gap: 41,
             display: "flex",
             flexDirection: "column",
           }}
         >
-          <div
-            style={{
-              width: 767,
-              height: 465,
-            }}
-          >
-            <CartItem1 />
-          </div>
-          <div
-            style={{
-              width: 767,
-              height: 465,
-              gap: 41,
-              display: "flex",
-              flexDirection: "column",
-            }}
-          >
-            <CartItem2 />
-          </div>
+          <CartItem1 />
         </div>
         <div>
           <CartSide />

@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { Box } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-import CartItem1 from "./cart_item1";
-import CartItem2 from "./cart_item2";
+import CartItem from "./cart_item";
 import CheckOutButton from "./checkout_b";
 import Checkout_dropdown from "./checkout_dropdown";
 import expand from "../assets/images/expand_down.png";
@@ -93,18 +92,7 @@ const Checkout = () => {
                 height: 465,
               }}
             >
-              <CartItem1 />
-            </Box>
-            <Box
-              width={{ base: "40%", xl: "767" }}
-              style={{
-                height: 465,
-                gap: 41,
-                display: "flex",
-                flexDirection: "column",
-              }}
-            >
-              <CartItem2 />
+              <CartItem />
             </Box>
           </Box>
 

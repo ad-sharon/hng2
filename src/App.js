@@ -6,20 +6,23 @@ import SetKitsPage from "./pages/SetKitsPage";
 import MakeupPage from "./pages/MakeupPage";
 import CartPage from "./pages/CartPage";
 import CheckoutPage from "./pages/CheckoutPage";
+import { CartProvider } from "./cart_context";
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<ShopAllPage />} />
-        <Route path="/cart" element={<CartPage />} />
-        <Route path="/checkout" element={<CheckoutPage />} />
-        <Route path="/skincare" element={<SkincarePage />} />
-        <Route path="/makeup" element={<MakeupPage />} />
-        <Route path="/setkits" element={<SetKitsPage />} />
-        <Route path="/byconcern" element={<ShopAllPage />} />
-      </Routes>
-    </Router>
+    <CartProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<ShopAllPage />} />
+          <Route path="/cart" element={<CartPage />} />
+          <Route path="/checkout" element={<CheckoutPage />} />
+          <Route path="/skincare" element={<SkincarePage />} />
+          <Route path="/makeup" element={<MakeupPage />} />
+          <Route path="/setkits" element={<SetKitsPage />} />
+          <Route path="/byconcern" element={<ShopAllPage />} />
+        </Routes>
+      </Router>
+    </CartProvider>
   );
 }
 

@@ -40,7 +40,7 @@ function CartPage() {
       </Link>
 
       <CartMain />
-      <Footer />
+      {/* <Footer /> */}
     </ChakraProvider>
   );
 }
