@@ -3,14 +3,7 @@ import { Box } from "@chakra-ui/react";
 import arrow_left from "..//assets/images/arrow_left.png";
 import arrow_right from "..//assets/images/arrow_right.png";
 
-const PrevNext = ({ products }) => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const productsPerPage = 10;
-  const indexOfLastProduct = currentPage * productsPerPage;
-  const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
-  const pageProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
-  const totalPages = Math.ceil(products.length / productsPerPage);
-
+const PrevNext = ({ currentPage, setCurrentPage, totalPages }) => {
   return (
     <Box
       style={{
@@ -37,8 +30,13 @@ const PrevNext = ({ products }) => {
             borderRadius: "8px",
             gap: "8px",
             display: "flex",
+            cursor: currentPage === 1 ? "not-allowed" : "pointer",
           }}
-          onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+          onClick={() => {
+            if (currentPage > 1) {
+              setCurrentPage((prev) => prev - 1);
+            }
+          }}
         >
           <Box
             style={{
@@ -113,10 +111,13 @@ const PrevNext = ({ products }) => {
             alignItems: "center",
             gap: "8px",
             display: "flex",
+            cursor: currentPage === totalPages ? "not-allowed" : "pointer",
           }}
-          onClick={() =>
-            setCurrentPage((prev) => Math.min(prev + 1, totalPages))
-          }
+          onClick={() => {
+            if (currentPage < totalPages) {
+              setCurrentPage((prev) => prev + 1);
+            }
+          }}
         >
           <p
             disabled={currentPage === totalPages}

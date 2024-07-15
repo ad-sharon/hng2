@@ -14,11 +14,12 @@ const ShopAll = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
-  const productsPerPage = 12;
+  const productsPerPage = 10;
 
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
   const pageProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
+  const totalPages = Math.ceil(products.length / productsPerPage);
 
   useEffect(() => {
     const getProducts = async () => {
@@ -271,7 +272,7 @@ const ShopAll = () => {
       ) : (
         <div>No products available</div>
       )}
-      <PrevNext />
+      <PrevNext currentPage={currentPage} setCurrentPage={setCurrentPage} />
     </Box>
   );
 };
