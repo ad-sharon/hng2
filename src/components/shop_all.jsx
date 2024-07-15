@@ -7,7 +7,7 @@ import "../hover_product.css";
 import { fetchProducts } from "../utils/requests";
 import { CartContext } from "../cart_context";
 
-const ShopAll = ({ product }) => {
+const ShopAll = () => {
   // to show products
   const { addToCart } = useContext(CartContext);
   const [products, setProducts] = useState([]);

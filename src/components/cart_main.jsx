@@ -1,27 +1,45 @@
 import React from "react";
+import { useState, useEffect, useContext } from "react";
 import { Box } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import cart from "../assets/images/cart.png";
 import CartItem1 from "./cart_item";
 import CartSide from "./cart_side";
-import product5 from "..//assets/images/product5.png";
-import product6 from "..//assets/images/product6.png";
-import product7 from "..//assets/images/product7.png";
-import product8 from "..//assets/images/product8.png";
-import smallStar from "..//assets/images/smallStar.png";
-import plainStar from "..//assets/images/plainStar.png";
 import "../hover_product.css";
-
 import { useCart } from "../cart_context";
+import { fetchProducts } from "../utils/requests";
+import { CartContext } from "../cart_context";
 
 const CartMain = () => {
   const { clearCart } = useCart();
 
+  const { addToCart } = useContext(CartContext);
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+
+  useEffect(() => {
+    const getProducts = async () => {
+      try {
+        const data = await fetchProducts();
+        setProducts(data || []);
+      } catch (err) {
+        setError("Error fetching products");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    getProducts();
+  }, []);
+
+  if (loading) return <Box>Loading...</Box>;
+  if (error) return <Box>{error}</Box>;
+
   return (
-    <div
+    <Box
       style={{
-        width: 1200,
-        height: 525,
+        width: "100%",
         top: 470,
         left: 120,
         gap: 31,
@@ -30,19 +48,19 @@ const CartMain = () => {
         position: "absolute",
       }}
     >
-      {/* cart tab div */}
-      <div
+      {/* cart tab Box */}
+      <Box
         style={{
-          width: "100%",
+          width: "78%",
           height: 32,
           justifyContent: "space-between",
           display: "flex",
-          flexDirection: "row",
+          position: "relative",
         }}
       >
-        <div
+        <Box
           style={{
-            width: "352px",
+            width: "fit-content",
             height: "26px",
             top: "425.75px",
             left: "119px",
@@ -59,7 +77,7 @@ const CartMain = () => {
           }}
         >
           Cart
-        </div>
+        </Box>
         {/* cart */}
         <Box>
           <button
@@ -78,47 +96,55 @@ const CartMain = () => {
             Clear Cart
           </button>
         </Box>
-      </div>
-      {/* cart tab div end */}
+      </Box>
+      {/* cart tab Box end */}
 
-      <div
+      <Box
+        flexDirection={{ base: "column", lg: "row" }}
         style={{
           width: "100%",
           height: 465,
           gap: 120,
           display: "flex",
-          flexDirection: "row",
         }}
       >
         {/*cart items */}
-        <div
+        <Box
+          flexDirection={{ base: "column", lg: "row" }}
           style={{
-            width: "100%",
+            width: "60%",
+            height: 465,
+            gap: 41,
+            display: "flex",
+          }}
+        >
+          <CartItem1 />
+        </Box>
+        <Box
+          style={{
+            width: "40%",
             height: 465,
             gap: 41,
             display: "flex",
             flexDirection: "column",
           }}
         >
-          <CartItem1 />
-        </div>
-        <div>
           <CartSide />
-        </div>
-      </div>
+        </Box>
+      </Box>
 
       {/* after */}
-      <div style={{ height: 1072, top: 607, gap: 18, position: "absolute" }}>
-        <div
+      <Box style={{ height: 1072, top: 607, gap: 18 }}>
+        <Box
           style={{
-            width: "1200px",
+            width: "100%",
             height: "900px",
             gap: 24,
             display: "flex",
             flexDirection: "column",
           }}
         >
-          <div
+          <Box
             style={{
               width: "1200px",
               height: "32px",
@@ -130,930 +156,168 @@ const CartMain = () => {
             }}
           >
             You May Also Like
-          </div>
+          </Box>
 
-          <div
-            style={{
-              width: "1200px",
-              height: "448px",
-              display: "flex",
-              gap: "52px",
-            }}
-          >
-            <div
+          {products.length > 0 ? (
+            <Box
               style={{
-                width: "278.25px",
-                height: "448px",
-                gap: "8px",
-                display: "flex",
-                flexDirection: "column",
+                width: "100%",
+                height: "1440px",
               }}
             >
-              {/* second role of four cards */}
-              <div className="" style={{ display: "flex", gap: "29px" }}>
-                <div
-                  style={{
-                    width: "1200px",
-                    height: "448px",
-                  }}
-                >
-                  {/* one card image */}
-                  <div
+              <Box
+                style={{
+                  width: "100%",
+                  height: "448px",
+                  display: "flex",
+                  flexWrap: "wrap",
+                  gap: "29px",
+                  margin: "auto",
+                  justifyContent: "center",
+                }}
+              >
+                {products.slice(0, 4).map((product) => (
+                  <Box
+                    key={product.unique_id}
                     style={{
                       width: "278.25px",
-                      height: "340px",
-                      backgroundColor: "#f1f0f0",
-                      display: "flex",
-                      position: "relative",
+                      height: "448px",
+                      gap: "8px",
                     }}
                   >
-                    <div
+                    <Box
+                      className="hover_product"
                       style={{
-                        position: "absolute",
-                        maxWidth: "92px",
-                        maxHeight: "30px",
-                        top: "-1px",
-                        left: "-1px",
-                        padding: "4px 8px 4px 8px",
-                        backgroundColor: "#EEE4E3",
+                        width: "278.25px",
+                        height: "340px",
+                        backgroundColor: "#f1f0f0",
+                        display: "flex",
                       }}
                     >
-                      <p
+                      <Box
+                        className="hover_content"
                         style={{
-                          width: "56px",
-                          fontFamily: "Kanit",
-                          fontWeight: "400",
-                          fontSize: "14px",
-                          lineHeight: "22px",
-                          letterSpacing: "0.07px",
-                          textAlign: "center",
-                          whiteSpace: "nowrap",
+                          position: "absolute",
+                          top: "0",
+                          left: "0",
+                          right: "0",
+                          bottom: "0",
+                          display: "flex",
+                          flexDirection: "column",
+                          zIndex: "1",
                         }}
                       >
-                        Sold Out
-                      </p>
-                    </div>
-                    <img
-                      src={product5}
-                      style={{
-                        width: "232px",
-                        position: "absolute",
-                        height: "286px",
-                        top: "27px",
-                        left: "23px",
-                        zIndex: "1",
-                      }}
-                    />
-                  </div>
+                        <Link
+                          onClick={() => addToCart(product)}
+                          className="hover_button"
+                        >
+                          Add to Cart
+                        </Link>
+                      </Box>
 
-                  {/* CAPTION */}
-                  <div
-                    className="Info"
-                    style={{
-                      width: 278.25,
-                      height: 100,
-                      position: "relative",
-                      flexDirection: "column",
-                      justifyContent: "flex-start",
-                      alignItems: "center",
-                      gap: 24,
-                      display: "flex",
-                    }}
-                  >
-                    <div
+                      <Box
+                        display="flex"
+                        width="278.25px"
+                        justifyContent="space-between"
+                      >
+                        <Box
+                          style={{
+                            position: "absolute",
+                            maxWidth: "92px",
+                            maxHeight: "30px",
+                            top: "-1px",
+                            left: "-1px",
+                            padding: "4px 8px 4px 8px",
+                            backgroundColor: "#EEE4E3 ",
+                            zIndex: "2",
+                          }}
+                        >
+                          <p
+                            style={{
+                              width: "56px",
+                              fontFamily: "Kanit",
+                              fontWeight: "400",
+                              fontSize: "14px",
+                              lineHeight: "22px",
+                              letterSpacing: "0.07px",
+                              textAlign: "center",
+                              whiteSpace: "nowrap",
+                            }}
+                          >
+                            Save 14%
+                          </p>
+                        </Box>
+
+                        <Box
+                          Box
+                          style={{
+                            position: "absolute",
+                            maxWidth: "92px",
+                            maxHeight: "30px",
+                            top: "-1px",
+                            left: "185px",
+                            padding: "4px 8px 4px 8px",
+                            backgroundColor: "#EEE4E3 ",
+                            zIndex: "2",
+                          }}
+                        >
+                          <p
+                            style={{
+                              width: "fit-content",
+                              fontFamily: "Kanit",
+                              fontWeight: "400",
+                              fontSize: "14px",
+                              lineHeight: "22px",
+                              letterSpacing: "0.07px",
+                              textAlign: "center",
+                              whiteSpace: "nowrap",
+                            }}
+                          >
+                            <Link to={`/product/${product.id}`}>
+                              View Details
+                            </Link>
+                          </p>
+                        </Box>
+                      </Box>
+
+                      <img
+                        src={`https://api.timbu.cloud/images/${product.photos[0].url}`}
+                        alt={product.name}
+                        style={{
+                          width: "232px",
+                          height: "286px",
+                          position: "absolute",
+                          height: "286px",
+                          top: "27px",
+                          left: "23px",
+                        }}
+                      />
+                    </Box>
+
+                    {/* CAPTION */}
+                    <Box
+                      className="Info"
                       style={{
-                        height: "100px",
-                        gap: 8,
+                        width: 278.25,
+                        height: 100,
+                        position: "relative",
+                        flexDirection: "column",
+                        justifyContent: "flex-start",
                         alignItems: "center",
-                        flexDirection: "column",
+                        gap: 24,
                         display: "flex",
                       }}
-                    >
-                      <div
-                        style={{
-                          justifyContent: "center",
-                          height: "26px",
-                          display: "flex",
-                          flexDirection: "row",
-                          alignItems: "center",
-                          gap: "8px",
-                        }}
-                      >
-                        <div
-                          style={{
-                            display: "flex",
-                            justifyContent: "flex-start",
-                            width: 132,
-                            height: 24,
-                            gap: "3px",
-                          }}
-                        >
-                          <img
-                            src={smallStar}
-                            style={{
-                              width: 24,
-                              height: 24,
-                            }}
-                          />
-                          <img
-                            src={smallStar}
-                            style={{
-                              width: 24,
-                              height: 24,
-                            }}
-                          />
-                          <img
-                            src={smallStar}
-                            style={{
-                              width: 24,
-                              height: 24,
-                            }}
-                          />
-                          <img
-                            src={smallStar}
-                            style={{
-                              width: 24,
-                              height: 24,
-                            }}
-                          />
-                          <img
-                            src={plainStar}
-                            style={{
-                              width: 24,
-                              height: 24,
-                            }}
-                          />
-                        </div>
-
-                        <div
-                          style={{
-                            color: "#473838",
-                            fontSize: 18,
-                            fontFamily: "Kanit",
-                            fontWeight: "400",
-                            lineHeight: 26,
-                            letterSpacing: 0.09,
-                          }}
-                        >
-                          4 (5)
-                        </div>
-                      </div>
-
-                      <div
-                        style={{
-                          height: "26px",
-                          display: "flex",
-                          alignItems: "center",
-                        }}
-                      >
-                        <p
-                          style={{
-                            textAlign: "center",
-                            color: "#473838",
-                            fontSize: 18,
-                            fontFamily: "Kanit",
-                            fontWeight: "400",
-                            letterSpacing: 0.09,
-                          }}
-                        >
-                          Lip Balm
-                        </p>
-                      </div>
-
-                      <div
-                        style={{
-                          gap: 8,
-                          display: "flex",
-                          justifyContent: "center",
-                          alignItems: "center",
-                          height: "26px",
-                        }}
-                      >
-                        <div
-                          style={{
-                            textAlign: "center",
-                            color: "#473838",
-                            fontSize: 24,
-                            fontFamily: "Kanit",
-                            fontWeight: "400",
-                            textDecoration: "line-through",
-                            lineHeight: 32,
-                            letterSpacing: 0.12,
-                          }}
-                        >
-                          $20
-                        </div>
-
-                        <div
-                          style={{
-                            textAlign: "center",
-                            color: "#F7AFBC",
-                            fontSize: 24,
-                            fontFamily: "Kanit",
-                            fontWeight: "700",
-                            lineHeight: 32,
-                            letterSpacing: 0.12,
-                          }}
-                        >
-                          $15
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div
-                  style={{
-                    width: "1200px",
-                    height: "448px",
-                    gap: "29px",
-                  }}
-                >
-                  {/* one card image */}
-                  <div
-                    className="hover_product"
-                    style={{
-                      width: "278.25px",
-                      height: "340px",
-                      backgroundColor: "#f1f0f0",
-                      display: "flex",
-                      position: "relative",
-                    }}
-                  >
-                    <div
-                      className="hover_content"
-                      style={{
-                        position: "absolute",
-                        top: "0",
-                        left: "0",
-                        right: "0",
-                        bottom: "0",
-                        display: "flex",
-                        flexDirection: "column",
-                        zIndex: "1",
-                      }}
-                    >
-                      <Link to="/addcart" className="hover_button">
-                        Add to Cart
-                      </Link>
-                    </div>
-                    <div
-                      style={{
-                        position: "absolute",
-                        maxWidth: "92px",
-                        maxHeight: "30px",
-                        top: "-1px",
-                        left: "-1px",
-                        padding: "4px 8px 4px 8px",
-                        backgroundColor: "#EEE4E3",
-                      }}
-                    >
-                      <p
-                        style={{
-                          width: "56px",
-                          fontFamily: "Kanit",
-                          fontWeight: "400",
-                          fontSize: "14px",
-                          lineHeight: "22px",
-                          letterSpacing: "0.07px",
-                          textAlign: "center",
-                          whiteSpace: "nowrap",
-                        }}
-                      >
-                        Save 5%
-                      </p>
-                    </div>
-                    <img
-                      src={product6}
-                      style={{
-                        width: "232px",
-                        position: "absolute",
-                        height: "286px",
-                        top: "27px",
-                        left: "23px",
-                      }}
-                    />
-                  </div>
-
-                  {/* CAPTION */}
-                  <div
-                    className="Info"
-                    style={{
-                      width: 278.25,
-                      height: 100,
-                      position: "relative",
-                      flexDirection: "column",
-                      justifyContent: "flex-start",
-                      alignItems: "center",
-                      gap: 24,
-                      display: "flex",
-                    }}
-                  >
-                    <div
-                      style={{
-                        height: "100px",
-                        gap: 8,
-                        alignItems: "center",
-                        flexDirection: "column",
-                        display: "flex",
-                      }}
-                    >
-                      <div
-                        style={{
-                          justifyContent: "center",
-                          height: "26px",
-                          display: "flex",
-                          flexDirection: "row",
-                          alignItems: "center",
-                          gap: "8px",
-                        }}
-                      >
-                        <div
-                          style={{
-                            display: "flex",
-                            justifyContent: "flex-start",
-                            width: 132,
-                            height: 24,
-                            gap: "3px",
-                          }}
-                        >
-                          <img
-                            src={smallStar}
-                            style={{
-                              width: 24,
-                              height: 24,
-                            }}
-                          />
-                          <img
-                            src={smallStar}
-                            style={{
-                              width: 24,
-                              height: 24,
-                            }}
-                          />
-                          <img
-                            src={smallStar}
-                            style={{
-                              width: 24,
-                              height: 24,
-                            }}
-                          />
-                          <img
-                            src={smallStar}
-                            style={{
-                              width: 24,
-                              height: 24,
-                            }}
-                          />
-                          <img
-                            src={plainStar}
-                            style={{
-                              width: 24,
-                              height: 24,
-                            }}
-                          />
-                        </div>
-
-                        <div
-                          style={{
-                            color: "#473838",
-                            fontSize: 18,
-                            fontFamily: "Kanit",
-                            fontWeight: "400",
-                            lineHeight: 26,
-                            letterSpacing: 0.09,
-                          }}
-                        >
-                          4 (5)
-                        </div>
-                      </div>
-
-                      <div
-                        style={{
-                          height: "26px",
-                          display: "flex",
-                          alignItems: "center",
-                        }}
-                      >
-                        <p
-                          style={{
-                            textAlign: "center",
-                            color: "#473838",
-                            fontSize: 18,
-                            fontFamily: "Kanit",
-                            fontWeight: "400",
-                            letterSpacing: 0.09,
-                          }}
-                        >
-                          Lim Lip Gloss
-                        </p>
-                      </div>
-
-                      <div
-                        style={{
-                          gap: 8,
-                          display: "flex",
-                          justifyContent: "center",
-                          alignItems: "center",
-                          height: "26px",
-                        }}
-                      >
-                        <div
-                          style={{
-                            textAlign: "center",
-                            color: "#473838",
-                            fontSize: 24,
-                            fontFamily: "Kanit",
-                            fontWeight: "400",
-                            textDecoration: "line-through",
-                            lineHeight: 32,
-                            letterSpacing: 0.12,
-                          }}
-                        >
-                          $200
-                        </div>
-
-                        <div
-                          style={{
-                            textAlign: "center",
-                            color: "#F7AFBC",
-                            fontSize: 24,
-                            fontFamily: "Kanit",
-                            fontWeight: "700",
-                            lineHeight: 32,
-                            letterSpacing: 0.12,
-                          }}
-                        >
-                          $186
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div
-                  style={{
-                    width: "1200px",
-                    height: "448px",
-                    gap: "29px",
-                  }}
-                >
-                  {/* one card image */}
-                  <div
-                    className="hover_product"
-                    style={{
-                      width: "278.25px",
-                      height: "340px",
-                      backgroundColor: "#f1f0f0",
-                      display: "flex",
-                      position: "relative",
-                    }}
-                  >
-                    <div
-                      className="hover_content"
-                      style={{
-                        position: "absolute",
-                        top: "0",
-                        left: "0",
-                        right: "0",
-                        bottom: "0",
-                        display: "flex",
-                        flexDirection: "column",
-                        zIndex: "1",
-                      }}
-                    >
-                      <Link to="/addcart" className="hover_button">
-                        Add to Cart
-                      </Link>
-                    </div>
-                    <div
-                      style={{
-                        position: "absolute",
-                        maxWidth: "92px",
-                        maxHeight: "30px",
-                        top: "-1px",
-                        left: "-1px",
-                        padding: "4px 8px 4px 8px",
-                        backgroundColor: "#EEE4E3",
-                      }}
-                    >
-                      <p
-                        style={{
-                          width: "56px",
-                          fontFamily: "Kanit",
-                          fontWeight: "400",
-                          fontSize: "14px",
-                          lineHeight: "22px",
-                          letterSpacing: "0.07px",
-                          textAlign: "center",
-                          whiteSpace: "nowrap",
-                        }}
-                      >
-                        Save 14%
-                      </p>
-                    </div>
-                    <img
-                      src={product7}
-                      style={{
-                        width: "232px",
-                        position: "absolute",
-                        height: "286px",
-                        top: "27px",
-                        left: "23px",
-                      }}
-                    />
-                  </div>
-
-                  {/* CAPTION */}
-                  <div
-                    className="Info"
-                    style={{
-                      width: 278.25,
-                      height: 100,
-                      position: "relative",
-                      flexDirection: "column",
-                      justifyContent: "flex-start",
-                      alignItems: "center",
-                      gap: 24,
-                      display: "flex",
-                    }}
-                  >
-                    <div
-                      style={{
-                        height: "100px",
-                        gap: 8,
-                        alignItems: "center",
-                        flexDirection: "column",
-                        display: "flex",
-                      }}
-                    >
-                      <div
-                        style={{
-                          justifyContent: "center",
-                          height: "26px",
-                          display: "flex",
-                          flexDirection: "row",
-                          alignItems: "center",
-                          gap: "8px",
-                        }}
-                      >
-                        <div
-                          style={{
-                            display: "flex",
-                            justifyContent: "flex-start",
-                            width: 132,
-                            height: 24,
-                            gap: "3px",
-                          }}
-                        >
-                          <img
-                            src={smallStar}
-                            style={{
-                              width: 24,
-                              height: 24,
-                            }}
-                          />
-                          <img
-                            src={smallStar}
-                            style={{
-                              width: 24,
-                              height: 24,
-                            }}
-                          />
-                          <img
-                            src={smallStar}
-                            style={{
-                              width: 24,
-                              height: 24,
-                            }}
-                          />
-                          <img
-                            src={smallStar}
-                            style={{
-                              width: 24,
-                              height: 24,
-                            }}
-                          />
-                          <img
-                            src={plainStar}
-                            style={{
-                              width: 24,
-                              height: 24,
-                            }}
-                          />
-                        </div>
-
-                        <div
-                          style={{
-                            color: "#473838",
-                            fontSize: 18,
-                            fontFamily: "Kanit",
-                            fontWeight: "400",
-                            lineHeight: 26,
-                            letterSpacing: 0.09,
-                          }}
-                        >
-                          4 (5)
-                        </div>
-                      </div>
-
-                      <div
-                        style={{
-                          height: "26px",
-                          display: "flex",
-                          alignItems: "center",
-                        }}
-                      >
-                        <p
-                          style={{
-                            textAlign: "center",
-                            color: "#473838",
-                            fontSize: 18,
-                            fontFamily: "Kanit",
-                            fontWeight: "400",
-                            letterSpacing: 0.09,
-                          }}
-                        >
-                          Branti Lipstick
-                        </p>
-                      </div>
-
-                      <div
-                        style={{
-                          gap: 8,
-                          display: "flex",
-                          justifyContent: "center",
-                          alignItems: "center",
-                          height: "26px",
-                        }}
-                      >
-                        <div
-                          style={{
-                            textAlign: "center",
-                            color: "#473838",
-                            fontSize: 24,
-                            fontFamily: "Kanit",
-                            fontWeight: "400",
-                            textDecoration: "line-through",
-                            lineHeight: 32,
-                            letterSpacing: 0.12,
-                          }}
-                        >
-                          $200
-                        </div>
-
-                        <div
-                          style={{
-                            textAlign: "center",
-                            color: "#F7AFBC",
-                            fontSize: 24,
-                            fontFamily: "Kanit",
-                            fontWeight: "700",
-                            lineHeight: 32,
-                            letterSpacing: 0.12,
-                          }}
-                        >
-                          $186
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div
-                  style={{
-                    width: "1200px",
-                    height: "448px",
-                    gap: "29px",
-                  }}
-                >
-                  {/* one card image */}
-                  <div
-                    className="hover_product"
-                    style={{
-                      width: "278.25px",
-                      height: "340px",
-                      backgroundColor: "#f1f0f0",
-                      display: "flex",
-                      position: "relative",
-                    }}
-                  >
-                    <div
-                      className="hover_content"
-                      style={{
-                        position: "absolute",
-                        top: "0",
-                        left: "0",
-                        right: "0",
-                        bottom: "0",
-                        display: "flex",
-                        flexDirection: "column",
-                        zIndex: "1",
-                      }}
-                    >
-                      <Link to="/addcart" className="hover_button">
-                        Add to Cart
-                      </Link>
-                    </div>
-                    <div
-                      style={{
-                        position: "absolute",
-                        maxWidth: "92px",
-                        maxHeight: "30px",
-                        top: "-1px",
-                        left: "-1px",
-                        padding: "4px 8px 4px 8px",
-                        backgroundColor: "#EEE4E3",
-                      }}
-                    >
-                      <p
-                        style={{
-                          width: "56px",
-                          fontFamily: "Kanit",
-                          fontWeight: "400",
-                          fontSize: "14px",
-                          lineHeight: "22px",
-                          letterSpacing: "0.07px",
-                          textAlign: "center",
-                          whiteSpace: "nowrap",
-                        }}
-                      >
-                        Save 14%
-                      </p>
-                    </div>
-                    <img
-                      src={product8}
-                      style={{
-                        width: "232px",
-                        position: "absolute",
-                        height: "286px",
-                        top: "27px",
-                        left: "23px",
-                      }}
-                    />
-                  </div>
-
-                  {/* CAPTION */}
-                  <div
-                    className="Info"
-                    style={{
-                      width: 278.25,
-                      height: 100,
-                      position: "relative",
-                      flexDirection: "column",
-                      justifyContent: "flex-start",
-                      alignItems: "center",
-                      gap: 24,
-                      display: "flex",
-                    }}
-                  >
-                    <div
-                      style={{
-                        height: "100px",
-                        gap: 8,
-                        alignItems: "center",
-                        flexDirection: "column",
-                        display: "flex",
-                      }}
-                    >
-                      <div
-                        style={{
-                          justifyContent: "center",
-                          height: "26px",
-                          display: "flex",
-                          flexDirection: "row",
-                          alignItems: "center",
-                          gap: "8px",
-                        }}
-                      >
-                        <div
-                          style={{
-                            display: "flex",
-                            justifyContent: "flex-start",
-                            width: 132,
-                            height: 24,
-                            gap: "3px",
-                          }}
-                        >
-                          <img
-                            src={smallStar}
-                            style={{
-                              width: 24,
-                              height: 24,
-                            }}
-                          />
-                          <img
-                            src={smallStar}
-                            style={{
-                              width: 24,
-                              height: 24,
-                            }}
-                          />
-                          <img
-                            src={smallStar}
-                            style={{
-                              width: 24,
-                              height: 24,
-                            }}
-                          />
-                          <img
-                            src={smallStar}
-                            style={{
-                              width: 24,
-                              height: 24,
-                            }}
-                          />
-                          <img
-                            src={plainStar}
-                            style={{
-                              width: 24,
-                              height: 24,
-                            }}
-                          />
-                        </div>
-
-                        <div
-                          style={{
-                            color: "#473838",
-                            fontSize: 18,
-                            fontFamily: "Kanit",
-                            fontWeight: "400",
-                            lineHeight: 26,
-                            letterSpacing: 0.09,
-                          }}
-                        >
-                          4 (5)
-                        </div>
-                      </div>
-
-                      <div
-                        style={{
-                          height: "26px",
-                          display: "flex",
-                          alignItems: "center",
-                        }}
-                      >
-                        <p
-                          style={{
-                            textAlign: "center",
-                            color: "#473838",
-                            fontSize: 18,
-                            fontFamily: "Kanit",
-                            fontWeight: "400",
-                            letterSpacing: 0.09,
-                          }}
-                        >
-                          Sekine Shower Gel
-                        </p>
-                      </div>
-
-                      <div
-                        style={{
-                          gap: 8,
-                          display: "flex",
-                          justifyContent: "center",
-                          alignItems: "center",
-                          height: "26px",
-                        }}
-                      >
-                        <div
-                          style={{
-                            textAlign: "center",
-                            color: "#473838",
-                            fontSize: 24,
-                            fontFamily: "Kanit",
-                            fontWeight: "400",
-                            textDecoration: "line-through",
-                            lineHeight: 32,
-                            letterSpacing: 0.12,
-                          }}
-                        >
-                          $430
-                        </div>
-
-                        <div
-                          style={{
-                            textAlign: "center",
-                            color: "#F7AFBC",
-                            fontSize: 24,
-                            fontFamily: "Kanit",
-                            fontWeight: "700",
-                            lineHeight: 32,
-                            letterSpacing: 0.12,
-                          }}
-                        >
-                          $400
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+                    ></Box>
+                  </Box>
+                ))}
+              </Box>
+            </Box>
+          ) : (
+            <Box>No products</Box>
+          )}
+        </Box>
+      </Box>
+    </Box>
   );
 };
 
