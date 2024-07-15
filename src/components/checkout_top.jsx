@@ -28,13 +28,15 @@ const CheckoutTop = () => {
         </Link>
       </div>
       <div>
-        <img
-          src={cart}
-          style={{
-            width: 24,
-            height: 24,
-          }}
-        />
+        <Link to="/cart">
+          <img
+            src={cart}
+            style={{
+              width: 24,
+              height: 24,
+            }}
+          />
+        </Link>
       </div>
     </div>
   );

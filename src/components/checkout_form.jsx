@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import "../hover_product.css";
 import visa from "../assets/images/visa_card.png";
+import { Link } from "react-router-dom";
+
 const CheckoutForm = () => {
+  const [selectedOption, setSelectedOption] = useState("");
+
+  const handleOptionChange = (event) => {
+    setSelectedOption(event.target.value);
+  };
+
   return (
     <div
       width={{ base: "100%", xl: "548" }}
@@ -159,7 +167,7 @@ const CheckoutForm = () => {
               border: "6px solid #eee4e3",
             }}
           >
-            <input type="radio" />
+            <input name="pay" onChange={handleOptionChange} type="radio" />
             <div
               style={{
                 width: "97%",
@@ -215,7 +223,7 @@ const CheckoutForm = () => {
             border: "6px solid #eee4e3",
           }}
         >
-          <input type="radio" />
+          <input name="pay" onChange={handleOptionChange} type="radio" />
           Transfer
         </label>
       </div>
@@ -226,27 +234,28 @@ const CheckoutForm = () => {
           height: 50,
           top: 1790,
           left: 446,
+          textAlign: "center",
           gap: 8,
           backgroundColor: "#ED8174",
           padding: "12px 16px",
         }}
       >
-        <p
-          style={{
-            width: 292,
-            height: 26,
-            letterSpacing: 0.09,
-            textAlign: "center",
-            fontFamily: "Kanit",
-            fontWeight: 400,
-            margin: "auto",
-            size: "18px",
-            color: "#fff",
-            cursor: "pointer",
-          }}
-        >
-          Pay Now
-        </p>
+        <Link to="/success">
+          <button
+            style={{
+              width: 292,
+              height: 26,
+              letterSpacing: 0.09,
+              fontFamily: "Kanit",
+              fontWeight: 400,
+              size: "18px",
+              color: "#fff",
+              cursor: "pointer",
+            }}
+          >
+            Pay Now
+          </button>
+        </Link>
       </div>
     </div>
   );
