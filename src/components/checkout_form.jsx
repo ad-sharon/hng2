@@ -4,7 +4,8 @@ import visa from "../assets/images/visa_card.png";
 const CheckoutForm = () => {
   return (
     <div
-      width={{ base: "80%", xl: "548" }}
+      width={{ base: "100%", xl: "548" }}
+      margin={{ base: "0", xl: "auto" }}
       style={{
         height: 414,
         top: 857,
@@ -12,7 +13,6 @@ const CheckoutForm = () => {
         gap: 16,
         display: "flex",
         flexDirection: "column",
-        margin: "auto",
         position: "absolute",
       }}
     >
@@ -33,7 +33,7 @@ const CheckoutForm = () => {
       </div>
 
       <div
-        width={{ base: "80%", xl: "548" }}
+        width={{ base: "100%", xl: "548" }}
         style={{
           height: 342,
           gap: 22,
@@ -242,6 +242,7 @@ const CheckoutForm = () => {
             margin: "auto",
             size: "18px",
             color: "#fff",
+            cursor: "pointer",
           }}
         >
           Pay Now

@@ -5,6 +5,7 @@ import CheckoutTop from "../components/checkout_top";
 import TimbuDiv from "../components/timbu_div";
 import CheckOut from "../components/checkout";
 import Footer from "../components/footer";
+import CheckoutForm from "../components/checkout_form";
 
 const theme = extendTheme({
   styles: {
@@ -24,7 +25,7 @@ function CheckoutPage() {
 
       <CheckoutTop />
       <CheckOut />
-
+      {/* <CheckoutForm /> */}
       <div>{/* <Footer /> */}</div>
     </ChakraProvider>
   );

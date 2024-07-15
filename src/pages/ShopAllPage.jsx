@@ -30,7 +30,6 @@ function ShopAllPage() {
       </div>
 
       <ShopAll />
-      {/* <PrevNext /> */}
 
       {/* <Footer /> */}
     </ChakraProvider>

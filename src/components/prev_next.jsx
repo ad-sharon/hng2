@@ -7,7 +7,8 @@ const PrevNext = ({ currentPage, setCurrentPage, totalPages }) => {
   return (
     <Box
       style={{
-        width: "100%",
+        width: "fit-content",
+        margin: "auto",
         display: "flex",
       }}
     >
@@ -16,6 +17,8 @@ const PrevNext = ({ currentPage, setCurrentPage, totalPages }) => {
           width: "100%",
           height: "42px",
           gap: "8px",
+          alignItems: "center",
+          justifyContent: "center",
           display: "flex",
           flexDirection: "row",
         }}
@@ -94,7 +97,6 @@ const PrevNext = ({ currentPage, setCurrentPage, totalPages }) => {
                 cursor: "pointer",
                 color: currentPage === index + 1 ? "#fff" : "#473838",
               }}
-              // onClick={() => onPageChange(index + 1)}
             >
               <Box style={{ fontSize: "18px", fontFamily: "Kanit" }}>
                 {index + 1}
@@ -105,12 +107,9 @@ const PrevNext = ({ currentPage, setCurrentPage, totalPages }) => {
 
         <Box
           style={{
-            width: "85px",
-            height: "42px",
-            padding: "8px 12px",
-            alignItems: "center",
-            gap: "8px",
-            display: "flex",
+            width: "100%",
+            color: "#ED8174",
+
             cursor: currentPage === totalPages ? "not-allowed" : "pointer",
           }}
           onClick={() => {
@@ -124,29 +123,13 @@ const PrevNext = ({ currentPage, setCurrentPage, totalPages }) => {
             style={{
               color: "#ED8174",
               fontSize: "18px",
-              fontFamily: "Kanit, sans-serif",
+              fontFamily: "Kanit",
               fontWeight: "400",
-              lineHeight: "26px",
               letterSpacing: "0.09px",
             }}
           >
             Next
           </p>
-
-          <Box
-            style={{
-              display: "flex",
-            }}
-          >
-            <img
-              src={arrow_right}
-              alt=""
-              style={{
-                width: 16,
-                height: 16,
-              }}
-            />
-          </Box>
         </Box>
       </Box>
     </Box>

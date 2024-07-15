@@ -11,16 +11,13 @@ const Checkout_dropdown = () => {
   return (
     <div
       style={{
-        width: 359,
+        width: "100%",
         height: 54,
         display: "flex",
       }}
     >
       <select
         style={{
-          appearance: "none",
-          MozAppearance: "none",
-          WebkitAppearance: "none",
           width: 339,
           height: 54,
           background: "transparent",
@@ -30,6 +27,7 @@ const Checkout_dropdown = () => {
           fontWeight: 400,
           fontFamily: "Kanit",
           color: "#B2A6A6",
+          border: "1px solid #D9D9D9",
         }}
       >
         <option>Door Delivery</option>
