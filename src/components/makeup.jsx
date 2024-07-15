@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { Box } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import RatingStars from "./rating_stars";
 import PrevNext from "./prev_next";
 import "../hover_product.css";
-import { fetchMakeupProducts } from "../utils/requests";
+import { fetchProducts } from "../utils/requests";
+import { CartContext } from "../cart_context";
 
-const Makeup = () => {
-  // to show products
+const Makeup = ({ product }) => {
+  // to show makeup products
+  const { addToCart } = useContext(CartContext);
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -15,11 +17,10 @@ const Makeup = () => {
   const productsPerPage = 12;
 
   useEffect(() => {
-    const getMakeupProducts = async () => {
+    const getProducts = async () => {
       try {
-        const data = await fetchMakeupProducts();
+        const data = await fetchProducts();
         setProducts(data || []);
-        console.log("fetched:", data);
       } catch (err) {
         setError("Error fetching products");
       } finally {
@@ -27,7 +28,7 @@ const Makeup = () => {
       }
     };
 
-    getMakeupProducts();
+    getProducts();
   }, []);
 
   if (loading) return <div>Loading...</div>;
@@ -63,7 +64,7 @@ const Makeup = () => {
           >
             {products.map((product) => (
               <Box
-                key={product.entity_id}
+                key={product.unique_id}
                 style={{
                   width: "278.25px",
                   height: "448px",
@@ -92,54 +93,89 @@ const Makeup = () => {
                       zIndex: "1",
                     }}
                   >
-                    <Link to="/addcart" className="hover_button">
+                    <Link
+                      onClick={() => addToCart(product)}
+                      className="hover_button"
+                    >
                       Add to Cart
                     </Link>
                   </Box>
+
                   <Box
-                    style={{
-                      position: "absolute",
-                      maxWidth: "92px",
-                      maxHeight: "30px",
-                      top: "-1px",
-                      left: "-1px",
-                      padding: "4px 8px 4px 8px",
-                      backgroundColor: "#EEE4E3 ",
-                      zIndex: "2",
-                    }}
+                    display="flex"
+                    width="278.25px"
+                    justifyContent="space-between"
                   >
-                    <p
+                    <Box
                       style={{
-                        width: "56px",
-                        fontFamily: "Kanit",
-                        fontWeight: "400",
-                        fontSize: "14px",
-                        lineHeight: "22px",
-                        letterSpacing: "0.07px",
-                        textAlign: "center",
-                        whiteSpace: "nowrap",
+                        position: "absolute",
+                        maxWidth: "92px",
+                        maxHeight: "30px",
+                        top: "-1px",
+                        left: "-1px",
+                        padding: "4px 8px 4px 8px",
+                        backgroundColor: "#EEE4E3 ",
+                        zIndex: "2",
                       }}
                     >
-                      Save 14%
-                    </p>
+                      <p
+                        style={{
+                          width: "56px",
+                          fontFamily: "Kanit",
+                          fontWeight: "400",
+                          fontSize: "14px",
+                          lineHeight: "22px",
+                          letterSpacing: "0.07px",
+                          textAlign: "center",
+                          whiteSpace: "nowrap",
+                        }}
+                      >
+                        Save 14%
+                      </p>
+                    </Box>
+
+                    <Box
+                      Box
+                      style={{
+                        position: "absolute",
+                        maxWidth: "92px",
+                        maxHeight: "30px",
+                        top: "-1px",
+                        left: "185px",
+                        padding: "4px 8px 4px 8px",
+                        backgroundColor: "#EEE4E3 ",
+                        zIndex: "2",
+                      }}
+                    >
+                      <p
+                        style={{
+                          width: "fit-content",
+                          fontFamily: "Kanit",
+                          fontWeight: "400",
+                          fontSize: "14px",
+                          lineHeight: "22px",
+                          letterSpacing: "0.07px",
+                          textAlign: "center",
+                          whiteSpace: "nowrap",
+                        }}
+                      >
+                        <Link to={`/product/${product.id}`}>View Details</Link>
+                      </p>
+                    </Box>
                   </Box>
 
-                  {product.photos &&
-                    product.photos[0] &&
-                    product.photos[0].url && (
-                      <img
-                        src={`https://api.timbu.cloud/images/${product.photos[0].url}`}
-                        alt={product.name}
-                        style={{
-                          width: "232px",
-                          height: "286px",
-                          position: "absolute",
-                          height: "286px",
-                          top: "27px",
-                          left: "23px",
-                        }}
-                      />
-                    )}
+                  <img
+                    src={`https://api.timbu.cloud/images/${product.photos[0].url}`}
+                    alt={product.name}
+                    style={{
+                      width: "232px",
+                      height: "286px",
+                      position: "absolute",
+                      height: "286px",
+                      top: "27px",
+                      left: "23px",
+                    }}
+                  />
                 </Box>
 
                 {/* CAPTION */}
@@ -209,21 +245,6 @@ const Makeup = () => {
                         <Box
                           style={{
                             textAlign: "center",
-                            color: "#473838",
-                            fontSize: 24,
-                            fontFamily: "Kanit",
-                            fontWeight: "400",
-                            textDecoration: "line-through",
-                            lineHeight: 32,
-                            letterSpacing: 0.12,
-                          }}
-                        >
-                          $200
-                        </Box>
-
-                        <Box
-                          style={{
-                            textAlign: "center",
                             color: "#F7AFBC",
                             fontSize: 24,
                             fontFamily: "Kanit",
@@ -232,10 +253,8 @@ const Makeup = () => {
                             letterSpacing: 0.12,
                           }}
                         >
-                          {product.current_price &&
-                            product.current_price[0] &&
-                            product.current_price[0].NGN &&
-                            product.current_price[0].NGN[0]}{" "}
+                          <span style={{ margin: 2 }}>NGN</span>
+                          {product.current_price[0]?.NGN[0]}
                         </Box>
                       </Box>
                     </Box>

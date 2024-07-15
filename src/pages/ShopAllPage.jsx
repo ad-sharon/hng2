@@ -23,14 +23,14 @@ function ShopAllPage() {
     <ChakraProvider theme={theme}>
       <TopBar />
       <TimbuDiv />
-      <NavBar />
+      <NavBar showMobileNav={true} />
 
       <div>
         <FilterTab />
       </div>
 
       <ShopAll />
-      <PrevNext />
+      {/* <PrevNext /> */}
 
       {/* <Footer /> */}
     </ChakraProvider>

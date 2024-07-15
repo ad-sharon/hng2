@@ -22,11 +22,11 @@ function SkincarePage() {
     <ChakraProvider theme={theme}>
       <TopBar />
       <TimbuDiv />
-      <NavBar />
+      <NavBar showMobileNav={true} />
       <FilterTab />
       <Skincare />
-      =
-      <Footer />
+
+      {/* <Footer /> */}
     </ChakraProvider>
   );
 }

@@ -22,7 +22,7 @@ function SetKitsPage() {
     <ChakraProvider theme={theme}>
       <TopBar />
       <TimbuDiv />
-      <NavBar />
+      <NavBar showMobileNav={true} />
 
       <FilterTab />
       <SetKits />

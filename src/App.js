@@ -7,6 +7,7 @@ import MakeupPage from "./pages/MakeupPage";
 import CartPage from "./pages/CartPage";
 import CheckoutPage from "./pages/CheckoutPage";
 import { CartProvider } from "./cart_context";
+import Details from "./components/product_detail";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<ShopAllPage />} />
+          <Route path="/products/:unique_id" element={<Details />} />
           <Route path="/cart" element={<CartPage />} />
           <Route path="/checkout" element={<CheckoutPage />} />
           <Route path="/skincare" element={<SkincarePage />} />

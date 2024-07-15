@@ -5,7 +5,7 @@ import { Box } from "@chakra-ui/react";
 import { useCart } from "../cart_context";
 
 const CartItem = () => {
-  const { cart = [], removeFromCart, clearCart } = useCart();
+  const { cart, removeFromCart } = useCart();
 
   return (
     <Box
@@ -152,32 +152,20 @@ const CartItem = () => {
                 {product.current_price[0].NGN[0]}
               </Box>
             </Box>
-
             <Box
               style={{
                 width: 92,
-                height: 26,
-                alignItems: "center",
-                gap: 21,
-                display: "inline-flex",
+                zIndex: "5",
+                color: "#ED8174",
+                fontSize: 18,
+                fontFamily: "Kanit",
+                fontWeight: "400",
+                letterSpacing: 0.09,
               }}
             >
-              <Box
-                style={{
-                  width: 166,
-                  color: "#ED8174",
-                  fontSize: 18,
-                  fontFamily: "Kanit",
-                  fontWeight: "400",
-                  lineHeight: 26,
-                  letterSpacing: 0.09,
-                  wordWrap: "break-word",
-                }}
-              >
-                <button onClick={() => removeFromCart(product.unique_id)}>
-                  Remove
-                </button>
-              </Box>
+              <button onClick={() => removeFromCart(product.unique_id)}>
+                Remove
+              </button>
             </Box>
           </Box>
         </Box>

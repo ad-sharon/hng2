@@ -22,7 +22,7 @@ function MakeupPage() {
     <ChakraProvider theme={theme}>
       <TopBar />
       <TimbuDiv />
-      <NavBar />
+      <NavBar showMobileNav={true} />
 
       <FilterTab />
       <Makeup />

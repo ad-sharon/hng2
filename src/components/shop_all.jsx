@@ -7,7 +7,7 @@ import "../hover_product.css";
 import { fetchProducts } from "../utils/requests";
 import { CartContext } from "../cart_context";
 
-const ShopAll = () => {
+const ShopAll = ({ product }) => {
   // to show products
   const { addToCart } = useContext(CartContext);
   const [products, setProducts] = useState([]);
@@ -100,32 +100,68 @@ const ShopAll = () => {
                       Add to Cart
                     </Link>
                   </Box>
+
                   <Box
-                    style={{
-                      position: "absolute",
-                      maxWidth: "92px",
-                      maxHeight: "30px",
-                      top: "-1px",
-                      left: "-1px",
-                      padding: "4px 8px 4px 8px",
-                      backgroundColor: "#EEE4E3 ",
-                      zIndex: "2",
-                    }}
+                    display="flex"
+                    width="278.25px"
+                    justifyContent="space-between"
                   >
-                    <p
+                    <Box
                       style={{
-                        width: "56px",
-                        fontFamily: "Kanit",
-                        fontWeight: "400",
-                        fontSize: "14px",
-                        lineHeight: "22px",
-                        letterSpacing: "0.07px",
-                        textAlign: "center",
-                        whiteSpace: "nowrap",
+                        position: "absolute",
+                        maxWidth: "92px",
+                        maxHeight: "30px",
+                        top: "-1px",
+                        left: "-1px",
+                        padding: "4px 8px 4px 8px",
+                        backgroundColor: "#EEE4E3 ",
+                        zIndex: "2",
                       }}
                     >
-                      Save 14%
-                    </p>
+                      <p
+                        style={{
+                          width: "56px",
+                          fontFamily: "Kanit",
+                          fontWeight: "400",
+                          fontSize: "14px",
+                          lineHeight: "22px",
+                          letterSpacing: "0.07px",
+                          textAlign: "center",
+                          whiteSpace: "nowrap",
+                        }}
+                      >
+                        Save 14%
+                      </p>
+                    </Box>
+
+                    <Box
+                      Box
+                      style={{
+                        position: "absolute",
+                        maxWidth: "92px",
+                        maxHeight: "30px",
+                        top: "-1px",
+                        left: "185px",
+                        padding: "4px 8px 4px 8px",
+                        backgroundColor: "#EEE4E3 ",
+                        zIndex: "2",
+                      }}
+                    >
+                      <p
+                        style={{
+                          width: "fit-content",
+                          fontFamily: "Kanit",
+                          fontWeight: "400",
+                          fontSize: "14px",
+                          lineHeight: "22px",
+                          letterSpacing: "0.07px",
+                          textAlign: "center",
+                          whiteSpace: "nowrap",
+                        }}
+                      >
+                        <Link to={`/product/${product.id}`}>View Details</Link>
+                      </p>
+                    </Box>
                   </Box>
 
                   <img
@@ -209,21 +245,6 @@ const ShopAll = () => {
                         <Box
                           style={{
                             textAlign: "center",
-                            color: "#473838",
-                            fontSize: 24,
-                            fontFamily: "Kanit",
-                            fontWeight: "400",
-                            textDecoration: "line-through",
-                            lineHeight: 32,
-                            letterSpacing: 0.12,
-                          }}
-                        >
-                          $200
-                        </Box>
-
-                        <Box
-                          style={{
-                            textAlign: "center",
                             color: "#F7AFBC",
                             fontSize: 24,
                             fontFamily: "Kanit",
@@ -232,6 +253,7 @@ const ShopAll = () => {
                             letterSpacing: 0.12,
                           }}
                         >
+                          <span style={{ margin: 2 }}>NGN</span>
                           {product.current_price[0]?.NGN[0]}
                         </Box>
                       </Box>

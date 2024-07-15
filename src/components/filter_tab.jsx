@@ -50,6 +50,7 @@ const FilterTab = () => {
   };
 
   const { cartCount } = useCart();
+  console.log(cartCount);
 
   return (
     <Box
@@ -243,14 +244,12 @@ const FilterTab = () => {
                   width: "10px",
                   height: "10px",
                   borderRadius: "50%",
-                  backgroundColor: "red",
+                  backgroundColor: "#ED8174",
                   color: "white",
                   textAlign: "center",
                   fontSize: "12px",
                 }}
-              >
-                {cartCount}
-              </div>
+              ></div>
             )}
           </Link>
         </Box>

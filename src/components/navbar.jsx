@@ -8,7 +8,7 @@ import hamburger from "..//assets/images/hamburger.png";
 import search from "..//assets/images/search.png";
 import cart from "..//assets/images/cart.png";
 
-const NavBar = () => {
+const NavBar = ({ showMobileNav }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [title, setTitle] = useState("");
   const location = useLocation();
@@ -38,7 +38,7 @@ const NavBar = () => {
         setTitle("Shop by concern");
         break;
       default:
-        setTitle("Initial Title");
+        setTitle("");
     }
     document.title = title;
   }, [location]);
@@ -446,66 +446,68 @@ const NavBar = () => {
           </Box>
         </Box>
 
-        <Box width="80%">
-          <Box
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              fontFamily: "Kanit",
-              fontWeight: "400",
-              fontSize: "18px",
-              lineHeight: "26px",
-              letterSpacing: "0.5px",
-              color: "#241C1C",
-              whiteSpace: "nowrap",
-            }}
-          >
-            <p style={{ padding: "12px 16px" }}>{title}</p>
-
+        {showMobileNav && (
+          <Box width="80%">
             <Box
               style={{
-                width: 342,
-                height: 48,
                 display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-                gap: 10,
-                padding: "12px 16px",
+                flexDirection: "column",
+                fontFamily: "Kanit",
+                fontWeight: "400",
+                fontSize: "18px",
+                lineHeight: "26px",
+                letterSpacing: "0.5px",
+                color: "#241C1C",
+                whiteSpace: "nowrap",
               }}
             >
-              <Box>
-                <select
-                  style={{
-                    width: 161,
-                    height: 48,
-                    border: " 1px solid #d9d9d9",
-                    background: "transparent",
-                    color: "#473838",
-                  }}
-                >
-                  <option>Availability</option>
-                  <option>In stock</option>
-                  <option>Out of Stock</option>
-                </select>
-              </Box>
-              <Box>
-                <select
-                  style={{
-                    width: 161,
-                    height: 48,
-                    border: " 1px solid #d9d9d9",
-                    background: "transparent",
-                    color: "#473838",
-                  }}
-                >
-                  <option>Price</option>
-                  <option>Low to High</option>
-                  <option>High to Low</option>
-                </select>
+              <p style={{ padding: "12px 16px" }}>{title}</p>
+
+              <Box
+                style={{
+                  width: 342,
+                  height: 48,
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  gap: 10,
+                  padding: "12px 16px",
+                }}
+              >
+                <Box>
+                  <select
+                    style={{
+                      width: 161,
+                      height: 48,
+                      border: " 1px solid #d9d9d9",
+                      background: "transparent",
+                      color: "#473838",
+                    }}
+                  >
+                    <option>Availability</option>
+                    <option>In stock</option>
+                    <option>Out of Stock</option>
+                  </select>
+                </Box>
+                <Box>
+                  <select
+                    style={{
+                      width: 161,
+                      height: 48,
+                      border: " 1px solid #d9d9d9",
+                      background: "transparent",
+                      color: "#473838",
+                    }}
+                  >
+                    <option>Price</option>
+                    <option>Low to High</option>
+                    <option>High to Low</option>
+                  </select>
+                </Box>
               </Box>
             </Box>
           </Box>
-        </Box>
+        )}
       </Box>
     </Box>
   );

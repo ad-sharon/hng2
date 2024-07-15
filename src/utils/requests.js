@@ -12,10 +12,27 @@ export const fetchProducts = async () => {
       `https://api.timbu.cloud/products?organization_id=9e9018be597f42d2a22613fa757f20d3&Appid=8BK3V334E1ZMO9O&Apikey=5bfc932bce134ee389811bc18828262620240712220136734749`,
       {}
     );
-    // console.log("Api response:", response.data.items);
+    console.log(response.data.items);
     return response.data.items;
   } catch (error) {
     console.error("Error fetching products:", error);
+  }
+};
+
+// get a single product
+export const fetchProductbyId = async (id) => {
+  try {
+    const response = await axios.get(`https://api.timbu.cloud/products/${id}`, {
+      params: {
+        organization_id: "9e9018be597f42d2a22613fa757f20d3",
+        Appid: "8BK3V334E1ZMO9O",
+        Apikey: "5bfc932bce134ee389811bc18828262620240712220136734749",
+      },
+    });
+    console.log(response.data);
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching product:", error);
   }
 };
 

@@ -1,4 +1,5 @@
 import React from "react";
+import { Box } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import cart from "../assets/images/cart.png";
 import CartItem1 from "./cart_item";
@@ -11,7 +12,11 @@ import smallStar from "..//assets/images/smallStar.png";
 import plainStar from "..//assets/images/plainStar.png";
 import "../hover_product.css";
 
+import { useCart } from "../cart_context";
+
 const CartMain = () => {
+  const { clearCart } = useCart();
+
   return (
     <div
       style={{
@@ -55,9 +60,24 @@ const CartMain = () => {
         >
           Cart
         </div>
-
         {/* cart */}
-        <img style={{ width: 24, height: 24 }} src={cart} alt="" />
+        <Box>
+          <button
+            style={{
+              width: 150,
+              height: 50,
+              backgroundColor: "#ED8174",
+              color: "#fff",
+              fontSize: 18,
+              fontFamily: "Kanit",
+              fontWeight: "400",
+              letterSpacing: 0.09,
+            }}
+            onClick={() => clearCart()}
+          >
+            Clear Cart
+          </button>
+        </Box>
       </div>
       {/* cart tab div end */}
 

@@ -8,11 +8,18 @@ export const CartProvider = ({ children }) => {
     return savedCart ? JSON.parse(savedCart) : [];
   });
 
+  const [cartCount, setCartCount] = useState(() => {
+    const savedCart = sessionStorage.getItem("cart");
+    return savedCart
+      ? JSON.parse(savedCart).reduce((acc, item) => acc + item.quantity, 0)
+      : 0;
+  });
+
   useEffect(() => {
     sessionStorage.setItem("cart", JSON.stringify(cart));
+    const newCount = cart.reduce((acc, item) => acc + item.quantity, 0);
+    setCartCount(newCount);
   }, [cart]);
-
-  const [cartCount, setCartCount] = useState(0);
 
   const addToCart = (product) => {
     setCart((prevCart) => {
@@ -30,24 +37,21 @@ export const CartProvider = ({ children }) => {
         return [...prevCart, { ...product, quantity: 1 }];
       }
     });
-    setCartCount((prevCount) => prevCount + 1);
   };
 
   const removeFromCart = (productId) => {
     setCart((prevCart) =>
       prevCart.filter((product) => product.unique_id !== productId)
     );
-    setCartCount((prevCount) => (prevCount > 0 ? prevCount - 1 : 0));
   };
 
   const clearCart = () => {
     setCart([]);
-    setCartCount(0);
   };
 
   return (
     <CartContext.Provider
-      value={{ cart, addToCart, removeFromCart, clearCart }}
+      value={{ cart, cartCount, addToCart, removeFromCart, clearCart }}
     >
       {children}
     </CartContext.Provider>

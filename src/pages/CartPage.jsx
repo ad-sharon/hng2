@@ -23,7 +23,7 @@ function CartPage() {
     <ChakraProvider theme={theme}>
       <TopBar />
       <TimbuDiv />
-      <NavBar />
+      <NavBar showMobileNav={false} />
 
       <Link to="/">
         <img
