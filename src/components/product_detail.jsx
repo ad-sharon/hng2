@@ -5,22 +5,35 @@ import { useParams } from "react-router-dom";
 import "../hover_product.css";
 import expand from "../assets/images/expand_down.png";
 import RatingStars from "./rating_stars";
-import cartIcon from "../assets/images/cart.png";
 import { fetchProductbyId } from "../utils/requests";
 import plus from "../assets/images/plus.png";
 import minus from "../assets/images/minus.png";
 import { Image } from "@chakra-ui/react";
 import { useCart } from "../cart_context";
+import { CartContext } from "../cart_context";
 
 const Details = () => {
   // to show one product
+  const { addToCart } = useContext(CartContext);
   const { unique_id } = useParams();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [qty, setQty] = useState(1);
 
-  const { cart, removeFromCart, increaseQuantity, decreaseQuantity } =
-    useCart();
+  const addQty = () => {
+    setQty(qty + 1);
+  };
+
+  const subQty = () => {
+    if (qty > 1) {
+      setQty(qty - 1);
+    } else {
+      setQty(1);
+    }
+  };
+
+  const { cart, cartCount, increaseQuantity, decreaseQuantity } = useCart();
 
   useEffect(() => {
     const getProduct = async () => {
@@ -44,8 +57,8 @@ const Details = () => {
     getProduct();
   }, [unique_id]);
 
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>{error}</div>;
+  if (loading) return <Box>Loading...</Box>;
+  if (error) return <Box>{error}</Box>;
 
   return (
     <Box
@@ -78,8 +91,27 @@ const Details = () => {
         >
           Product Details
         </Box>
-
-        <img src={cartIcon} width="16" height="16" />
+        <Box style={{ width: 24, height: 24 }}>
+          <Link to="/cart">
+            <img src={cart} alt="" />
+            {cartCount > 0 && (
+              <Box
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  right: 0,
+                  width: "10px",
+                  height: "10px",
+                  borderRadius: "50%",
+                  backgroundColor: "#ED8174",
+                  color: "white",
+                  textAlign: "center",
+                  fontSize: "12px",
+                }}
+              ></Box>
+            )}
+          </Link>
+        </Box>
       </Box>
 
       {/* main */}
@@ -122,10 +154,9 @@ const Details = () => {
           {/* second col */}
           <Box
             style={{
-              width: { base: "100%", md: "70%" },
+              gap: 10,
               display: "flex",
               flexDirection: "row",
-              justifyContent: "space-between",
               alignItems: "center",
             }}
           >
@@ -174,28 +205,34 @@ const Details = () => {
 
           {/* third col */}
 
-          <Box display="flex">
+          <Box
+            flexDirection={{ base: "column", md: "row" }}
+            display="flex"
+            width="100%"
+            gap="10px"
+          >
             <Box
               style={{
-                width: 150,
+                width: "20%",
                 height: "50px",
                 padding: "12px 16px",
                 border: "1px solid #B2A6A6",
                 alignItems: "center",
-                gap: 31,
+                justifyContent: "space-between",
                 display: "flex",
               }}
             >
               <Image
                 cursor="pointer"
-                onClick={() => decreaseQuantity(product.unique_id)}
+                onClick={() => {
+                  subQty();
+                }}
                 src={minus}
                 alt="minus"
               />
 
               <Box
                 style={{
-                  width: "8px",
                   textAlign: "center",
                   color: "#473838",
                   fontSize: 24,
@@ -205,15 +242,41 @@ const Details = () => {
                   letterSpacing: 0.12,
                 }}
               >
-                {product.quantity}
+                {qty}
               </Box>
 
               <Image
                 cursor="pointer"
-                onClick={() => increaseQuantity(product.unique_id)}
+                onClick={() => {
+                  addQty();
+                }}
                 src={plus}
                 alt="plus"
               />
+            </Box>
+
+            <Box
+              style={{
+                width: "80%",
+                height: 50,
+                gap: "8px",
+                backgroundColor: "#ED8174",
+                padding: "12px 16px",
+              }}
+            >
+              <p
+                style={{
+                  height: 26,
+                  textAlign: "center",
+                  letterSpacing: 0.09,
+                  fontFamily: "Kanit",
+                  fontWeight: 400,
+                  size: "18px",
+                  color: "#fff",
+                }}
+              >
+                Add to Cart
+              </p>
             </Box>
           </Box>
           {/* fourth col */}
