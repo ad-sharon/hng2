@@ -55,7 +55,6 @@ const CartMain = () => {
           height: 32,
           justifyContent: "space-between",
           display: "flex",
-          position: "relative",
         }}
       >
         <Box
@@ -100,21 +99,20 @@ const CartMain = () => {
       {/* cart tab Box end */}
 
       <Box
-        flexDirection={{ base: "column", lg: "row" }}
+        flexDirection={{ base: "column", md: "row" }}
+        justifyContent="space-between"
+        gap={{ base: "20", lg: "120" }}
         style={{
           width: "100%",
           height: 465,
-          gap: 120,
           display: "flex",
         }}
       >
         {/*cart items */}
         <Box
-          flexDirection={{ base: "column", lg: "row" }}
           style={{
             width: "60%",
-            height: 465,
-            gap: 41,
+
             display: "flex",
           }}
         >
@@ -123,8 +121,6 @@ const CartMain = () => {
         <Box
           style={{
             width: "40%",
-            height: 465,
-            gap: 41,
             display: "flex",
             flexDirection: "column",
           }}

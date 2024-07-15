@@ -1,11 +1,13 @@
 import React from "react";
+import { useState } from "react";
 import plus from "../assets/images/plus.png";
 import minus from "../assets/images/minus.png";
 import { Box } from "@chakra-ui/react";
 import { useCart } from "../cart_context";
 
 const CartItem = () => {
-  const { cart, removeFromCart } = useCart();
+  const { cart, removeFromCart, increaseQuantity, decreaseQuantity } =
+    useCart();
 
   return (
     <Box
@@ -17,103 +19,56 @@ const CartItem = () => {
         position: "absolute",
       }}
     >
-      {cart.map((product) => (
-        <Box
-          key={product.unique_id}
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            background: "#F1F0F0",
-          }}
-        >
+      {cart.length === 0 ? (
+        <Box>No items in the cart</Box>
+      ) : (
+        cart.map((product) => (
           <Box
+            key={product.unique_id}
             style={{
-              height: 172,
-              width: "146px",
+              display: "flex",
+              justifyContent: "space-between",
               background: "#F1F0F0",
             }}
           >
-            <img
-              src={`https://api.timbu.cloud/images/${product.photos[0].url}`}
-              style={{
-                width: "124px",
-                height: "148px",
-                // top: "11.98px",
-                // left: "12.91px",
-              }}
-              alt={product.name}
-            />
-          </Box>
-
-          <Box
-            style={{
-              width: 589,
-              height: "140px",
-              flexDirection: "column",
-              display: "flex",
-              margin: "auto",
-              gap: 16,
-            }}
-          >
             <Box
               style={{
-                height: "32px",
-                alignItems: "center",
-                gap: 21,
-                display: "flex",
+                height: 172,
+                width: "146px",
+                background: "#F1F0F0",
               }}
             >
-              <Box
+              <img
+                src={`https://api.timbu.cloud/images/${product.photos[0].url}`}
                 style={{
-                  width: 166,
-                  color: "#473838",
-                  fontSize: 24,
-                  fontFamily: "Kanit",
-                  fontWeight: "400",
-                  lineHeight: 32,
-                  letterSpacing: 0.12,
+                  width: "124px",
+                  height: "148px",
                 }}
-              >
-                {product.name}
-              </Box>
+                alt={product.name}
+              />
             </Box>
 
             <Box
-              width={{ base: "50%", xl: "589px" }}
               style={{
-                height: "50px",
-                justifyContent: "space-between",
-                alignItems: "center",
+                width: 589,
+                height: "140px",
+                flexDirection: "column",
                 display: "flex",
+                margin: "auto",
+                gap: 16,
               }}
             >
               <Box
                 style={{
-                  width: 150,
-                  height: "50px",
-                  padding: "12px 16px",
-                  border: "1px solid #B2A6A6",
+                  height: "32px",
                   alignItems: "center",
-                  gap: 31,
+                  gap: 21,
                   display: "flex",
                 }}
               >
                 <Box
                   style={{
-                    width: 24,
-                    height: 24,
-                    justifyContent: "center",
-                    alignItems: "center",
-                    display: "flex",
-                  }}
-                >
-                  <img src={minus} alt="minus" />
-                </Box>
-
-                <Box
-                  style={{
-                    width: "8px",
-                    textAlign: "center",
+                    width: 166,
                     color: "#473838",
                     fontSize: 24,
                     fontFamily: "Kanit",
@@ -122,54 +77,106 @@ const CartItem = () => {
                     letterSpacing: 0.12,
                   }}
                 >
-                  1
+                  {product.name}
+                </Box>
+              </Box>
+
+              <Box
+                width={{ base: "50%", xl: "589px" }}
+                style={{
+                  height: "50px",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  display: "flex",
+                }}
+              >
+                <Box
+                  style={{
+                    width: 150,
+                    height: "50px",
+                    padding: "12px 16px",
+                    border: "1px solid #B2A6A6",
+                    alignItems: "center",
+                    gap: 31,
+                    display: "flex",
+                  }}
+                >
+                  <Box
+                    onClick={() => decreaseQuantity(product.unique_id)}
+                    style={{
+                      width: 24,
+                      height: 24,
+                      justifyContent: "center",
+                      alignItems: "center",
+                      display: "flex",
+                    }}
+                  >
+                    <img src={minus} alt="minus" />
+                  </Box>
+
+                  <Box
+                    style={{
+                      width: "8px",
+                      textAlign: "center",
+                      color: "#473838",
+                      fontSize: 24,
+                      fontFamily: "Kanit",
+                      fontWeight: "400",
+                      lineHeight: 32,
+                      letterSpacing: 0.12,
+                    }}
+                  >
+                    {product.quantity}
+                  </Box>
+
+                  <Box
+                    onClick={() => increaseQuantity(product.unique_id)}
+                    style={{
+                      width: 24,
+                      height: 24,
+                      justifyContent: "center",
+                      alignItems: "center",
+                      display: "flex",
+                    }}
+                  >
+                    <img src={plus} alt="plus" />
+                  </Box>
                 </Box>
 
                 <Box
                   style={{
-                    width: 24,
-                    height: 24,
-                    justifyContent: "center",
-                    alignItems: "center",
-                    display: "flex",
+                    textAlign: "center",
+                    color: "#473838",
+                    fontSize: 24,
+                    fontFamily: "Kanit",
+                    fontWeight: "700",
+                    lineHeight: 32,
+                    letterSpacing: 0.12,
                   }}
                 >
-                  <img src={plus} alt="plus" />
+                  {product.current_price[0].NGN[0]}
                 </Box>
               </Box>
 
               <Box
                 style={{
-                  textAlign: "center",
-                  color: "#473838",
-                  fontSize: 24,
+                  width: 92,
+                  zIndex: "5",
+                  color: "#ED8174",
+                  fontSize: 18,
                   fontFamily: "Kanit",
-                  fontWeight: "700",
-                  lineHeight: 32,
-                  letterSpacing: 0.12,
+                  fontWeight: "400",
+                  letterSpacing: 0.09,
                 }}
               >
-                {product.current_price[0].NGN[0]}
+                <button onClick={() => removeFromCart(product.unique_id)}>
+                  Remove
+                </button>
               </Box>
             </Box>
-            <Box
-              style={{
-                width: 92,
-                zIndex: "5",
-                color: "#ED8174",
-                fontSize: 18,
-                fontFamily: "Kanit",
-                fontWeight: "400",
-                letterSpacing: 0.09,
-              }}
-            >
-              <button onClick={() => removeFromCart(product.unique_id)}>
-                Remove
-              </button>
-            </Box>
           </Box>
-        </Box>
-      ))}
+        ))
+      )}
     </Box>
   );
 };

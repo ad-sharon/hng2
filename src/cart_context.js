@@ -30,7 +30,7 @@ export const CartProvider = ({ children }) => {
       if (existingProduct) {
         return prevCart.map((item) =>
           item.unique_id === product.unique_id
-            ? { ...item, quantity: item.quantity + 1 }
+            ? { ...item, quantity: item.quantity }
             : item
         );
       } else {
@@ -49,9 +49,45 @@ export const CartProvider = ({ children }) => {
     setCart([]);
   };
 
+  const increaseQuantity = (unique_id) => {
+    const updatedCart = cart.map((item) =>
+      item.unique_id === unique_id
+        ? { ...item, quantity: item.quantity + 1 }
+        : item
+    );
+    setCart(updatedCart);
+  };
+
+  const decreaseQuantity = (unique_id) => {
+    const updatedCart = cart.map((item) =>
+      item.unique_id === unique_id && item.quantity > 1
+        ? { ...item, quantity: item.quantity - 1 }
+        : item
+    );
+    setCart(updatedCart);
+  };
+
+  const calculateTotalPrice = () => {
+    return cart.reduce(
+      (acc, item) => acc + item.current_price[0].NGN[0] * item.quantity,
+      0
+    );
+  };
+
+  const totalPrice = calculateTotalPrice();
+
   return (
     <CartContext.Provider
-      value={{ cart, cartCount, addToCart, removeFromCart, clearCart }}
+      value={{
+        cart,
+        cartCount,
+        totalPrice,
+        increaseQuantity,
+        decreaseQuantity,
+        addToCart,
+        removeFromCart,
+        clearCart,
+      }}
     >
       {children}
     </CartContext.Provider>

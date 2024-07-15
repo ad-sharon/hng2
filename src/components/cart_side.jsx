@@ -1,16 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import CheckOutButton from "./checkout_b";
-import product4 from "..//assets/images/product4.png";
-import product5 from "..//assets/images/product5.png";
-import product6 from "..//assets/images/product6.png";
-import product7 from "..//assets/images/product7.png";
-import product8 from "..//assets/images/product8.png";
 import door from "../assets/images/door_delivery.png";
 import "../hover_product.css";
+import { useCart } from "../cart_context";
 import station from "../assets/images/station_pickup.png";
 
 const CartSide = () => {
+  const { totalPrice } = useCart();
+
   return (
     <div
       style={{
@@ -128,9 +126,10 @@ const CartSide = () => {
               fontFamily: "Kanit",
               fontWeight: "700",
               letterSpacing: 0.12,
+              whiteSpace: "nowrap",
             }}
           >
-            $186
+            {totalPrice}
           </div>
         </div>
 
