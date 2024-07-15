@@ -25,9 +25,7 @@ function ShopAllPage() {
       <TimbuDiv />
       <NavBar showMobileNav={true} />
 
-      <div>
-        <FilterTab />
-      </div>
+      <FilterTab />
 
       <ShopAll />
 

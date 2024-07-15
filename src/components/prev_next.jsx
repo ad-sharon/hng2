@@ -10,12 +10,13 @@ const PrevNext = ({ currentPage, setCurrentPage, totalPages }) => {
         width: "fit-content",
         margin: "auto",
         display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
       }}
     >
       <Box
         style={{
           width: "100%",
-          height: "42px",
           gap: "8px",
           alignItems: "center",
           justifyContent: "center",
@@ -27,8 +28,6 @@ const PrevNext = ({ currentPage, setCurrentPage, totalPages }) => {
         <Box
           style={{
             width: "100%",
-            height: "42px",
-            padding: "8px 12px",
             opacity: "50%",
             borderRadius: "8px",
             gap: "8px",
@@ -43,7 +42,6 @@ const PrevNext = ({ currentPage, setCurrentPage, totalPages }) => {
         >
           <Box
             style={{
-              alignItems: "center",
               display: "flex",
             }}
           >
@@ -78,6 +76,7 @@ const PrevNext = ({ currentPage, setCurrentPage, totalPages }) => {
             width: "207px",
             height: "38px",
             display: "flex",
+            justifyContent: "center",
             alignItems: "center",
             gap: "8px",
           }}
@@ -94,6 +93,7 @@ const PrevNext = ({ currentPage, setCurrentPage, totalPages }) => {
                 borderRadius: "8px",
                 display: "flex",
                 justifyContent: "center",
+                alignItems: "center",
                 cursor: "pointer",
                 color: currentPage === index + 1 ? "#fff" : "#473838",
               }}
@@ -109,6 +109,7 @@ const PrevNext = ({ currentPage, setCurrentPage, totalPages }) => {
           style={{
             width: "100%",
             color: "#ED8174",
+            display: "flex",
 
             cursor: currentPage === totalPages ? "not-allowed" : "pointer",
           }}
@@ -130,6 +131,22 @@ const PrevNext = ({ currentPage, setCurrentPage, totalPages }) => {
           >
             Next
           </p>
+
+          <Box
+            style={{
+              alignItems: "center",
+              display: "flex",
+            }}
+          >
+            <img
+              src={arrow_right}
+              alt=""
+              style={{
+                width: "16",
+                height: "16",
+              }}
+            />
+          </Box>
         </Box>
       </Box>
     </Box>

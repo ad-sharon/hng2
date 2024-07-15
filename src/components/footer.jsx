@@ -11,7 +11,7 @@ const Footer = () => {
         width: "100%",
         display: "flex",
         flexDirection: "column",
-        marginBottom: "auto",
+        position: "absolute",
       }}
     >
       <TimbuDiv />

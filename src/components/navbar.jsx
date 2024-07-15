@@ -446,14 +446,11 @@ const NavBar = ({ showMobileNav }) => {
             <Box style={{}}>
               <img src={search} alt="" />
             </Box>
-
-            <Link to="/cart">
-              <img src={cart} />
+            <Box>
               {cartCount > 0 && (
                 <div
                   style={{
                     position: "absolute",
-
                     width: "10px",
                     height: "10px",
                     borderRadius: "50%",
@@ -464,7 +461,11 @@ const NavBar = ({ showMobileNav }) => {
                   }}
                 ></div>
               )}
-            </Link>
+
+              <Link to="/cart">
+                <img src={cart} />
+              </Link>
+            </Box>
           </Box>
         </Box>
 
