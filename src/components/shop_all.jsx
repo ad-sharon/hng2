@@ -272,7 +272,11 @@ const ShopAll = () => {
       ) : (
         <div>No products available</div>
       )}
-      <PrevNext currentPage={currentPage} setCurrentPage={setCurrentPage} />
+      <PrevNext
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+        totalPages={totalPages}
+      />
     </Box>
   );
 };
