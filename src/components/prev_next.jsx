@@ -1,20 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
+import { Box } from "@chakra-ui/react";
 import arrow_left from "..//assets/images/arrow_left.png";
 import arrow_right from "..//assets/images/arrow_right.png";
 
-const PrevNext = (currentPage, totalPages, onPageChange) => {
+const PrevNext = ({ products }) => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const productsPerPage = 10;
+  const indexOfLastProduct = currentPage * productsPerPage;
+  const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+  const pageProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
+  const totalPages = Math.ceil(products.length / productsPerPage);
+
   return (
-    <div
+    <Box
       style={{
         width: "100%",
         display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
       }}
     >
-      <div
+      <Box
         style={{
-          width: "427px",
+          width: "100%",
           height: "42px",
           gap: "8px",
           display: "flex",
@@ -22,9 +28,9 @@ const PrevNext = (currentPage, totalPages, onPageChange) => {
         }}
       >
         {/* previous/arrow-left */}
-        <div
+        <Box
           style={{
-            width: "119px",
+            width: "100%",
             height: "42px",
             padding: "8px 12px",
             opacity: "50%",
@@ -32,9 +38,9 @@ const PrevNext = (currentPage, totalPages, onPageChange) => {
             gap: "8px",
             display: "flex",
           }}
-          onClick={() => currentPage > 1 && onPageChange(currentPage - 1)}
+          onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
         >
-          <div
+          <Box
             style={{
               alignItems: "center",
               display: "flex",
@@ -48,9 +54,10 @@ const PrevNext = (currentPage, totalPages, onPageChange) => {
                 height: "16",
               }}
             />
-          </div>
+          </Box>
 
-          <div
+          <p
+            disabled={currentPage === 1}
             style={{
               color: "#B2A6A6",
               fontSize: "18px",
@@ -61,11 +68,11 @@ const PrevNext = (currentPage, totalPages, onPageChange) => {
             }}
           >
             Previous
-          </div>
-        </div>
+          </p>
+        </Box>
 
         {/* Page Numbers */}
-        <div
+        <Box
           style={{
             width: "207px",
             height: "38px",
@@ -75,7 +82,7 @@ const PrevNext = (currentPage, totalPages, onPageChange) => {
           }}
         >
           {[...Array(totalPages)].map((_, index) => (
-            <div
+            <Box
               key={index}
               style={{
                 width: "32px",
@@ -89,16 +96,16 @@ const PrevNext = (currentPage, totalPages, onPageChange) => {
                 cursor: "pointer",
                 color: currentPage === index + 1 ? "#fff" : "#473838",
               }}
-              onClick={() => onPageChange(index + 1)}
+              // onClick={() => onPageChange(index + 1)}
             >
-              <div style={{ fontSize: "18px", fontFamily: "Kanit" }}>
+              <Box style={{ fontSize: "18px", fontFamily: "Kanit" }}>
                 {index + 1}
-              </div>
-            </div>
+              </Box>
+            </Box>
           ))}
-        </div>
+        </Box>
 
-        <div
+        <Box
           style={{
             width: "85px",
             height: "42px",
@@ -107,8 +114,12 @@ const PrevNext = (currentPage, totalPages, onPageChange) => {
             gap: "8px",
             display: "flex",
           }}
+          onClick={() =>
+            setCurrentPage((prev) => Math.min(prev + 1, totalPages))
+          }
         >
-          <div
+          <p
+            disabled={currentPage === totalPages}
             style={{
               color: "#ED8174",
               fontSize: "18px",
@@ -119,9 +130,9 @@ const PrevNext = (currentPage, totalPages, onPageChange) => {
             }}
           >
             Next
-          </div>
+          </p>
 
-          <div
+          <Box
             style={{
               display: "flex",
             }}
@@ -134,10 +145,10 @@ const PrevNext = (currentPage, totalPages, onPageChange) => {
                 height: 16,
               }}
             />
-          </div>
-        </div>
-      </div>
-    </div>
+          </Box>
+        </Box>
+      </Box>
+    </Box>
   );
 };
 

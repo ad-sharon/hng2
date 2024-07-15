@@ -16,6 +16,10 @@ const ShopAll = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 12;
 
+  const indexOfLastProduct = currentPage * productsPerPage;
+  const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+  const pageProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
+
   useEffect(() => {
     const getProducts = async () => {
       try {
@@ -44,7 +48,7 @@ const ShopAll = () => {
         top: "554px",
       }}
     >
-      {products.length > 0 ? (
+      {pageProducts.length > 0 ? (
         <Box
           style={{
             width: "100%",
@@ -62,7 +66,7 @@ const ShopAll = () => {
               justifyContent: "center",
             }}
           >
-            {products.map((product) => (
+            {pageProducts.map((product) => (
               <Box
                 key={product.unique_id}
                 style={{

@@ -7,6 +7,7 @@ import star from "..//assets//images/star.png";
 import hamburger from "..//assets/images/hamburger.png";
 import search from "..//assets/images/search.png";
 import cart from "..//assets/images/cart.png";
+import { useCart } from "../cart_context";
 
 const NavBar = ({ showMobileNav }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,6 +19,10 @@ const NavBar = ({ showMobileNav }) => {
   };
 
   const handleLinkClick = (e, path) => {};
+
+  // for cart icon effect
+  const { cartCount } = useCart();
+  console.log(cartCount);
 
   // to change page title during page navigation
   useEffect(() => {
@@ -349,7 +354,7 @@ const NavBar = ({ showMobileNav }) => {
       >
         <Box
           style={{
-            width: "90%",
+            width: "100%",
             display: "flex",
             flexDirection: "row",
             backgroundColor: "#f8f8f8",
@@ -357,6 +362,7 @@ const NavBar = ({ showMobileNav }) => {
             cursor: "pointer",
           }}
         >
+          {/* mobile menu */}
           <Box flexDirection="column">
             <img
               src={hamburger}
@@ -433,15 +439,31 @@ const NavBar = ({ showMobileNav }) => {
 
           <Box
             style={{
-              height: "50px",
               display: "flex",
               gap: 8,
             }}
           >
-            <img style={{ width: 24, height: 24 }} src={search} />
+            <Box style={{}}>
+              <img src={search} alt="" />
+            </Box>
 
             <Link to="/cart">
-              <img style={{ width: 24, height: 24 }} src={cart} alt="" />
+              <img src={cart} />
+              {cartCount > 0 && (
+                <div
+                  style={{
+                    position: "absolute",
+
+                    width: "10px",
+                    height: "10px",
+                    borderRadius: "50%",
+                    backgroundColor: "#ED8174",
+                    color: "white",
+                    textAlign: "center",
+                    fontSize: "12px",
+                  }}
+                ></div>
+              )}
             </Link>
           </Box>
         </Box>
