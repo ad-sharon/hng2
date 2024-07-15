@@ -167,7 +167,9 @@ const ShopAll = () => {
                           whiteSpace: "nowrap",
                         }}
                       >
-                        <Link to={`/product/${product.id}`}>View Details</Link>
+                        <Link to={`/product/details/${product.id}`}>
+                          View Details
+                        </Link>
                       </p>
                     </Box>
                   </Box>
