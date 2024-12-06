@@ -2,7 +2,7 @@ import React from "react";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import TopBar from "../components/topBar";
 import CheckoutTop from "../components/checkout_top";
-import TimbuDiv from "../components/timbu_div";
+import TimbuDiv from "../components/timbuDiv";
 import CheckOut from "../components/checkout";
 // import Footer from "../components/footer";
 import CheckoutForm from "../components/checkout_form";

@@ -1,7 +1,7 @@
 import React from "react";
 import { Box } from "@chakra-ui/react";
 import TopBar from "./topBar";
-import TimbuDiv from "../components/timbu_div";
+import TimbuDiv from "./timbuDiv";
 import NavBar from "../components/navbar";
 
 const Success = () => {
