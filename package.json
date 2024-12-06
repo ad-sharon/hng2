@@ -1,5 +1,5 @@
 {
-  "name": "hng-stage2",
+  "name": "timbu-store",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -41,5 +41,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.16"
   }
 }
